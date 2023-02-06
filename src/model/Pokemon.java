@@ -1,5 +1,6 @@
-package src.models;
-public class Pokemon {
+package model;
+
+public abstract class Pokemon {
     private int id;
     private String name;
     private Types firstType;
@@ -11,7 +12,6 @@ public class Pokemon {
     private int spAttack;
     private int spDefense;
     private boolean shiny;
-    private Trainer trainer;
 
     public Pokemon(int id, String name, Types firstType, Types secondType, int hp, int attack, int defense, int speed, int spAttack, int spDefense) {
         this.id = id;
@@ -68,9 +68,5 @@ public class Pokemon {
 
     public boolean isShiny() {
         return shiny;
-    }
-
-    public Trainer getTrainer() {
-        return trainer;
     }
 }
