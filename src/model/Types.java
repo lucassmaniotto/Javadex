@@ -1,6 +1,7 @@
 package model;
 
 public enum Types {
+    NONE,
     FIRE, 
     WATER, 
     GRASS, 

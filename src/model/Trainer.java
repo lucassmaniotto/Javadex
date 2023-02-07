@@ -49,10 +49,15 @@ public class Trainer {
         return pokemonList;
     }
 
+    
     public Pokemon[] getParty() {
         return party;
     }
-
+    
+    public void setId(int id){
+        this.id = id;
+    }
+    
     public void addPokemon(Pokemon pokemon) {
         pokemonList.add(pokemon);
     }

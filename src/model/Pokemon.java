@@ -5,13 +5,16 @@ public abstract class Pokemon {
     private String name;
     private Types firstType;
     private Types secondType;
+    private boolean shiny;
     private int hp;
     private int attack;
     private int defense;
     private int speed;
     private int spAttack;
     private int spDefense;
-    private boolean shiny;
+    private int total;
+    private float height;
+    private float weight;
 
     public Pokemon(int id, String name, Types firstType, Types secondType, int hp, int attack, int defense, int speed, int spAttack, int spDefense) {
         this.id = id;
@@ -24,6 +27,10 @@ public abstract class Pokemon {
         this.speed = speed;
         this.spAttack = spAttack;
         this.spDefense = spDefense;
+        this.total = hp + attack + defense + speed + spAttack + spDefense;
+        this.shiny = false;
+        this.height = 0;
+        this.weight = 0;
     }
 
     public int getId() {
@@ -56,17 +63,86 @@ public abstract class Pokemon {
 
     public int getSpDefense() {
         return spDefense;
-    }
+    }    
 
     public Types getFirstType() {
         return firstType;
-    }
-
+    }    
+    
     public Types getSecondType() {
         return secondType;
-    } 
-
-    public boolean isShiny() {
+    }     
+    
+    public int getTotal() {
+        return total;
+    }    
+    
+    public boolean getShiny() {
         return shiny;
     }
+
+    public float getHeight() {
+        return height;
+    }
+
+    public float getWeight() {
+        return weight;
+    }
+    
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public void setHp(int hp) {
+        this.hp = hp;
+    }    
+    
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }    
+    
+    public void setDefense(int defense) {
+        this.defense = defense;
+    }    
+    
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }    
+    
+    public void setSpAttack(int spAttack) {
+        this.spAttack = spAttack;
+    }    
+
+    public void setSpDefense(int spDefense) {
+        this.spDefense = spDefense;
+    }    
+    
+    public void setTotal(int total) {
+        this.total = total;
+    }    
+    
+    public void setFirstType(Types firstType) {
+        this.firstType = firstType;
+    }    
+    
+    public void setSecondType(Types secondType) {
+        this.secondType = secondType;
+    }    
+    
+    public void setShiny(boolean shiny) {
+        this.shiny = shiny;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+
 }
