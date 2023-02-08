@@ -40,7 +40,10 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -50,7 +53,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="TitleLabel" alignment="0" pref="400" max="32767" attributes="0"/>
+              <Component id="TitleLabel" alignment="0" max="32767" attributes="0"/>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -99,15 +102,10 @@
                           <Component id="jSeparator1" min="-2" pref="370" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="HPLabel" min="-2" pref="38" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="HPTextField" min="-2" pref="71" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Component id="DEFLabel" min="-2" pref="38" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
@@ -119,29 +117,50 @@
                                       <Component id="ATQLabel" min="-2" pref="38" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="sDEFLabel" pref="45" max="32767" attributes="0"/>
+                                      <Component id="sATQLabel" pref="45" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="sDEFLabel" max="32767" attributes="0"/>
-                                          <Component id="sATQLabel" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="SpeedLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="sATQTextField" min="-2" pref="63" max="-2" attributes="0"/>
+                                      <Component id="sDEFTextField" min="-2" pref="63" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="TotalLabel" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="HPLabel" min="-2" pref="38" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="TotalValueLabel" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="HPTextField" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                                  <Component id="SpeedLabel" min="-2" pref="45" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="SpeedTextField" pref="0" max="32767" attributes="0"/>
                               </Group>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="sATQTextField" max="32767" attributes="0"/>
-                              <Component id="sDEFTextField" max="32767" attributes="0"/>
-                              <Component id="SpeedTextField" alignment="0" min="-2" pref="71" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="SaveButton" min="-2" pref="61" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                          <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="TotalValueLabel" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="TotalLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
@@ -189,7 +208,7 @@
                       <Component id="HPTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="SpeedTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="ATQTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="ATQLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -203,12 +222,16 @@
                       <Component id="sDEFLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="sDEFTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <Component id="TotalLabel" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="TotalValueLabel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="TotalLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="TotalValueLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="SaveButton" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -356,16 +379,6 @@
             <Property name="toolTipText" type="java.lang.String" value="Informe a Velocidade do Pok&#xe9;mon"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="sATQTextField">
-          <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Informe o valor de Ataque Especial do Pok&#xe9;mon"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="sDEFTextField">
-          <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Informe o valor de Defesa Especial do Pok&#xe9;mon"/>
-          </Properties>
-        </Component>
         <Component class="javax.swing.JLabel" name="TotalLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="TOTAL:"/>
@@ -380,6 +393,29 @@
                 <EtchetBorder/>
               </Border>
             </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="ExitButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Salvar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ExitButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="SaveButton">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Sair"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="sATQTextField">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Informe a Velocidade do Pok&#xe9;mon"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="sDEFTextField">
+          <Properties>
+            <Property name="toolTipText" type="java.lang.String" value="Informe a Velocidade do Pok&#xe9;mon"/>
           </Properties>
         </Component>
       </SubComponents>
