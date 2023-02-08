@@ -143,6 +143,7 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
         TotalValueLabel.setText("???");
         TotalValueLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        ExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/save.png"))); // NOI18N
         ExitButton.setText("Salvar");
         ExitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,6 +151,7 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
             }
         });
 
+        SaveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/exit.png"))); // NOI18N
         SaveButton.setText("Sair");
 
         sATQTextField.setToolTipText("Informe a Velocidade do Pokémon");
@@ -229,10 +231,10 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(SaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
+                        .addComponent(SaveButton)
+                        .addGap(51, 51, 51)
                         .addComponent(ExitButton)
-                        .addGap(106, 106, 106))
+                        .addGap(79, 79, 79))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TotalValueLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)

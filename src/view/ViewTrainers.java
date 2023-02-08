@@ -39,7 +39,7 @@ public class ViewTrainers extends javax.swing.JFrame {
         TrainerImageLabel = new javax.swing.JLabel();
         LinkPokemonButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         TrainersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -79,6 +79,7 @@ public class ViewTrainers extends javax.swing.JFrame {
         FilterTextField.setForeground(new java.awt.Color(102, 102, 102));
         FilterTextField.setText("O que você procura?");
         FilterTextField.setToolTipText("Digite o valor que deseja buscar conforme o a caixa de seleção ao lado");
+        FilterTextField.setActionCommand("<Not Set>");
         FilterTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FilterTextFieldActionPerformed(evt);
@@ -93,8 +94,10 @@ public class ViewTrainers extends javax.swing.JFrame {
             }
         });
 
+        FilterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/filter.png"))); // NOI18N
         FilterButton.setText("FILTRAR");
 
+        EditTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit-trainer.png"))); // NOI18N
         EditTrainerButton.setText("EDITAR TREINADOR");
         EditTrainerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,6 +107,7 @@ public class ViewTrainers extends javax.swing.JFrame {
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        RegisterTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/add-trainer.png"))); // NOI18N
         RegisterTrainerButton.setText("ADICIONAR TREINADOR");
         RegisterTrainerButton.setToolTipText("");
         RegisterTrainerButton.addActionListener(new java.awt.event.ActionListener() {
@@ -116,6 +120,7 @@ public class ViewTrainers extends javax.swing.JFrame {
         TrainerImageLabel.setText("Imagem do Treinador");
         TrainerImageLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        LinkPokemonButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/link-pokemon.png"))); // NOI18N
         LinkPokemonButton.setText("VINCULAR POKÉMON AO TREINADOR");
         LinkPokemonButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,13 +135,13 @@ public class ViewTrainers extends javax.swing.JFrame {
             .addComponent(TitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(FilterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(FilterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(FilterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FilterButton))
                     .addComponent(jScrollPane1))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)

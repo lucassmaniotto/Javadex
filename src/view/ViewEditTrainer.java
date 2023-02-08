@@ -51,7 +51,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         removeFromPartyButton = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         TitleLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
         TitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -110,8 +110,10 @@ public class ViewEditTrainer extends javax.swing.JFrame {
             TrainedPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(125);
         }
 
+        ExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/exit.png"))); // NOI18N
         ExitButton.setText("Sair");
 
+        SaveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/save.png"))); // NOI18N
         SaveButton.setText("Salvar");
         SaveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +165,11 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         }
 
         addToPartyButton.setText("Enviar para o Time ->");
+        addToPartyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addToPartyButtonActionPerformed(evt);
+            }
+        });
 
         removeFromPartyButton.setText("<- Guardar Pokémon");
         removeFromPartyButton.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +209,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(230, 230, 230)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(243, 243, 243))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,9 +218,9 @@ public class ViewEditTrainer extends javax.swing.JFrame {
                         .addGap(119, 119, 119)
                         .addComponent(PokemonsLabel)
                         .addGap(126, 126, 126)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(addToPartyButton)
                             .addComponent(removeFromPartyButton))
@@ -221,14 +228,15 @@ public class ViewEditTrainer extends javax.swing.JFrame {
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(PartyLabel)
-                        .addGap(184, 184, 184))))
+                        .addGap(192, 192, 192))))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(352, 352, 352)
-                        .addComponent(ExitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(58, 58, 58)
+                        .addGap(334, 334, 334)
+                        .addComponent(ExitButton)
+                        .addGap(59, 59, 59)
                         .addComponent(SaveButton))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
@@ -291,7 +299,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -308,6 +316,10 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     private void removeFromPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFromPartyButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_removeFromPartyButtonActionPerformed
+
+    private void addToPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToPartyButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addToPartyButtonActionPerformed
 
     /**
      * @param args the command line arguments
