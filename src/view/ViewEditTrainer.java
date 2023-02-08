@@ -51,7 +51,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         removeFromPartyButton = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         TitleLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
         TitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -59,6 +59,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
 
         NameLabel.setText("Nome:");
 
+        NameTextField.setEditable(false);
         NameTextField.setToolTipText("Digite o nome do treinador");
 
         AgeLabel.setText("Idade:");
@@ -89,9 +90,16 @@ public class ViewEditTrainer extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane1.setViewportView(TrainedPokemonsTable);
@@ -134,9 +142,16 @@ public class ViewEditTrainer extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane3.setViewportView(PokemonPartyTable);
