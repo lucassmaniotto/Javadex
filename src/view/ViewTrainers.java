@@ -110,6 +110,11 @@ public class ViewTrainers extends javax.swing.JFrame {
         TrainerImageLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         LinkPokemonButton.setText("VINCULAR POKÉMON AO TREINADOR");
+        LinkPokemonButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LinkPokemonButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -187,12 +192,19 @@ public class ViewTrainers extends javax.swing.JFrame {
     }//GEN-LAST:event_FilterComboBoxActionPerformed
 
     private void RegisterTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterTrainerButtonActionPerformed
-        // TODO add your handling code here:
+        ViewRegisterTrainer viewRegisterTrainer = new ViewRegisterTrainer();
+        viewRegisterTrainer.setVisible(true);
     }//GEN-LAST:event_RegisterTrainerButtonActionPerformed
 
     private void EditTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTrainerButtonActionPerformed
-        // TODO add your handling code here:
+        ViewEditTrainer viewEditTrainer = new ViewEditTrainer();
+        viewEditTrainer.setVisible(true);
     }//GEN-LAST:event_EditTrainerButtonActionPerformed
+
+    private void LinkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LinkPokemonButtonActionPerformed
+        ViewLinkPokemon viewLinkPokemon = new ViewLinkPokemon();
+        viewLinkPokemon.setVisible(true);
+    }//GEN-LAST:event_LinkPokemonButtonActionPerformed
 
     /**
      * @param args the command line arguments

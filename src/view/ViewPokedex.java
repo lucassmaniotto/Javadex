@@ -99,6 +99,11 @@ public class ViewPokedex extends javax.swing.JFrame {
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         RegisterPokemonButton.setText("ADICIONAR POKEMON");
+        RegisterPokemonButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RegisterPokemonButtonActionPerformed(evt);
+            }
+        });
 
         ViewTrainersButton.setText("VISUALIZAR TREINADORES");
         ViewTrainersButton.addActionListener(new java.awt.event.ActionListener() {
@@ -181,12 +186,18 @@ public class ViewPokedex extends javax.swing.JFrame {
     }//GEN-LAST:event_FilterTextFieldActionPerformed
 
     private void ViewTrainersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewTrainersButtonActionPerformed
-        // TODO add your handling code here:
+        ViewTrainers viewTrainers = new ViewTrainers();
+        viewTrainers.setVisible(true);
     }//GEN-LAST:event_ViewTrainersButtonActionPerformed
 
     private void FilterComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FilterComboBoxActionPerformed
+
+    private void RegisterPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPokemonButtonActionPerformed
+        ViewRegisterPokemon viewRegisterPokemon = new ViewRegisterPokemon();
+        viewRegisterPokemon.setVisible(true);
+    }//GEN-LAST:event_RegisterPokemonButtonActionPerformed
 
     /**
      * @param args the command line arguments

@@ -233,6 +233,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="VINCULAR POK&#xc9;MON AO TREINADOR"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LinkPokemonButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
