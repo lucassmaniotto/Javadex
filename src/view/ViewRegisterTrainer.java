@@ -41,7 +41,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
         ExitButton = new javax.swing.JButton();
         SaveButton = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         TitleLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
         TitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

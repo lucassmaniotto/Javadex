@@ -61,7 +61,7 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         WeightValueLabel = new javax.swing.JLabel();
         PokemonImageLabel = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         PokemonNameLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
         PokemonNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
