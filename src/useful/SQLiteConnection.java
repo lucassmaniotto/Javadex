@@ -18,7 +18,7 @@ public class SQLiteConnection {
 
     public boolean connect() {
         try {
-            this.connection = DriverManager.getConnection("jdbc:sqlite:database.db");
+            this.connection = DriverManager.getConnection("jdbc:sqlite:pokedex.db");
             System.out.println("Conectado!");
         } catch (SQLException e) {
             System.err.println(e.getMessage());
