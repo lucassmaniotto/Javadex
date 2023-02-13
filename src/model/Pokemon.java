@@ -3,8 +3,8 @@ package model;
 public abstract class Pokemon {
     private int id;
     private String name;
-    private Types firstType;
-    private Types secondType;
+    private String firstType;
+    private String secondType;
     private boolean shiny;
     private int hp;
     private int attack;
@@ -16,11 +16,11 @@ public abstract class Pokemon {
     private float height;
     private float weight;
 
-    public Pokemon(int id, String name, Types firstType, Types secondType, int hp, int attack, int defense, int speed, int spAttack, int spDefense) {
-        this.id = id;
+    public Pokemon (String name, String firstType, String secondType, int hp, int attack, int defense, int speed, int spAttack, int spDefense, float height, float weight) {
         this.name = name;
         this.firstType = firstType;
         this.secondType = secondType;
+        this.shiny = false;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
@@ -28,9 +28,8 @@ public abstract class Pokemon {
         this.spAttack = spAttack;
         this.spDefense = spDefense;
         this.total = hp + attack + defense + speed + spAttack + spDefense;
-        this.shiny = false;
-        this.height = 0;
-        this.weight = 0;
+        this.height = height;
+        this.weight = weight;
     }
 
     public int getId() {
@@ -65,11 +64,11 @@ public abstract class Pokemon {
         return spDefense;
     }    
 
-    public Types getFirstType() {
+    public String getFirstType() {
         return firstType;
     }    
     
-    public Types getSecondType() {
+    public String getSecondType() {
         return secondType;
     }     
     
@@ -125,11 +124,11 @@ public abstract class Pokemon {
         this.total = total;
     }    
     
-    public void setFirstType(Types firstType) {
+    public void setFirstType(String firstType) {
         this.firstType = firstType;
     }    
     
-    public void setSecondType(Types secondType) {
+    public void setSecondType(String secondType) {
         this.secondType = secondType;
     }    
     

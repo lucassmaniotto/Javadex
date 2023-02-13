@@ -3,8 +3,8 @@ package model;
 public class TrainedPokemon extends WildPokemon {
     private Trainer trainer;
 
-    public TrainedPokemon(int id, String name, Types firstType, Types secondType, int hp, int attack, int defense, int speed, int spAttack, int spDefense) {
-        super(id, name, firstType, secondType, hp, attack, defense, speed, spAttack, spDefense);
+    public TrainedPokemon(String name, String firstType, String secondType, int hp, int attack, int defense, int speed, int spAttack, int spDefense, float height, float weight) {
+        super(name, firstType, secondType, hp, attack, defense, speed, spAttack, spDefense, height, weight);
         this.isWild = false;
     }
 

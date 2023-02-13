@@ -11,7 +11,7 @@ public class Trainer {
     private int pokemonCount;
     private ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
     private Pokemon[] party = new Pokemon[6];
-
+    
     public Trainer(int id, String name, int age, int badges, String region, int pokemonCount) {
         this.id = id;
         this.name = name;
@@ -20,7 +20,7 @@ public class Trainer {
         this.region = region;
         this.pokemonCount = pokemonCount;
     }
-
+    
     public int getId() {
         return id;
     }
@@ -49,46 +49,39 @@ public class Trainer {
         return pokemonList;
     }
 
-    
     public Pokemon[] getParty() {
         return party;
     }
-    
-    public void setId(int id){
+
+    public void setId(int id) {
         this.id = id;
     }
-    
-    public void addPokemon(Pokemon pokemon) {
-        pokemonList.add(pokemon);
+
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void removePokemon(Pokemon pokemon) {
-        pokemonList.remove(pokemon);
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public void addBadge() {
-        if(badges <= 8) {
-            badges++;
-        }
+    public void setBadges(int badges) {
+        this.badges = badges;
     }
 
-    public void addToParty(Pokemon pokemon) {
-        for(int i = 0; i < party.length; i++) {
-            if(party[i] == null && i < 6) {
-                party[i] = pokemon;
-                break;
-            } else if(i == 5) {
-                // alerta treinador que o party está cheia
-            }
-        }
+    public void setRegion(String region) {
+        this.region = region;
     }
 
-    public void removeFromParty(Pokemon pokemon) {
-        for(int i = 0; i < party.length; i++) {
-            if(party[i] == pokemon) {
-                party[i] = null;
-                break;
-            }
-        }
+    public void setPokemonCount(int pokemonCount) {
+        this.pokemonCount = pokemonCount;
+    }
+
+    public void setPokemonList(ArrayList<Pokemon> pokemonList) {
+        this.pokemonList = pokemonList;
+    }
+
+    public void setParty(Pokemon[] party) {
+        this.party = party;
     }
 }
