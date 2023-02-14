@@ -14,6 +14,11 @@ import useful.SQLiteConnection;
  */
 public class DAOPokemon extends SQLiteConnection {
     
+    /**
+     * Salva um pokemon selvagem no banco de dados
+     * @param pokemon
+     * @return
+     */
     public boolean saveWildPokemon(WildPokemon pokemon){
         connect();
         
@@ -34,7 +39,7 @@ public class DAOPokemon extends SQLiteConnection {
                 + "PW_ISWILD, "
                 + "FK_TRAINER_ID ) "
                 + "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?, NULL)";
-
+                
         PreparedStatement preparedStatement = createPreparedStatement(sql, Statement.RETURN_GENERATED_KEYS);
         
         try {    
@@ -61,5 +66,28 @@ public class DAOPokemon extends SQLiteConnection {
             disconnect();
         }
         return true;
+    }
+
+    /**
+     * Retorna o último ID inserido no banco de dados
+     * @return int
+     */
+    public int getLastID() {
+        connect();
+
+        String sql = "SELECT MAX(PK_PW_ID) FROM T_POKEMON";
+
+        PreparedStatement preparedStatement = createPreparedStatement(sql);
+        int ID = 0;
+        try {
+            ID = preparedStatement.executeQuery().getInt(1);
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        } finally {
+            disconnect();
+        }
+
+        return ID;
     }
 }

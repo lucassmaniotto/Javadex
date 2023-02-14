@@ -52,6 +52,17 @@ public class SQLiteConnection {
         }
     }
 
+    public PreparedStatement createPreparedStatement(String sql) {
+        try {
+            System.out.println("Executando: " + sql);
+            return this.connection.prepareStatement(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.err.println(e.getMessage());
+            return null;
+        }
+    }
+
     public Connection getConnection() {
         return this.connection;
     }

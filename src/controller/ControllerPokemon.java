@@ -14,4 +14,13 @@ public class ControllerPokemon {
     public boolean saveWildPokemonController(WildPokemon pokemon) {
         return this.daoPokemon.saveWildPokemon(pokemon);
     }
+
+    /**
+     * Retorna o próximo ID a ser inserido no banco de dados
+     * @return int
+     */
+    public int getTheNextIdToInsertController() {
+        return this.daoPokemon.getLastID() + 1;
+    }
+
 }

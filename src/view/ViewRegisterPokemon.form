@@ -40,7 +40,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
@@ -54,27 +54,6 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Component id="TitleLabel" alignment="0" max="32767" attributes="0"/>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="SaveButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                          <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="TotalValueLabel" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="TotalLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -106,13 +85,13 @@
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="WeightLabel" max="32767" attributes="0"/>
                               <Component id="HeightLabel" alignment="0" pref="41" max="32767" attributes="0"/>
-                              <Component id="jLabel1" max="32767" attributes="0"/>
+                              <Component id="IDLabel" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="HeightTextField" pref="67" max="32767" attributes="0"/>
-                                  <Component id="jTextField1" max="32767" attributes="0"/>
+                                  <Component id="IDTextField" max="32767" attributes="0"/>
                               </Group>
                               <Component id="WeightTextField" min="-2" pref="67" max="-2" attributes="0"/>
                           </Group>
@@ -158,6 +137,22 @@
                               </Group>
                           </Group>
                       </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="TotalValueLabel" alignment="1" min="-2" pref="90" max="-2" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="TotalLabel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="ExitButton" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                          <Component id="SaveButton" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace pref="16" max="32767" attributes="0"/>
               </Group>
@@ -171,12 +166,23 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="NameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="NameLabel" alignment="3" min="-2" pref="10" max="-2" attributes="0"/>
-                      <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="IDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="IDTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="HeightLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="HeightTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="WeightTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="WeightLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="FirstTypeComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="FirstTypeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -210,30 +216,18 @@
                               <Component id="sDEFLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="sDEFTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="24" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="TotalLabel" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="TotalValueLabel" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="ExitButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="SaveButton" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="HeightLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="HeightTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="WeightTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="WeightLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="SaveButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="ExitButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -258,9 +252,6 @@
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Digite o nome de seu Pok&#xe9;mon"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextFieldActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="FirstTypeLabel">
           <Properties>
@@ -273,9 +264,6 @@
               <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { Types.NONE.toString(), Types.NORMAL.toString(), Types.FIRE.toString(), Types.WATER.toString(), Types.GRASS.toString(), Types.FLYING.toString(), Types.FIGHTING.toString(), Types.POISON.toString(), Types.ELECTRIC.toString(), Types.GROUND.toString(), Types.ROCK.toString(), Types.PSYCHIC.toString(), Types.ICE.toString(), Types.BUG.toString(), Types.GHOST.toString(), Types.STEEL.toString(), Types.DRAGON.toString(), Types.DARK.toString(), Types.FAIRY.toString()})" type="code"/>
             </Property>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FirstTypeComboBoxActionPerformed"/>
-          </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
@@ -299,9 +287,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Shiny"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ShinyCheckBoxActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="HeightLabel">
           <Properties>
@@ -317,9 +302,6 @@
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Informe a altura do Pok&#xe9;mon"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HeightTextFieldActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="WeightTextField">
           <Properties>
@@ -362,9 +344,6 @@
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Informe os Pontos de Vida do Pok&#xe9;mon"/>
           </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HPTextFieldActionPerformed"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="ATQTextField">
           <Properties>
@@ -397,7 +376,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ExitButton">
+        <Component class="javax.swing.JButton" name="SaveButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/icons/save.png"/>
@@ -408,7 +387,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="SaveButton">
+        <Component class="javax.swing.JButton" name="ExitButton">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/images/icons/exit.png"/>
@@ -429,12 +408,12 @@
             <Property name="toolTipText" type="java.lang.String" value="Informe a Velocidade do Pok&#xe9;mon"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="IDLabel">
           <Properties>
             <Property name="text" type="java.lang.String" value="ID:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="IDTextField">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
