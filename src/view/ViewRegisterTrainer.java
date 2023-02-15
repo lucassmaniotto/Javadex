@@ -166,7 +166,6 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String[][] ar) {
-
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

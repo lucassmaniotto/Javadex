@@ -4,17 +4,26 @@
  */
 package view;
 
-/**
- *
- * @author Lucas Smaniotto
- */
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.table.DefaultTableModel;
+
+import controller.ControllerPokemon;
+import model.WildPokemon;
+
 public class ViewPokedex extends javax.swing.JFrame {
+    WildPokemon wildPokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
+    static ControllerPokemon controllerPokemon = new ControllerPokemon();
+    static List<WildPokemon> wildPokemonsList = new ArrayList<>();
 
     /**
      * Creates new form ViewPokedex
      */
     public ViewPokedex() {
         initComponents();
+        setLocationRelativeTo(null);
+        updateTable();
     }
 
     /**
@@ -193,29 +202,55 @@ public class ViewPokedex extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FilterTextFieldActionPerformed
 
+    /**
+     * Abre a tela de vizualização de treinadores
+     * @param evt
+     */
     private void ViewTrainersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewTrainersButtonActionPerformed
         ViewTrainers viewTrainers = new ViewTrainers();
         viewTrainers.setVisible(true);
     }//GEN-LAST:event_ViewTrainersButtonActionPerformed
 
-    private void FilterComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FilterComboBoxActionPerformed
-
+    /**
+     * Abre a tela de registro de pokemons
+     * @param evt
+     */
     private void RegisterPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPokemonButtonActionPerformed
         ViewRegisterPokemon viewRegisterPokemon = new ViewRegisterPokemon();
         viewRegisterPokemon.setVisible(true);
     }//GEN-LAST:event_RegisterPokemonButtonActionPerformed
 
     /**
+     * Filtra os pokemons selvagens
+     * @param evt
+     */
+    private void FilterComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FilterComboBoxActionPerformed
+
+
+    /**
+     * Atualiza a tabela de pokemons selvagens
+     */
+    public static void updateTable() {
+        wildPokemonsList = controllerPokemon.getWildPokemonsController();
+        DefaultTableModel model = (DefaultTableModel) WildPokemonTable.getModel();
+        model.setRowCount(0);
+
+        for (WildPokemon pokemon : wildPokemonsList) {
+            model.addRow(new Object[]{
+                pokemon.getId(),
+                pokemon.getName(),
+                pokemon.getFirstType(),
+                pokemon.getSecondType(),
+            });
+        }
+    }
+
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -242,6 +277,7 @@ public class ViewPokedex extends javax.swing.JFrame {
         });
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton FilterButton;
     private javax.swing.JComboBox<String> FilterComboBox;
@@ -250,9 +286,10 @@ public class ViewPokedex extends javax.swing.JFrame {
     private javax.swing.JButton RegisterPokemonButton;
     private javax.swing.JLabel TitleLabel;
     private javax.swing.JButton ViewTrainersButton;
-    private javax.swing.JTable WildPokemonTable;
+    private static javax.swing.JTable WildPokemonTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import DAO.DAOPokemon;
 import model.WildPokemon;
 
@@ -23,4 +25,11 @@ public class ControllerPokemon {
         return this.daoPokemon.getLastID() + 1;
     }
 
+    /**
+     * Retorna uma lista de pokemons selvagens do banco de dados
+     * @return List<WildPokemon>
+     */
+    public List<WildPokemon> getWildPokemonsController() {
+        return this.daoPokemon.getWildPokemons();
+    }
 }

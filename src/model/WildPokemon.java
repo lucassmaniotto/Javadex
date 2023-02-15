@@ -8,8 +8,11 @@ public class WildPokemon extends Pokemon {
         this.isWild = true;
     }
     
-
     public boolean getIsWild() {
         return this.isWild;
+    }
+
+    public void setIsWild(boolean isWild) {
+        this.isWild = isWild;
     }
 }
