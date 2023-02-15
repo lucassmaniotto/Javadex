@@ -296,6 +296,10 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
      */
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
         pokemon.setName(NameTextField.getText());
+        if (NameTextField.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "O Pokemón precisa de um nome!", "Erro",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         pokemon.setFirstType(FirstTypeComboBox.getSelectedItem().toString());
         pokemon.setSecondType(SecondTypeComboBox.getSelectedItem().toString());
         pokemon.setShiny(ShinyCheckBox.isSelected());
@@ -327,6 +331,7 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
         }
         pokemon.setTotal(pokemon.getHp() + pokemon.getAttack() + pokemon.getDefense() + pokemon.getSpAttack() + pokemon.getSpDefense() + pokemon.getSpeed());
         TotalValueLabel.setText(String.valueOf(pokemon.getTotal()));
+        
         if(controllerPokemon.saveWildPokemonController(pokemon)){
             JOptionPane.showMessageDialog(this, "Pokemon registrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             updateFieldsOnSave();

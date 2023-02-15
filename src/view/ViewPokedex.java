@@ -211,7 +211,11 @@ public class ViewPokedex extends javax.swing.JFrame {
      * @param evt
      */
     private void ChangePokemonImage(ListSelectionEvent evt) {
-        PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/" + WildPokemonTable.getValueAt(WildPokemonTable.getSelectedRow(), 1) + ".png")));
+        try {
+            PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/" + WildPokemonTable.getValueAt(WildPokemonTable.getSelectedRow(), 1) + ".png")));
+        } catch (Exception e) {
+            PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/unown.png")));
+        }
     }
     
     /**
