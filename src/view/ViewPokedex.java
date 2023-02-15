@@ -76,10 +76,10 @@ public class ViewPokedex extends javax.swing.JFrame {
         if (WildPokemonTable.getColumnModel().getColumnCount() > 0) {
             WildPokemonTable.getColumnModel().getColumn(0).setMinWidth(60);
             WildPokemonTable.getColumnModel().getColumn(0).setMaxWidth(60);
-            WildPokemonTable.getColumnModel().getColumn(2).setMinWidth(60);
-            WildPokemonTable.getColumnModel().getColumn(2).setMaxWidth(60);
-            WildPokemonTable.getColumnModel().getColumn(3).setMinWidth(60);
-            WildPokemonTable.getColumnModel().getColumn(3).setMaxWidth(60);
+            WildPokemonTable.getColumnModel().getColumn(2).setMinWidth(100);
+            WildPokemonTable.getColumnModel().getColumn(2).setMaxWidth(100);
+            WildPokemonTable.getColumnModel().getColumn(3).setMinWidth(100);
+            WildPokemonTable.getColumnModel().getColumn(3).setMaxWidth(100);
         }
 
         TitleLabel.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
@@ -91,22 +91,17 @@ public class ViewPokedex extends javax.swing.JFrame {
         FilterTextField.setToolTipText("Digite o valor que deseja buscar conforme o a caixa de seleção ao lado");
         FilterTextField.setActionCommand("<Not Set>");
         FilterTextField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        FilterTextField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FilterTextFieldActionPerformed(evt);
-            }
-        });
 
         FilterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/filter.png"))); // NOI18N
         FilterButton.setText("FILTRAR");
+        FilterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FilterButtonActionPerformed(evt);
+            }
+        });
 
         FilterComboBox.setForeground(new java.awt.Color(102, 102, 102));
         FilterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "ID", "Nome", "Tipo" }));
-        FilterComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FilterComboBoxActionPerformed(evt);
-            }
-        });
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -198,10 +193,6 @@ public class ViewPokedex extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void FilterTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterTextFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FilterTextFieldActionPerformed
-
     /**
      * Abre a tela de vizualização de treinadores
      * @param evt
@@ -220,13 +211,9 @@ public class ViewPokedex extends javax.swing.JFrame {
         viewRegisterPokemon.setVisible(true);
     }//GEN-LAST:event_RegisterPokemonButtonActionPerformed
 
-    /**
-     * Filtra os pokemons selvagens
-     * @param evt
-     */
-    private void FilterComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterComboBoxActionPerformed
+    private void FilterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FilterComboBoxActionPerformed
+    }//GEN-LAST:event_FilterButtonActionPerformed
 
 
     /**
