@@ -1,10 +1,16 @@
 package view;
+import javax.swing.JOptionPane;
+
+import controller.ControllerTrainer;
 import model.Regions;
+import model.Trainer;
 
 /**
  * Classe que representa a interface gráfica de cadastro de treinadores.
  */
 public class ViewRegisterTrainer extends javax.swing.JFrame {
+    Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
+    ControllerTrainer controllerTrainer = new ControllerTrainer();
 
     public ViewRegisterTrainer() {
         initComponents();
@@ -147,8 +153,44 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
      * @param evt
      */
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-        // TODO add your handling code here:
+        trainer.setName(NameTextField.getText());
+        if (NameTextField.getText().equals("")) {
+            JOptionPane.showMessageDialog(this, "O Treinador precisa de um nome!", "Erro",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        trainer.setRegion(RegionsComboBox.getSelectedItem().toString());
+        try {
+            trainer.setAge(Integer.parseInt(AgeTextField.getText()));
+            if (Integer.parseInt(AgeTextField.getText()) < 10) {
+                JOptionPane.showMessageDialog(this, "A idade deve ser maior que 10!", "Erro",JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            trainer.setBadges(Integer.parseInt(BagdesTextField.getText()));
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Os campos de Idade e Insígneas devem ser preenchidos com números inteiros!", "Erro",JOptionPane.ERROR_MESSAGE);
+            AgeTextField.setText("10");
+            BagdesTextField.setText("0");
+            return;
+        }
+        
+        if(controllerTrainer.saveTrainerController(trainer)){
+            JOptionPane.showMessageDialog(this, "Treinador salvo com sucesso!", "Sucesso",JOptionPane.INFORMATION_MESSAGE);
+            clearFields();
+        } else {
+            JOptionPane.showMessageDialog(this, "Erro ao salvar o treinador!", "Erro",JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_SaveButtonActionPerformed
+
+    /**
+     * Limpa os campos do formulário
+     */
+    private void clearFields() {
+        NameTextField.setText("");
+        RegionsComboBox.setSelectedIndex(0);
+        AgeTextField.setText("");
+        BagdesTextField.setText("");
+    }
 
     /**
      * Fecha a janela

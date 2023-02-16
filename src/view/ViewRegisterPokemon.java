@@ -9,7 +9,7 @@ import model.WildPokemon;
  * Classe que representa a interface gráfica de registro de Pokémon selvagens.
  */
 public class ViewRegisterPokemon extends javax.swing.JFrame {
-    WildPokemon pokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
+    WildPokemon pokemon = new WildPokemon("", Types.NONE.toString(), Types.NONE.toString(), 0, 0, 0, 0, 0, 0, 0, 0);
     ControllerPokemon controllerPokemon = new ControllerPokemon();
     
     public ViewRegisterPokemon() {

@@ -15,8 +15,7 @@ public class Trainer {
     private ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
     private Pokemon[] party = new Pokemon[6];
     
-    public Trainer(int id, String name, int age, int badges, String region, int pokemonCount) {
-        this.id = id;
+    public Trainer(String name, int age, int badges, String region, int pokemonCount) {
         this.name = name;
         this.age = age;
         this.badges = badges;
