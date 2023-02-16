@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,12 +71,19 @@ public class ViewPokedex extends javax.swing.JFrame {
             WildPokemonTable.getColumnModel().getColumn(3).setMinWidth(100);
             WildPokemonTable.getColumnModel().getColumn(3).setMaxWidth(100);
         }
-
+        
         WildPokemonTable.getSelectionModel().addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 ChangePokemonImage(evt);
             }
+        });
 
+        WildPokemonTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if (evt.getClickCount() == 2) {
+                    WildPokemonTableMouseClicked(evt);
+                }
+            }
         });
         
         TitleLabel.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
@@ -87,7 +95,7 @@ public class ViewPokedex extends javax.swing.JFrame {
         FilterTextField.setToolTipText("Digite o valor que deseja buscar conforme o a caixa de seleção ao lado");
         FilterTextField.setActionCommand("<Not Set>");
         FilterTextField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-
+        
         FilterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/filter.png"))); // NOI18N
         FilterButton.setText("FILTRAR");
         FilterButton.addActionListener(new java.awt.event.ActionListener() {
@@ -116,7 +124,7 @@ public class ViewPokedex extends javax.swing.JFrame {
                 ViewTrainersButtonActionPerformed(evt);
             }
         });
-
+        
         PokemonImageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PokemonImageLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         
@@ -131,9 +139,9 @@ public class ViewPokedex extends javax.swing.JFrame {
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 557, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addGroup(jPanel1Layout.createSequentialGroup()
             .addComponent(FilterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(FilterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
+            .addGap(18, 18, 18)
+            .addComponent(FilterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 14, Short.MAX_VALUE)
                         .addComponent(FilterButton)))
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -145,29 +153,29 @@ public class ViewPokedex extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         );
                         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
             .addContainerGap(21, Short.MAX_VALUE)
             .addComponent(TitleLabel)
             .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(FilterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+            .addComponent(FilterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(FilterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(FilterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(ViewTrainersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(RegisterPokemonButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(47, 47, 47)
-                        .addComponent(PokemonImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(15, 15, 15))
-                        );
+                            .addComponent(ViewTrainersButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(RegisterPokemonButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(47, 47, 47)
+                            .addComponent(PokemonImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(15, 15, 15))
+                            );
                         
                         FilterTextField.getAccessibleContext().setAccessibleName("");
                         ViewTrainersButton.getAccessibleContext().setAccessibleName("TREINADORES");
@@ -175,18 +183,19 @@ public class ViewPokedex extends javax.swing.JFrame {
                         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
                         getContentPane().setLayout(layout);
                         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addContainerGap())
-            );
-        layout.setVerticalGroup(
+                            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addContainerGap())
+                            );
+                            layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             );
             
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
     
     /**
      * Abre a tela de vizualização de treinadores
@@ -196,7 +205,7 @@ public class ViewPokedex extends javax.swing.JFrame {
         ViewTrainers viewTrainers = new ViewTrainers();
         viewTrainers.setVisible(true);
     }//GEN-LAST:event_ViewTrainersButtonActionPerformed
-
+    
     /**
      * Abre a tela de registro de pokemons
      * @param evt
@@ -219,13 +228,23 @@ public class ViewPokedex extends javax.swing.JFrame {
     }
     
     /**
+     * Abre a tela de detalhes do pokemon selecionado quando a linha da tabela é clicada duas vezes
+     * @param evt
+     */
+    private void WildPokemonTableMouseClicked(MouseEvent evt) {
+        wildPokemon = wildPokemonsList.get(WildPokemonTable.getSelectedRow());
+        ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(wildPokemon);
+        viewPokemonDetails.setVisible(true);
+    }
+    
+    /**
      * Filtra os pokemons selvagens
      * @param evt
      */
     private void FilterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FilterButtonActionPerformed
-
+    
     
     /**
      * Atualiza a tabela de pokemons selvagens
