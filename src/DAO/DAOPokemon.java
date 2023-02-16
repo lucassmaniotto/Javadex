@@ -20,8 +20,8 @@ public class DAOPokemon extends SQLiteConnection {
     
     /**
      * Salva um pokemon selvagem no banco de dados
-     * @param pokemon
-     * @return
+     * @param pokemon WildPokemon - Pokemon selvagem a ser salvo
+     * @return boolean - true se salvou, false se não salvou
      */
     public boolean saveWildPokemon(WildPokemon pokemon){
         connect();
@@ -74,7 +74,7 @@ public class DAOPokemon extends SQLiteConnection {
 
     /**
      * Retorna o último ID inserido no banco de dados
-     * @return int
+     * @return int - ID a ser inserido
      */
     public int getLastID() {
         connect();
@@ -97,7 +97,7 @@ public class DAOPokemon extends SQLiteConnection {
 
     /**
      * Retorna uma lista com todos os pokemons selvagens do banco de dados
-     * @return List<WildPokemon>
+     * @return List - Lista de pokemons do tipo WildPokemon
      */
     public List<WildPokemon> getWildPokemons() {
         List<WildPokemon> wildPokemonsList = new ArrayList<>();

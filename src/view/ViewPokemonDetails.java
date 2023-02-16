@@ -338,7 +338,7 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
     
     /**
      * Carrega os dados do pokemon nos campos da tela
-     * @param wildPokemon
+     * @param wildPokemon Pokemon a ser carregado
      */
     private void loadPokemonData(WildPokemon wildPokemon) {
         PokemonNameLabel.setText(wildPokemon.getName());
