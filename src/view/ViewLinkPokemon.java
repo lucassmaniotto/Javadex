@@ -1,5 +1,8 @@
 package view;
 
+/**
+ * Classe que representa a interface gráfica de vincular um pokémon selvagem a um treinador.
+ */
 public class ViewLinkPokemon extends javax.swing.JFrame {
 
     public ViewLinkPokemon() {

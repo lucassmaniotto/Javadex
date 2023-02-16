@@ -10,6 +10,9 @@ import javax.swing.table.DefaultTableModel;
 import controller.ControllerPokemon;
 import model.WildPokemon;
 
+/**
+ * Classe que representa a interface gráfica da Pokedex
+ */
 public class ViewPokedex extends javax.swing.JFrame {
     WildPokemon wildPokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
     static ControllerPokemon controllerPokemon = new ControllerPokemon();

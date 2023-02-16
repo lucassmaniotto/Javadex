@@ -2,6 +2,9 @@ package view;
 
 import model.Regions;
 
+/**
+ * Classe que representa a interface gráfica de edição de treinadores.
+ */
 public class ViewEditTrainer extends javax.swing.JFrame {
 
     public ViewEditTrainer() {
@@ -292,14 +295,26 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
+    /**
+     * Remove um pokemon do grupo do treinador
+     * @param evt
+     */
     private void removeFromPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFromPartyButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_removeFromPartyButtonActionPerformed
     
+    /**
+     * Adiciona um pokemon ao grupo do treinador
+     * @param evt
+     */
     private void addToPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToPartyButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addToPartyButtonActionPerformed
     
+    /**
+     * Salva as alterações feitas no treinador
+     * @param evt
+     */
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveButtonActionPerformed

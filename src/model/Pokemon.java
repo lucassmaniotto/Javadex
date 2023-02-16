@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Classe abstrata que representa um Pokémon.
+ */
 public abstract class Pokemon {
     private int id;
     private String name;

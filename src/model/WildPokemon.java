@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * Classe que representa um Pokémon selvagem.
+ * Extende a classe Pokemon.
+ */
 public class WildPokemon extends Pokemon {
     protected boolean isWild;
     

@@ -1,5 +1,8 @@
 package view;
 
+/**
+ * Classe que representa a interface gráfica de visualização de treinadores.
+ */
 public class ViewTrainers extends javax.swing.JFrame {
 
     public ViewTrainers() {

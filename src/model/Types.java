@@ -1,5 +1,8 @@
 package model;
 
+/**
+ * Enum que representa os tipos de Pokémon.
+ */
 public enum Types {
     NONE,
     FIRE, 

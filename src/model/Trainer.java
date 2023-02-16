@@ -2,6 +2,9 @@ package model;
 
 import java.util.ArrayList;
 
+/**
+ * Classe que representa um treinador Pokémon.
+ */
 public class Trainer {
     private int id;
     private String name;

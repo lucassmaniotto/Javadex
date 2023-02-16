@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * Classe que representa um pokemon treinado por um treinador. 
+ * Ela herda de WildPokemon, pois um pokemon selvagem pode se tornar um pokemon treinado.
+ */
 public class TrainedPokemon extends WildPokemon {
     private Trainer trainer;
 

@@ -1,6 +1,9 @@
 package view;
 import model.Regions;
 
+/**
+ * Classe que representa a interface gráfica de cadastro de treinadores.
+ */
 public class ViewRegisterTrainer extends javax.swing.JFrame {
 
     public ViewRegisterTrainer() {
@@ -139,6 +142,10 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Salva os dados do treinador
+     * @param evt
+     */
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SaveButtonActionPerformed

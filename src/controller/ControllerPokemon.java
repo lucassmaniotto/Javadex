@@ -5,6 +5,9 @@ import java.util.List;
 import DAO.DAOPokemon;
 import model.WildPokemon;
 
+/**
+ * Classe responsável por controlar as ações do usuário relacionadas ao Objeto Pokemon
+ */
 public class ControllerPokemon {
     DAOPokemon daoPokemon = new DAOPokemon();
 

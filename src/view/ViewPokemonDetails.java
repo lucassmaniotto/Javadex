@@ -7,6 +7,9 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 import model.WildPokemon;
 
+/**
+ * Classe que representa a interface gráfica de detalhes de um Pokémon.
+ */
 public class ViewPokemonDetails extends javax.swing.JFrame {
 
     public ViewPokemonDetails(WildPokemon wildPokemon) {
