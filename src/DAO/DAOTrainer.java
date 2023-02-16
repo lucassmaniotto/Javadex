@@ -1,6 +1,7 @@
 package DAO;
 
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -44,5 +45,28 @@ public class DAOTrainer extends SQLiteConnection {
             disconnect();
         }
         return true;
+    }
+
+    /**
+     * Retorna o último ID inserido no banco de dados
+     * @return int - ID a ser inserido
+     */
+    public int getLastID() {
+        connect();
+
+        String sql = "SELECT MAX(PK_TRAINER_ID) FROM T_TRAINER";
+
+        PreparedStatement preparedStatement = createPreparedStatement(sql);
+        int ID = 0;
+        try {
+            ID = preparedStatement.executeQuery().getInt(1);
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+            return 0;
+        } finally {
+            disconnect();
+        }
+
+        return ID;
     }
 }
