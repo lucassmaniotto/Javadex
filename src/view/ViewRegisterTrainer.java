@@ -15,6 +15,8 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
     public ViewRegisterTrainer() {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Cadastro de Treinador");
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

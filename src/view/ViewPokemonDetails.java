@@ -16,6 +16,8 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         setLookAndFeel();
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Detalhes do Pokémon");
         loadPokemonData(wildPokemon);
     }
     

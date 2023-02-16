@@ -15,6 +15,8 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
     public ViewRegisterPokemon() {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Cadastro de Pokémon");
     }
 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

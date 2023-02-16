@@ -21,6 +21,8 @@ public class ViewPokedex extends javax.swing.JFrame {
     public ViewPokedex() {
         initComponents();
         setLocationRelativeTo(null);
+        setTitle("Pokedex");
+        setResizable(false);
         updateTable();
     }
 

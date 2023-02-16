@@ -8,6 +8,8 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
     public ViewLinkPokemon() {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Vincular Pokémon");
     }
 
     

@@ -10,6 +10,8 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     public ViewEditTrainer() {
         initComponents();
         setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Editar Treinador");
     }
 
     
