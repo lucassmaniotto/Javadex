@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.List;
+
 import DAO.DAOTrainer;
 import model.Trainer;
 
@@ -23,9 +25,14 @@ public class ControllerTrainer {
      * @return int - ID a ser inserido.
      */
     public int getTheNextIdToInsertController() {
-        if (this.daoTrainer.getLastID() != 0) {
-            return this.daoTrainer.getLastID() + 1;
-        }
-        return 1;
+        return this.daoTrainer.getLastID() + 1;
+    }
+
+    /**
+     * Retorna uma lista de treinadores do banco de dados
+     * @return List - Lista de treinadores do Tipo Treinadores
+     */
+    public List<Trainer> getTrainersController() {
+        return this.daoTrainer.getTrainers();
     }
 }

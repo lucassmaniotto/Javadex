@@ -25,10 +25,7 @@ public class ControllerPokemon {
      * @return int - ID a ser inserido
      */
     public int getTheNextIdToInsertController() {
-        if (this.daoPokemon.getLastID() != 0) {
-            return this.daoPokemon.getLastID() + 1;
-        }
-        return 1;
+        return this.daoPokemon.getLastID() + 1;
     }
 
     /**

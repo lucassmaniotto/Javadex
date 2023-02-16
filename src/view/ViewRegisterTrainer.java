@@ -190,6 +190,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
         if(controllerTrainer.saveTrainerController(trainer)){
             JOptionPane.showMessageDialog(this, "Treinador salvo com sucesso!", "Sucesso",JOptionPane.INFORMATION_MESSAGE);
             clearFields();
+            ViewTrainers.updateTable();
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao salvar o treinador!", "Erro",JOptionPane.ERROR_MESSAGE);
         }
@@ -203,6 +204,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
         RegionsComboBox.setSelectedIndex(0);
         AgeTextField.setText("");
         BagdesTextField.setText("");
+        IDTextField.setText(String.valueOf(Integer.parseInt(IDTextField.getText()) + 1));
     }
 
     /**

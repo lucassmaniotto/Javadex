@@ -1,9 +1,21 @@
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.table.DefaultTableModel;
+
+import controller.ControllerTrainer;
+import model.Regions;
+import model.Trainer;
+
 /**
  * Classe que representa a interface gráfica de visualização de treinadores.
  */
 public class ViewTrainers extends javax.swing.JFrame {
+    Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
+    static ControllerTrainer controllerTrainer = new ControllerTrainer();
+    static List<Trainer> trainersList = new ArrayList<>();
 
     public ViewTrainers() {
         initComponents();
@@ -214,6 +226,24 @@ public class ViewTrainers extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_FilterButtonActionPerformed
 
+    /**
+     * Atualiza a tabela de treinadores
+     */
+    public static void updateTable() {
+        trainersList = controllerTrainer.getTrainersController();
+        DefaultTableModel model = (DefaultTableModel) TrainersTable.getModel();
+        model.setRowCount(0);
+
+        for (Trainer trainer : trainersList) {
+            model.addRow(new Object[]{
+                trainer.getId(),
+                trainer.getName(),
+                trainer.getAge(),
+                trainer.getRegion()
+            });
+        }
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EditTrainerButton;
     private javax.swing.JButton FilterButton;
@@ -223,7 +253,7 @@ public class ViewTrainers extends javax.swing.JFrame {
     private javax.swing.JButton RegisterTrainerButton;
     private javax.swing.JLabel TitleLabel;
     private javax.swing.JLabel TrainerImageLabel;
-    private javax.swing.JTable TrainersTable;
+    private static javax.swing.JTable TrainersTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;

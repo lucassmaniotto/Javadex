@@ -1,11 +1,16 @@
 package DAO;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import model.Regions;
 import model.Trainer;
 import useful.SQLiteConnection;
 
@@ -26,8 +31,9 @@ public class DAOTrainer extends SQLiteConnection {
                     + "TRAINER_NAME, "
                     + "TRAINER_AGE ,"
                     + "TRAINER_BADGES ,"
-                    + "TRAINER_REGION )"
-                    + "VALUES (?,?,?,?)";
+                    + "TRAINER_REGION ,"
+                    + "TRAINER_POKEMON_COUNT ) "
+                    + "VALUES (?,?,?,?,0)";
 
         PreparedStatement preparedStatement = createPreparedStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
@@ -69,4 +75,37 @@ public class DAOTrainer extends SQLiteConnection {
 
         return ID;
     }
+
+    /**
+     * Retorna uma lista com todos os treinadores do banco de dados
+     * @return List - Lista de treinadores do tipo Trainer
+     */
+    public List<Trainer> getTrainers() {
+        List<Trainer> wildPokemonsList = new ArrayList<>();
+        
+        connect();
+        String sql = "SELECT * FROM T_TRAINER";
+        
+        try {
+            PreparedStatement preparedStatement = createPreparedStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
+                trainer.setId(resultSet.getInt("PK_TRAINER_ID"));
+                trainer.setName(resultSet.getString("TRAINER_NAME"));
+                trainer.setAge(resultSet.getInt("TRAINER_AGE"));
+                trainer.setBadges(resultSet.getInt("TRAINER_BADGES"));
+                trainer.setRegion(resultSet.getString("TRAINER_REGION"));
+                wildPokemonsList.add(trainer);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+            return Collections.emptyList();
+        } finally {
+            disconnect();
+        }
+
+        return wildPokemonsList;
+    } 
 }
