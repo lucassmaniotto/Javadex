@@ -20,6 +20,7 @@ public class ViewTrainers extends javax.swing.JFrame {
     public ViewTrainers() {
         initComponents();
         setLocationRelativeTo(null);
+        updateTable();
     }
     
     @SuppressWarnings("unchecked")
