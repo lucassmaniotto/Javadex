@@ -1,15 +1,20 @@
 package view;
 
+import java.util.logging.Logger;
+
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 import model.WildPokemon;
 
 public class ViewPokemonDetails extends javax.swing.JFrame {
 
     public ViewPokemonDetails(WildPokemon wildPokemon) {
+        setLookAndFeel();
         initComponents();
         setLocationRelativeTo(null);
         loadPokemonData(wildPokemon);
     }
-    
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -51,6 +56,14 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+
+        jPanel1.setBackground(new java.awt.Color(233, 236, 242));
+
         PokemonNameLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
         PokemonNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PokemonNameLabel.setText("Nome do Pokémon");
@@ -67,6 +80,9 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         HPValueLabel.setLabelFor(HPLabel);
         HPValueLabel.setText("???");
         HPValueLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        HPProgressBar.setMaximum(160);
+        HPProgressBar.setForeground(new java.awt.Color(255, 51, 51));
         
         FirstTypeValueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FirstTypeValueLabel.setText("???");
@@ -86,6 +102,9 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         ATQValueLabel.setLabelFor(HPLabel);
         ATQValueLabel.setText("???");
         ATQValueLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        ATQProgressBar.setMaximum(160);
+        ATQProgressBar.setForeground(new java.awt.Color(255, 184, 77));
         
         DEFLabel.setText("DEF:");
 
@@ -93,6 +112,9 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         DEFValueLabel.setLabelFor(HPLabel);
         DEFValueLabel.setText("???");
         DEFValueLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        DEFProgressBar.setMaximum(160);
+        DEFProgressBar.setForeground(new java.awt.Color(255, 214, 51));
         
         sATQLabel.setText("S. ATQ:");
         
@@ -100,6 +122,9 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         sATQValueLabel.setLabelFor(HPLabel);
         sATQValueLabel.setText("???");
         sATQValueLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        sATQProgressBar.setMaximum(160);
+        sATQProgressBar.setForeground(new java.awt.Color(128, 229, 255));
         
         sDEFLabel.setText("S. DEF:");
         
@@ -107,6 +132,9 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         sDEFValueLabel.setLabelFor(HPLabel);
         sDEFValueLabel.setText("???");
         sDEFValueLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        sDEFProgressBar.setMaximum(160);
+        sDEFProgressBar.setForeground(new java.awt.Color(92, 214, 92));
         
         SpeedLabel.setText("VELOC:");
         
@@ -114,6 +142,9 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         SpeedValueLabel.setLabelFor(HPLabel);
         SpeedValueLabel.setText("???");
         SpeedValueLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        SpeedProgressBar.setMaximum(160);
+        SpeedProgressBar.setForeground(new java.awt.Color(255, 128, 255));
         
         TotalLabel.setText("TOTAL:");
         
@@ -335,6 +366,35 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         sATQProgressBar.setValue(wildPokemon.getSpAttack());
         sDEFProgressBar.setValue(wildPokemon.getSpDefense());
         SpeedProgressBar.setValue(wildPokemon.getSpeed());
+    }
+
+    /**
+     * Seta o look and feel da tela
+     */
+    private void setLookAndFeel() {
+        try {
+            UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ViewPokemonDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(ViewPokemonDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(ViewPokemonDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(ViewPokemonDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * Depois da tela ser carregada, muda a look and feel para Nimbus
+     * @param evt
+     */
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {
+        try {
+            UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(ViewPokemonDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
