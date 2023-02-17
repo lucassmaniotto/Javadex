@@ -10,9 +10,9 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import connection.SQLiteConnection;
 import model.Regions;
 import model.Trainer;
-import useful.SQLiteConnection;
 
 /**
  * Classe responsável por fazer as operações de CRUD no banco de dados com o Objeto Trainer

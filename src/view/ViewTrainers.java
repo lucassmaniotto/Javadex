@@ -2,6 +2,8 @@ package view;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -222,12 +224,104 @@ public class ViewTrainers extends javax.swing.JFrame {
     }//GEN-LAST:event_LinkPokemonButtonActionPerformed
 
     /**
-     * Filtra os treinadores
+     * Filtra os treinadores conforme o valor da ComboBox
      * @param evt
      */
     private void FilterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterButtonActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) TrainersTable.getModel();
+        model.setRowCount(0);
+
+        if (FilterComboBox.getSelectedItem().equals("ID")){
+            idSearch(model, FilterTextField.getText());
+        } else if (FilterComboBox.getSelectedItem().equals("Nome")){
+            nameSearch(model, FilterTextField.getText());
+        } else if (FilterComboBox.getSelectedItem().equals("Idade")){
+            ageSearch(model, FilterTextField.getText());
+        } else if (FilterComboBox.getSelectedItem().equals("Região")){
+            regionSearch(model, FilterTextField.getText());
+        } else if (FilterComboBox.getSelectedItem().equals("Todos")){
+            updateTable();
+        }
     }//GEN-LAST:event_FilterButtonActionPerformed
+
+    
+    /**
+     * Busca os treinadores pelo ID
+     * @param model
+     * @param text
+     */
+    private void idSearch(DefaultTableModel model, String text) {
+        for (Trainer trainer : trainersList) {
+            if (trainer.getId() == Integer.parseInt(text)) {
+                model.addRow(new Object[]{
+                    trainer.getId(),
+                    trainer.getName(),
+                    trainer.getAge(),
+                    trainer.getRegion()
+                });
+            }
+        }
+    }
+
+    /**
+     * Busca os treinadores pelo nome
+     * @param model Tabela de treinadores
+     * @param text Texto digitado no campo de filtro
+     */
+    private void nameSearch(DefaultTableModel model, String text) {
+        Pattern pattern = Pattern.compile(text, Pattern.CASE_INSENSITIVE);
+        Matcher matcher;
+        for (Trainer trainer : trainersList) {
+            matcher = pattern.matcher(trainer.getName());
+            if (matcher.find()) {
+                model.addRow(new Object[]{
+                    trainer.getId(),
+                    trainer.getName(),
+                    trainer.getAge(),
+                    trainer.getRegion()
+                });
+            }
+        }
+    }
+
+    /**
+     * Busca os treinadores pela idade
+     * @param model Tabela de treinadores
+     * @param text Texto digitado no campo de filtro
+     */
+    private void ageSearch(DefaultTableModel model, String text) {
+        for (Trainer trainer : trainersList) {
+            if (trainer.getAge() == Integer.parseInt(text)) {
+                model.addRow(new Object[]{
+                    trainer.getId(),
+                    trainer.getName(),
+                    trainer.getAge(),
+                    trainer.getRegion()
+                });
+            }
+        }
+    }
+
+    /**
+     * Busca os treinadores pela região
+     * @param model Tabela de treinadores
+     * @param text Texto digitado no campo de filtro
+     */
+    private void regionSearch(DefaultTableModel model, String text) {
+        Pattern pattern = Pattern.compile(text, Pattern.CASE_INSENSITIVE);
+        Matcher matcher;
+        for (Trainer trainer : trainersList) {
+            matcher = pattern.matcher(trainer.getRegion());
+            if (matcher.find()) {
+                model.addRow(new Object[]{
+                    trainer.getId(),
+                    trainer.getName(),
+                    trainer.getAge(),
+                    trainer.getRegion()
+                });
+            }
+        }
+    }
 
     /**
      * Atualiza a tabela de treinadores

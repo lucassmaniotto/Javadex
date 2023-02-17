@@ -245,7 +245,7 @@ public class ViewPokedex extends javax.swing.JFrame {
     }
 
     /**
-     * Filtra os pokemons selvagens
+     * Filtra os pokemons selvagens conforme o valor da ComboBox
      * @param evt
      */
     private void FilterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterButtonActionPerformed
@@ -264,7 +264,7 @@ public class ViewPokedex extends javax.swing.JFrame {
     }//GEN-LAST:event_FilterButtonActionPerformed
 
     /**
-     * Filtra os pokemons selvagens pelo ID
+     * Busca os pokemons selvagens pelo ID
      * @param model Tabela de pokemons selvagens
      * @param text Texto digitado no campo de filtro
      */
@@ -282,7 +282,7 @@ public class ViewPokedex extends javax.swing.JFrame {
     }
 
     /**
-     * Filtra os pokemons selvagens pelo nome
+     * Busca os pokemons selvagens pelo nome
      * @param model Tabela de pokemons selvagens
      * @param text Texto digitado no campo de filtro
      */
@@ -303,7 +303,7 @@ public class ViewPokedex extends javax.swing.JFrame {
     }
 
     /**
-     * Filtra os pokemons selvagens pelo tipo
+     * Busca os pokemons selvagens pelo tipo
      * @param model Tabela de pokemons selvagens
      * @param text Texto digitado no campo de filtro
      */
