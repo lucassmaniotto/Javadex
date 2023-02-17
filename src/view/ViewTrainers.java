@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import controller.ControllerTrainer;
@@ -43,6 +44,7 @@ public class ViewTrainers extends javax.swing.JFrame {
         RegisterTrainerButton = new javax.swing.JButton();
         TrainerImageLabel = new javax.swing.JLabel();
         LinkPokemonButton = new javax.swing.JButton();
+        RemoveTrainerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -118,7 +120,6 @@ public class ViewTrainers extends javax.swing.JFrame {
         });
 
         TrainerImageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TrainerImageLabel.setText("Imagem do Treinador");
         TrainerImageLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         LinkPokemonButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/link-pokemon.png"))); // NOI18N
@@ -126,6 +127,14 @@ public class ViewTrainers extends javax.swing.JFrame {
         LinkPokemonButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LinkPokemonButtonActionPerformed(evt);
+            }
+        });
+
+        RemoveTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/remove-trainer.png"))); // NOI18N
+        RemoveTrainerButton.setText("REMOVER TREINADOR");
+        RemoveTrainerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveTrainerButtonActionPerformed(evt);
             }
         });
 
@@ -151,7 +160,8 @@ public class ViewTrainers extends javax.swing.JFrame {
                     .addComponent(EditTrainerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(RegisterTrainerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(TrainerImageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LinkPokemonButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(LinkPokemonButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(RemoveTrainerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
@@ -175,9 +185,11 @@ public class ViewTrainers extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(EditTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(RemoveTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(LinkPokemonButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(TrainerImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGap(18, 18, 18)
+                            .addComponent(TrainerImageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
         );
@@ -224,6 +236,20 @@ public class ViewTrainers extends javax.swing.JFrame {
     }//GEN-LAST:event_LinkPokemonButtonActionPerformed
 
     /**
+     * Remove o treinador que estiver com a linha selecionada
+     * @param evt
+     */
+    private void RemoveTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveTrainerButtonActionPerformed
+        try {
+            int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
+            controllerTrainer.removeTrainerController(id);
+            updateTable(); 
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Selecione um treinador para remover!", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_RemoveTrainerButtonActionPerformed
+    
+    /**
      * Filtra os treinadores conforme o valor da ComboBox
      * @param evt
      */
@@ -243,6 +269,7 @@ public class ViewTrainers extends javax.swing.JFrame {
             updateTable();
         }
     }//GEN-LAST:event_FilterButtonActionPerformed
+
 
     
     /**
@@ -348,6 +375,7 @@ public class ViewTrainers extends javax.swing.JFrame {
     private javax.swing.JTextField FilterTextField;
     private javax.swing.JButton LinkPokemonButton;
     private javax.swing.JButton RegisterTrainerButton;
+    private javax.swing.JButton RemoveTrainerButton;
     private javax.swing.JLabel TitleLabel;
     private javax.swing.JLabel TrainerImageLabel;
     private static javax.swing.JTable TrainersTable;

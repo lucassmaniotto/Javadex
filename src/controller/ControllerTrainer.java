@@ -35,4 +35,11 @@ public class ControllerTrainer {
     public List<Trainer> getTrainersController() {
         return this.daoTrainer.getTrainers();
     }
+
+    /**
+     * Remove um treinador do banco de dados através do seu ID
+     */
+    public void removeTrainerController(int id) {
+        this.daoTrainer.removeTrainer(id);
+    }
 }

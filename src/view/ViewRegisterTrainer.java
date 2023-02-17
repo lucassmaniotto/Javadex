@@ -206,7 +206,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
         RegionsComboBox.setSelectedIndex(0);
         AgeTextField.setText("");
         BagdesTextField.setText("");
-        IDTextField.setText(String.valueOf(Integer.parseInt(IDTextField.getText()) + 1));
+        IDTextField.setText(String.valueOf(controllerTrainer.getTheNextIdToInsertController()));
     }
 
     /**

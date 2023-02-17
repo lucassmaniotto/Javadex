@@ -60,7 +60,7 @@ public class DAOTrainer extends SQLiteConnection {
     public int getLastID() {
         connect();
 
-        String sql = "SELECT MAX(PK_TRAINER_ID) FROM T_TRAINER";
+        String sql = "SELECT PK_TRAINER_ID FROM T_TRAINER ORDER BY PK_TRAINER_ID DESC LIMIT 1";
 
         PreparedStatement preparedStatement = createPreparedStatement(sql);
         int ID = 0;
@@ -107,5 +107,26 @@ public class DAOTrainer extends SQLiteConnection {
         }
 
         return wildPokemonsList;
-    } 
+    }
+
+    /**
+     * Remove um treinador do banco de dados através do seu ID
+     * @param id int - ID do treinador a ser removido
+     */
+    public void removeTrainer(int id) {
+        connect();
+
+        String sql = "DELETE FROM T_TRAINER WHERE PK_TRAINER_ID = ?";
+
+        PreparedStatement preparedStatement = createPreparedStatement(sql);
+
+        try {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            disconnect();
+        }
+    }
 }

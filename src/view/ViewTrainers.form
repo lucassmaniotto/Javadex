@@ -59,6 +59,7 @@
                       <Component id="RegisterTrainerButton" max="32767" attributes="0"/>
                       <Component id="TrainerImageLabel" max="32767" attributes="0"/>
                       <Component id="LinkPokemonButton" alignment="0" max="32767" attributes="0"/>
+                      <Component id="RemoveTrainerButton" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
@@ -72,7 +73,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="FilterTextField" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
                                   <Component id="FilterButton" alignment="3" min="-2" pref="31" max="-2" attributes="0"/>
@@ -81,15 +82,17 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
                               <Component id="RegisterTrainerButton" min="-2" pref="31" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="EditTrainerButton" min="-2" pref="31" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="RemoveTrainerButton" min="-2" pref="31" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="LinkPokemonButton" min="-2" pref="31" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="TrainerImageLabel" min="-2" pref="321" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="TrainerImageLabel" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                       <Component id="jSeparator1" alignment="0" min="-2" pref="464" max="-2" attributes="0"/>
@@ -231,7 +234,6 @@
         <Component class="javax.swing.JLabel" name="TrainerImageLabel">
           <Properties>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Imagem do Treinador"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
                 <EtchetBorder/>
@@ -248,6 +250,17 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LinkPokemonButtonActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="RemoveTrainerButton">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/images/icons/remove-trainer.png"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="REMOVER TREINADOR"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="RemoveTrainerButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>
