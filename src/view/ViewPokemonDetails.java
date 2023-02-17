@@ -369,7 +369,7 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         try{
             PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/" + wildPokemon.getName() + ".png")));
         } catch (Exception e) {
-            PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/unown.png")));
+            PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/missingno.png")));
         }
 
         HPProgressBar.setValue(wildPokemon.getHp());

@@ -230,7 +230,7 @@ public class ViewPokedex extends javax.swing.JFrame {
         try {
             PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/" + WildPokemonTable.getValueAt(WildPokemonTable.getSelectedRow(), 1) +".png")));
         } catch (Exception e) {
-            PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/unown.png")));
+            PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/missingno.png")));
         }
     }
     
