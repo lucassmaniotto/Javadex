@@ -123,7 +123,7 @@ public class ViewTrainers extends javax.swing.JFrame {
         TrainerImageLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         LinkPokemonButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/link-pokemon.png"))); // NOI18N
-        LinkPokemonButton.setText("VINCULAR POKÉMON AO TREINADOR");
+        LinkPokemonButton.setText("VINCULAR POKÉMONS AOS TREINADORES");
         LinkPokemonButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LinkPokemonButtonActionPerformed(evt);
