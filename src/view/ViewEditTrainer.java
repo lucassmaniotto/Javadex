@@ -1,17 +1,22 @@
 package view;
 
+import controller.ControllerTrainer;
 import model.Regions;
+import model.Trainer;
 
 /**
  * Classe que representa a interface gráfica de edição de treinadores.
  */
 public class ViewEditTrainer extends javax.swing.JFrame {
+    ControllerTrainer controllerTrainer = new ControllerTrainer();
+    Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
 
-    public ViewEditTrainer() {
+    public ViewEditTrainer(int idTrainer) {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Editar Treinador");
+        loadTrainerData(idTrainer);
     }
 
     
@@ -61,7 +66,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
 
         BadgesLabel.setText("Insígnias:");
 
-        BagdesTextField.setToolTipText("OBS: o número máx. de insígnias são 6 por treinador");
+        BagdesTextField.setToolTipText("Insira a quantidade de insígnias do treinador");
 
         RegionsLabel.setText("Região:");
 
@@ -329,6 +334,15 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
         this.dispose();
     }//GEN-LAST:event_ExitButtonActionPerformed
+
+    private void loadTrainerData(int id){
+        trainer = controllerTrainer.getTrainerByIDController(id);
+        IDTextField.setText(String.valueOf(trainer.getId()));
+        NameTextField.setText(trainer.getName());
+        AgeTextField.setText(String.valueOf(trainer.getAge()));
+        BagdesTextField.setText(String.valueOf(trainer.getBadges()));
+        RegionsComboBox.setSelectedItem(trainer.getRegion());
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgeLabel;

@@ -54,6 +54,37 @@ public class DAOTrainer extends SQLiteConnection {
     }
 
     /**
+     * Retorna um treinador do banco de dados através do seu ID
+     * @param id int - ID do treinador a ser retornado
+     * @return Trainer - Treinador do tipo Trainer
+     */
+    public Trainer getTrainer(int id) {
+        connect();
+
+        String sql = "SELECT * FROM T_TRAINER WHERE PK_TRAINER_ID = ?";
+
+        PreparedStatement preparedStatement = createPreparedStatement(sql);
+        Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
+        try {
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            trainer.setId(resultSet.getInt("PK_TRAINER_ID"));
+            trainer.setName(resultSet.getString("TRAINER_NAME"));
+            trainer.setAge(resultSet.getInt("TRAINER_AGE"));
+            trainer.setBadges(resultSet.getInt("TRAINER_BADGES"));
+            trainer.setRegion(resultSet.getString("TRAINER_REGION"));
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        } finally {
+            disconnect();
+        }
+
+        return trainer;
+    }
+
+    /**
      * Retorna o último ID inserido no banco de dados
      * @return int - ID a ser inserido
      */

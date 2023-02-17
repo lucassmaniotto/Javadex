@@ -218,12 +218,17 @@ public class ViewTrainers extends javax.swing.JFrame {
     }//GEN-LAST:event_RegisterTrainerButtonActionPerformed
 
     /**
-     * Abre a tela de edição de treinadores
+     * Abre a tela de edição de treinadores com os dados do treinador selecionado na tabela
      * @param evt
      */
     private void EditTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTrainerButtonActionPerformed
-        ViewEditTrainer viewEditTrainer = new ViewEditTrainer();
-        viewEditTrainer.setVisible(true);
+        try {
+            int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
+            ViewEditTrainer viewEditTrainer = new ViewEditTrainer(id);
+            viewEditTrainer.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Selecione um treinador para editar!", "Atenção", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_EditTrainerButtonActionPerformed
 
     /**

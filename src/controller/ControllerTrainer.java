@@ -20,6 +20,13 @@ public class ControllerTrainer {
         return this.daoTrainer.saveTrainer(trainer);    
     }
 
+    /**Retorna um treinador do banco de dados através do seu ID.
+     * @param id ID do treinador a ser retornado.
+     */
+    public Trainer getTrainerByIDController(int id) {
+        return this.daoTrainer.getTrainer(id);
+    }
+    
     /**
      * Método responsável por retornar o próximo ID a ser inserido no banco de dados.
      * @return int - ID a ser inserido.
