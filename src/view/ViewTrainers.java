@@ -257,17 +257,24 @@ public class ViewTrainers extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) TrainersTable.getModel();
         model.setRowCount(0);
 
-        if (FilterComboBox.getSelectedItem().equals("ID")){
-            idSearch(model, FilterTextField.getText());
-        } else if (FilterComboBox.getSelectedItem().equals("Nome")){
-            nameSearch(model, FilterTextField.getText());
-        } else if (FilterComboBox.getSelectedItem().equals("Idade")){
-            ageSearch(model, FilterTextField.getText());
-        } else if (FilterComboBox.getSelectedItem().equals("Região")){
-            regionSearch(model, FilterTextField.getText());
-        } else if (FilterComboBox.getSelectedItem().equals("Todos")){
-            updateTable();
+        try {
+            if (FilterComboBox.getSelectedItem().equals("ID")){
+                idSearch(model, FilterTextField.getText());
+            } else if (FilterComboBox.getSelectedItem().equals("Nome")){
+                nameSearch(model, FilterTextField.getText());
+            } else if (FilterComboBox.getSelectedItem().equals("Idade")){
+                ageSearch(model, FilterTextField.getText());
+            } else if (FilterComboBox.getSelectedItem().equals("Região")){
+                regionSearch(model, FilterTextField.getText());
+            } else if (FilterComboBox.getSelectedItem().equals("Todos")){
+                updateTable();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Filtro não encontrado! Informe no campo de texto um valor válido.", "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            FilterTextField.setText("");
         }
+
     }//GEN-LAST:event_FilterButtonActionPerformed
 
 

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.swing.JOptionPane;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.DefaultTableModel;
 
@@ -252,15 +253,22 @@ public class ViewPokedex extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) WildPokemonTable.getModel();
         model.setRowCount(0);
 
-        if (FilterComboBox.getSelectedItem().equals("ID")) {
-           idSearch(model, FilterTextField.getText());
-        } else if (FilterComboBox.getSelectedItem().equals("Nome")) {
-            nameSearch(model, FilterTextField.getText());
-        } else if (FilterComboBox.getSelectedItem().equals("Tipo")) {
-            typeSearch(model, FilterTextField.getText());
-        } else if (FilterComboBox.getSelectedItem().equals("Todos")) {
-            updateTable();
+        try {
+            if (FilterComboBox.getSelectedItem().equals("ID")) {
+            idSearch(model, FilterTextField.getText());
+            } else if (FilterComboBox.getSelectedItem().equals("Nome")) {
+                nameSearch(model, FilterTextField.getText());
+            } else if (FilterComboBox.getSelectedItem().equals("Tipo")) {
+                typeSearch(model, FilterTextField.getText());
+            } else if (FilterComboBox.getSelectedItem().equals("Todos")) {
+                updateTable();
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Filtro não encontrado! Informe no campo de texto um valor válido.", "Atenção", JOptionPane.WARNING_MESSAGE);
+        } finally {
+            FilterTextField.setText("");
         }
+        
     }//GEN-LAST:event_FilterButtonActionPerformed
 
     /**
