@@ -1,24 +1,30 @@
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import controller.ControllerPokemon;
 import model.WildPokemon;
 
 /**
  * Classe que representa a interface gráfica de detalhes de um Pokémon.
  */
 public class ViewPokemonDetails extends javax.swing.JFrame {
+    WildPokemon wildPokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
+    static ControllerPokemon controllerPokemon = new ControllerPokemon();
+    static List<WildPokemon> wildPokemonsList = new ArrayList<>();
 
-    public ViewPokemonDetails(WildPokemon wildPokemon) {
+    public ViewPokemonDetails(int i) {
         setLookAndFeel();
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Detalhes do Pokémon");
-        loadPokemonData(wildPokemon);
+        loadPokemonData(i);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -343,9 +349,10 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
     
     /**
      * Carrega os dados do pokemon nos campos da tela
-     * @param wildPokemon Pokemon a ser carregado
+     * @param index índice do pokemon na tabela da ViewPokedex
      */
-    private void loadPokemonData(WildPokemon wildPokemon) {
+    private void loadPokemonData(int index) {
+        WildPokemon wildPokemon = controllerPokemon.getWildPokemonsController().get(index - 1);
         PokemonNameLabel.setText(wildPokemon.getName());
         FirstTypeValueLabel.setText(wildPokemon.getFirstType());
         SecondTypeValueLabel.setText(wildPokemon.getSecondType());

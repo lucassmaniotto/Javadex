@@ -3,6 +3,8 @@ package view;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.DefaultTableModel;
@@ -226,7 +228,7 @@ public class ViewPokedex extends javax.swing.JFrame {
      */
     private void ChangePokemonImage(ListSelectionEvent evt) {
         try {
-            PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/" + WildPokemonTable.getValueAt(WildPokemonTable.getSelectedRow(), 1) + ".png")));
+            PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/" + WildPokemonTable.getValueAt(WildPokemonTable.getSelectedRow(), 1) +".png")));
         } catch (Exception e) {
             PokemonImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pokemon/unown.png")));
         }
@@ -237,19 +239,99 @@ public class ViewPokedex extends javax.swing.JFrame {
      * @param evt
      */
     private void WildPokemonTableMouseClicked(MouseEvent evt) {
-        wildPokemon = wildPokemonsList.get(WildPokemonTable.getSelectedRow());
-        ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(wildPokemon);
+        ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails((int) WildPokemonTable.getValueAt(WildPokemonTable.getSelectedRow(), 0));
         viewPokemonDetails.setVisible(true);
+
     }
-    
+
     /**
      * Filtra os pokemons selvagens
      * @param evt
      */
     private void FilterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterButtonActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) WildPokemonTable.getModel();
+        model.setRowCount(0);
+
+        if (FilterComboBox.getSelectedItem().equals("ID")) {
+           idSearch(model, FilterTextField.getText());
+        } else if (FilterComboBox.getSelectedItem().equals("Nome")) {
+            nameSearch(model, FilterTextField.getText());
+        } else if (FilterComboBox.getSelectedItem().equals("Tipo")) {
+            typeSearch(model, FilterTextField.getText());
+        } else if (FilterComboBox.getSelectedItem().equals("Todos")) {
+            updateTable();
+        }
     }//GEN-LAST:event_FilterButtonActionPerformed
-    
+
+    /**
+     * Filtra os pokemons selvagens pelo ID
+     * @param model Tabela de pokemons selvagens
+     * @param text Texto digitado no campo de filtro
+     */
+    private void idSearch(DefaultTableModel model, String text) {
+        for (WildPokemon pokemon : wildPokemonsList) {
+            if (pokemon.getId() == Integer.parseInt(text)) {
+                model.addRow(new Object[] {
+                    pokemon.getId(),
+                    pokemon.getName(),
+                    pokemon.getFirstType(),
+                    pokemon.getSecondType(),
+                });
+            }
+        }
+    }
+
+    /**
+     * Filtra os pokemons selvagens pelo nome
+     * @param model Tabela de pokemons selvagens
+     * @param text Texto digitado no campo de filtro
+     */
+    private void nameSearch(DefaultTableModel model, String text) {
+        Pattern pattern = Pattern.compile(text, Pattern.CASE_INSENSITIVE);
+        Matcher matcher;
+        for (WildPokemon pokemon : wildPokemonsList) {
+            matcher = pattern.matcher(pokemon.getName());
+            if (matcher.find()) {
+                model.addRow(new Object[] {
+                    pokemon.getId(),
+                    pokemon.getName(),
+                    pokemon.getFirstType(),
+                    pokemon.getSecondType(),
+                });
+            }
+        }
+    }
+
+    /**
+     * Filtra os pokemons selvagens pelo tipo
+     * @param model Tabela de pokemons selvagens
+     * @param text Texto digitado no campo de filtro
+     */
+    private void typeSearch(DefaultTableModel model, String text) {
+        Pattern pattern = Pattern.compile(text, Pattern.CASE_INSENSITIVE);
+        Matcher matcher;
+        for (WildPokemon pokemon : wildPokemonsList) {
+            matcher = pattern.matcher(pokemon.getFirstType());
+            if (matcher.find()) {
+                model.addRow(new Object[] {
+                    pokemon.getId(),
+                    pokemon.getName(),
+                    pokemon.getFirstType(),
+                    pokemon.getSecondType(),
+                });
+            } else {
+                matcher = pattern.matcher(pokemon.getSecondType());
+                if (matcher.find()) {
+                    model.addRow(new Object[] {
+                        pokemon.getId(),
+                        pokemon.getName(),
+                        pokemon.getFirstType(),
+                        pokemon.getSecondType(),
+                    });
+                }
+            }
+        }
+    }
     
     /**
      * Atualiza a tabela de pokemons selvagens
