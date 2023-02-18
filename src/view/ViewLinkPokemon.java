@@ -72,6 +72,14 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
             }
         });
 
+        TrainerPokemonsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if (evt.getClickCount() == 2) {
+                    TrainerPokemonTableMouseClicked(evt);
+                }
+            }
+        });
+
         LinkPokemonButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LinkPokemonButtonActionPerformed(evt);
@@ -318,6 +326,16 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
     private void WildPokemonTableMouseClicked(MouseEvent evt) {
         //pega o valor da string id na coluna ID da linha selecionada e manda para a tela de detalhes
         int id = (int) WildPokemonsTable.getValueAt(WildPokemonsTable.getSelectedRow(), 0);
+        ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(id);
+        viewPokemonDetails.setVisible(true);
+    }
+    /**
+     * Método que quando clicado na linha selecionada da tabela TrainerPokemonsTable
+     * abre a tela ViewPokemonDetails do pokemon selecionado
+     * @param evt
+     */
+    private void TrainerPokemonTableMouseClicked(MouseEvent evt) {
+        int id = (int) TrainerPokemonsTable.getValueAt(TrainerPokemonsTable.getSelectedRow(), 0);
         ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(id);
         viewPokemonDetails.setVisible(true);
     }
