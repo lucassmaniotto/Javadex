@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import connection.SQLiteConnection;
+import model.TrainedPokemon;
 import model.WildPokemon;
 
 /**
@@ -136,5 +137,138 @@ public class DAOPokemon extends SQLiteConnection {
         }
 
         return wildPokemonsList;
-    } 
+    }
+
+    public WildPokemon getWildPokemonById(int id) {
+        WildPokemon wildPokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
+        
+        connect();
+        String sql = "SELECT * FROM T_POKEMON WHERE PK_PW_ID = ?";
+        
+        try {
+            PreparedStatement preparedStatement = createPreparedStatement(sql);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                wildPokemon.setId(resultSet.getInt(1));
+                wildPokemon.setName(resultSet.getString(2));
+                wildPokemon.setFirstType(resultSet.getString(3));
+                wildPokemon.setSecondType(resultSet.getString(4));
+                wildPokemon.setShiny(resultSet.getBoolean(5));
+                wildPokemon.setHp(resultSet.getInt(6));
+                wildPokemon.setAttack(resultSet.getInt(7));
+                wildPokemon.setDefense(resultSet.getInt(8));
+                wildPokemon.setSpeed(resultSet.getInt(9));
+                wildPokemon.setSpAttack(resultSet.getInt(10));
+                wildPokemon.setSpDefense(resultSet.getInt(11));
+                wildPokemon.setTotal(resultSet.getInt(12));
+                wildPokemon.setHeight(resultSet.getFloat(13));
+                wildPokemon.setWeight(resultSet.getFloat(14));
+                wildPokemon.setIsWild(resultSet.getBoolean(15));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        } finally {
+            disconnect();
+        }
+
+        return wildPokemon;
+    }
+
+    /**
+     * Retorna uma lista com todos os pokemons treinados do banco de dados
+     * @param int - ID do treinador
+     * @return List - Lista de pokemons do tipo TrainedPokemon
+     */
+    public List<TrainedPokemon> getTrainedPokemons(int trainerID) {
+        List<TrainedPokemon> trainedPokemonsList = new ArrayList<>();
+        
+        connect();
+        String sql = "SELECT * FROM T_POKEMON WHERE FK_TRAINER_ID = ?";
+        
+        try {
+            PreparedStatement preparedStatement = createPreparedStatement(sql);
+            preparedStatement.setInt(1, trainerID);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                TrainedPokemon trainedPokemon = new TrainedPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
+                trainedPokemon.setId(resultSet.getInt(1));
+                trainedPokemon.setName(resultSet.getString(2));
+                trainedPokemon.setFirstType(resultSet.getString(3));
+                trainedPokemon.setSecondType(resultSet.getString(4));
+                trainedPokemon.setShiny(resultSet.getBoolean(5));
+                trainedPokemon.setHp(resultSet.getInt(6));
+                trainedPokemon.setAttack(resultSet.getInt(7));
+                trainedPokemon.setDefense(resultSet.getInt(8));
+                trainedPokemon.setSpeed(resultSet.getInt(9));
+                trainedPokemon.setSpAttack(resultSet.getInt(10));
+                trainedPokemon.setSpDefense(resultSet.getInt(11));
+                trainedPokemon.setTotal(resultSet.getInt(12));
+                trainedPokemon.setHeight(resultSet.getFloat(13));
+                trainedPokemon.setWeight(resultSet.getFloat(14));
+                trainedPokemon.setIsWild(resultSet.getBoolean(15));
+                trainedPokemonsList.add(trainedPokemon);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+            return Collections.emptyList();
+        } finally {
+            disconnect();
+        }
+
+        return trainedPokemonsList;
+    }
+
+    /**
+     * Vincula um pokemon selvagem a um treinador
+     * através do ID do pokemon e do ID do treinador
+     * com um UPDATE no banco de dados
+     * @param int - ID do pokemon
+     * @param int - ID do treinador
+     */
+    public boolean setWildPokemonToTrainedPokemon(int pokemonID, int trainerID) {
+        connect();
+        String sql = "UPDATE T_POKEMON SET FK_TRAINER_ID = ? , PW_ISWILD = 0 WHERE PK_PW_ID = ?";
+        
+        try {
+            PreparedStatement preparedStatement = createPreparedStatement(sql);
+            preparedStatement.setInt(1, trainerID);
+            preparedStatement.setInt(2, pokemonID);
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } finally {
+            disconnect();
+        }
+
+        return true;
+    }
+
+    /**
+     * O pokemon vinculado a um treinador
+     * é desvinculado e vira um pokemon selvagem
+     * @param int - ID do pokemon
+     */
+     public boolean setTrainedPokemonToWildPokemon(int pokemonID){
+        connect();
+        String sql = "UPDATE T_POKEMON SET FK_TRAINER_ID = NULL , PW_ISWILD = 1 WHERE PK_PW_ID = ?";
+
+        try {
+            PreparedStatement preparedStatement = createPreparedStatement(sql);
+            preparedStatement.setInt(1, pokemonID);
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        } finally {
+            disconnect();
+        }
+
+        return true;
+     }
+
 }

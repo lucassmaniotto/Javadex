@@ -3,6 +3,7 @@ package controller;
 import java.util.List;
 
 import DAO.DAOPokemon;
+import model.TrainedPokemon;
 import model.WildPokemon;
 
 /**
@@ -35,4 +36,50 @@ public class ControllerPokemon {
     public List<WildPokemon> getWildPokemonsController() {
         return this.daoPokemon.getWildPokemons();
     }
+
+    /**
+     * Retorna o pokemon selvagem com o ID passado como parâmetro
+     * @param id int - ID do pokemon selvagem
+     * @return WildPokemon - Pokemon selvagem com o ID passado como parâmetro
+     */
+    public WildPokemon getWildPokemonByIdController(int id) {
+        return this.daoPokemon.getWildPokemonById(id);
+    }
+
+    /**
+     * Retorna uma lista de pokemons treinados do banco de dados
+     * @param id int - ID do treinador
+     * @return List - Lista de pokemons treinados do Tipo TrainedPokemon
+     */
+    public List<TrainedPokemon> getTrainedPokemonsController(int id) {
+        return this.daoPokemon.getTrainedPokemons(id);
+    }
+
+    /**
+     * Atualiza o pokemon selvagem no banco de dados
+     * para um pokemon treinado através do ID
+     * @param idPokemon int - ID do pokemon selvagem
+     * @param idTrainer int - ID do treinador
+     */
+    public boolean setWildPokemonToTrainedPokemonController(int idPokemon, int idTrainer) {
+        if (this.daoPokemon.setWildPokemonToTrainedPokemon(idPokemon, idTrainer)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * Atualiza o pokemon treinado no banco de dados
+     * para um pokemon selvagem através do ID
+     * @param idPokemon int - ID do pokemon treinado
+     */
+    public boolean setTrainedPokemonToWildPokemonController(int idPokemon) {
+        if (this.daoPokemon.setTrainedPokemonToWildPokemon(idPokemon)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
+

@@ -335,6 +335,10 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_ExitButtonActionPerformed
 
+    /**
+     * Carrega os dados do treinador no formulário
+     * @param id ID do treinador
+     */
     private void loadTrainerData(int id){
         trainer = controllerTrainer.getTrainerByIDController(id);
         IDTextField.setText(String.valueOf(trainer.getId()));

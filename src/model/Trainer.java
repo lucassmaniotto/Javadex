@@ -12,8 +12,8 @@ public class Trainer {
     private int badges;
     private String region;
     private int pokemonCount;
-    private ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
-    private Pokemon[] party = new Pokemon[6];
+    private ArrayList<TrainedPokemon> pokemonList = new ArrayList<TrainedPokemon>();
+    private TrainedPokemon[] party = new TrainedPokemon[6];
     
     public Trainer(String name, int age, int badges, String region, int pokemonCount) {
         this.name = name;
@@ -47,7 +47,7 @@ public class Trainer {
         return pokemonCount;
     }
 
-    public ArrayList<Pokemon> getPokemonList() {
+    public ArrayList<TrainedPokemon> getPokemonList() {
         return pokemonList;
     }
 
@@ -79,11 +79,11 @@ public class Trainer {
         this.pokemonCount = pokemonCount;
     }
 
-    public void setPokemonList(ArrayList<Pokemon> pokemonList) {
+    public void setPokemonList(ArrayList<TrainedPokemon> pokemonList) {
         this.pokemonList = pokemonList;
     }
 
-    public void setParty(Pokemon[] party) {
+    public void setParty(TrainedPokemon[] party) {
         this.party = party;
     }
 }

@@ -232,12 +232,17 @@ public class ViewTrainers extends javax.swing.JFrame {
     }//GEN-LAST:event_EditTrainerButtonActionPerformed
 
     /**
-     * Abre a tela de vinculação de pokemons aos treinadores
+     * Abre a tela de vinculação de pokemons aos treinadores com os dados do treinador selecionado na tabela
      * @param evt
      */
     private void LinkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LinkPokemonButtonActionPerformed
-        ViewLinkPokemon viewLinkPokemon = new ViewLinkPokemon();
-        viewLinkPokemon.setVisible(true);
+        try {
+            int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
+            ViewLinkPokemon viewLinkPokemon = new ViewLinkPokemon(id);
+            viewLinkPokemon.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Selecione um treinador para vincular pokemons!", "Atenção", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_LinkPokemonButtonActionPerformed
 
     /**

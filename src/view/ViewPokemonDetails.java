@@ -18,13 +18,13 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
     static ControllerPokemon controllerPokemon = new ControllerPokemon();
     static List<WildPokemon> wildPokemonsList = new ArrayList<>();
 
-    public ViewPokemonDetails(int i) {
+    public ViewPokemonDetails(int id) {
         setLookAndFeel();
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Detalhes do Pokémon");
-        loadPokemonData(i);
+        loadPokemonData(id);
     }
     
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -349,10 +349,10 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
     
     /**
      * Carrega os dados do pokemon nos campos da tela
-     * @param index índice do pokemon na tabela da ViewPokedex
+     * @param id índice do pokemon na tabela da ViewPokedex
      */
-    private void loadPokemonData(int index) {
-        WildPokemon wildPokemon = controllerPokemon.getWildPokemonsController().get(index - 1);
+    private void loadPokemonData(int id) {
+        WildPokemon wildPokemon = controllerPokemon.getWildPokemonByIdController(id);
         PokemonNameLabel.setText(wildPokemon.getName());
         FirstTypeValueLabel.setText(wildPokemon.getFirstType());
         SecondTypeValueLabel.setText(wildPokemon.getSecondType());
