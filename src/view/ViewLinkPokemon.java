@@ -3,9 +3,14 @@ package view;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.table.DefaultTableModel;
+
+import controller.ControllerPokemon;
 import controller.ControllerTrainer;
 import model.Regions;
 import model.Trainer;
+import model.Types;
+import model.WildPokemon;
 
 /**
  * Classe que representa a interface gráfica de vincular um pokémon selvagem a um treinador.
@@ -14,19 +19,24 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
     Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
     static ControllerTrainer controllerTrainer = new ControllerTrainer();
     static List<Trainer> trainersList = new ArrayList<>();
+
+    WildPokemon pokemon = new WildPokemon("", Types.NONE.toString(), Types.NONE.toString(), 0, 0, 0, 0, 0, 0, 0, 0);
+    static ControllerPokemon controllerPokemon = new ControllerPokemon();
+    static List<WildPokemon> pokemonsList = new ArrayList<>();
     
     public ViewLinkPokemon() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Vincular Pokémon");
+        loadWildPokemons();
     }
 
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         WildPokemonsTable = new javax.swing.JTable();
@@ -48,7 +58,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome", "Tipo 1", "Tipo 2", "Total"
+                "ID", "Nome", "Tipo 1", "Tipo 2", "Poder"
             }
         ) {
             Class<Object>[] types = new Class [] {
@@ -105,7 +115,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome", "Tipo 1", "Tipo 2", "Total"
+                "ID", "Nome", "Tipo 1", "Tipo 2", "Poder"
             }
         ) {
             Class<Object>[] types = new Class [] {
@@ -204,6 +214,24 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void loadWildPokemons(){
+        DefaultTableModel model = (DefaultTableModel) WildPokemonsTable.getModel();
+        model.setRowCount(0);
+
+        pokemonsList = controllerPokemon.getWildPokemonsController();
+
+        for(WildPokemon pokemon : pokemonsList){
+            model.addRow(new Object[]{
+                pokemon.getId(),
+                pokemon.getName(),
+                pokemon.getFirstType(),
+                pokemon.getSecondType(),
+                pokemon.getTotal()
+            });
+        }
+        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LinkPokemonButton;
