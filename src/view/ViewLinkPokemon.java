@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,7 +37,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        
+
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         WildPokemonsTable = new javax.swing.JTable();
@@ -53,6 +54,13 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        WildPokemonsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if (evt.getClickCount() == 2) {
+                    WildPokemonTableMouseClicked(evt);
+                }
+            }
+        });
         WildPokemonsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -78,10 +86,12 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(WildPokemonsTable);
         if (WildPokemonsTable.getColumnModel().getColumnCount() > 0) {
-            WildPokemonsTable.getColumnModel().getColumn(0).setMinWidth(30);
-            WildPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(30);
-            WildPokemonsTable.getColumnModel().getColumn(1).setMinWidth(125);
-            WildPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(125);
+            WildPokemonsTable.getColumnModel().getColumn(0).setMinWidth(40);
+            WildPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(40);
+            WildPokemonsTable.getColumnModel().getColumn(1).setMinWidth(100);
+            WildPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(100);
+            WildPokemonsTable.getColumnModel().getColumn(4).setMinWidth(60);
+            WildPokemonsTable.getColumnModel().getColumn(4).setMaxWidth(60);
         }
 
         TitleLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
@@ -102,13 +112,10 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
 
         TrainersLabel.setText("Treinador: ");
 
-        //setar os treinadores do banco de dados no combobox
         trainersList = controllerTrainer.getTrainersController();
         for (Trainer trainer : trainersList) {
             TrainersComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { trainer.getName() }));
         }
-
-
 
         TrainerPokemonsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -135,10 +142,12 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(TrainerPokemonsTable);
         if (TrainerPokemonsTable.getColumnModel().getColumnCount() > 0) {
-            TrainerPokemonsTable.getColumnModel().getColumn(0).setMinWidth(30);
-            TrainerPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(30);
-            TrainerPokemonsTable.getColumnModel().getColumn(1).setMinWidth(125);
-            TrainerPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(125);
+            TrainerPokemonsTable.getColumnModel().getColumn(0).setMinWidth(40);
+            TrainerPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(40);
+            TrainerPokemonsTable.getColumnModel().getColumn(1).setMinWidth(100);
+            TrainerPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(100);
+            TrainerPokemonsTable.getColumnModel().getColumn(4).setMinWidth(60);
+            TrainerPokemonsTable.getColumnModel().getColumn(4).setMaxWidth(60);
         }
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -215,6 +224,9 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /*
+     * Carrega os pokemons selvagens do banco de dados
+     */
     private void loadWildPokemons(){
         DefaultTableModel model = (DefaultTableModel) WildPokemonsTable.getModel();
         model.setRowCount(0);
@@ -229,9 +241,18 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
                 pokemon.getSecondType(),
                 pokemon.getTotal()
             });
-        }
-        
+        } 
     }
+
+    /**
+     * Método que quando clicado na linha selecionada da tabela WildPokemonsTable
+     * abre a tela ViewPokemonDetails do pokemon selecionado
+     * @param evt
+     */
+    private void WildPokemonTableMouseClicked(MouseEvent evt) {
+        ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails((int)WildPokemonsTable.getValueAt(WildPokemonsTable.getSelectedRow(), 0));
+        viewPokemonDetails.setVisible(true);
+    } 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton LinkPokemonButton;

@@ -242,7 +242,6 @@ public class ViewPokedex extends javax.swing.JFrame {
     private void WildPokemonTableMouseClicked(MouseEvent evt) {
         ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails((int) WildPokemonTable.getValueAt(WildPokemonTable.getSelectedRow(), 0));
         viewPokemonDetails.setVisible(true);
-
     }
 
     /**
