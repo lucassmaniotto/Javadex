@@ -160,4 +160,21 @@ public class DAOTrainer extends SQLiteConnection {
             disconnect();
         }
     }
+
+    public void removeTrainerPokemons(int id) {
+        connect();
+
+        String sql = "UPDATE T_POKEMON SET FK_TRAINER_ID = NULL, PW_ISWILD = 1 WHERE FK_TRAINER_ID = ?";
+
+        PreparedStatement preparedStatement = createPreparedStatement(sql);
+
+        try {
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            disconnect();
+        }
+    }
 }

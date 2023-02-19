@@ -280,7 +280,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
     /*
      * Carrega os pokemons selvagens do banco de dados
      */
-    private void loadWildPokemons(){
+    public static void loadWildPokemons(){
         DefaultTableModel model = (DefaultTableModel) WildPokemonsTable.getModel();
         model.setRowCount(0);
 
@@ -301,7 +301,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * Carrega os pokemons do treinador do banco de dados
      * @param id ID do treinador
      */
-    private void loadTrainedPokemons(int id){
+    public static void loadTrainedPokemons(int id){
         DefaultTableModel model = (DefaultTableModel) TrainerPokemonsTable.getModel();
         model.setRowCount(0);
 
@@ -387,9 +387,9 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
     private javax.swing.JLabel PokemonsLabel;
     private javax.swing.JButton RemovePokemonButton;
     private javax.swing.JLabel TitleLabel;
-    private javax.swing.JTable TrainerPokemonsTable;
+    private static javax.swing.JTable TrainerPokemonsTable;
     private javax.swing.JLabel TrainersPokemonLabel;
-    private javax.swing.JTable WildPokemonsTable;
+    private static javax.swing.JTable WildPokemonsTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

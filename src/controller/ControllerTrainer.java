@@ -45,8 +45,11 @@ public class ControllerTrainer {
 
     /**
      * Remove um treinador do banco de dados através do seu ID
+     * e torna seus pokemons treinados como selvagens
+     * @param id ID do treinador a ser removido.
      */
-    public void removeTrainerController(int id) {
-        this.daoTrainer.removeTrainer(id);
+    public void removeTrainerController(int idTrainer) {
+        this.daoTrainer.removeTrainer(idTrainer);
+        this.daoTrainer.removeTrainerPokemons(idTrainer);
     }
 }

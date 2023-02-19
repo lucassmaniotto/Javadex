@@ -253,7 +253,10 @@ public class ViewTrainers extends javax.swing.JFrame {
         try {
             int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
             controllerTrainer.removeTrainerController(id);
-            updateTable(); 
+            updateTable();
+            ViewPokedex.updateTable();
+            ViewLinkPokemon.loadWildPokemons();
+            ViewLinkPokemon.loadTrainedPokemons(id);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Selecione um treinador para remover!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
