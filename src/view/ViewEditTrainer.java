@@ -1,7 +1,14 @@
 package view;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.table.DefaultTableModel;
+
+import controller.ControllerPokemon;
 import controller.ControllerTrainer;
 import model.Regions;
+import model.TrainedPokemon;
 import model.Trainer;
 
 /**
@@ -10,6 +17,9 @@ import model.Trainer;
 public class ViewEditTrainer extends javax.swing.JFrame {
     ControllerTrainer controllerTrainer = new ControllerTrainer();
     Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
+    
+    ControllerPokemon controllerPokemon = new ControllerPokemon();
+    List<TrainedPokemon> trainedPokemons = new ArrayList<>();
 
     public ViewEditTrainer(int idTrainer) {
         initComponents();
@@ -17,6 +27,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         setResizable(false);
         setTitle("Editar Treinador");
         loadTrainerData(idTrainer);
+        loadTrainerPokemons(idTrainer);
     }
 
     
@@ -77,7 +88,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome", "Tipo 1", "Tipo 2", "Total"
+                "ID", "Nome", "Tipo 1", "Tipo 2", "Poder"
             }
         ) {
             Class<Object>[] types = new Class [] {
@@ -136,7 +147,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Nome", "Tipo 1", "Tipo 2", "Total"
+                "ID", "Nome", "Tipo 1", "Tipo 2", "Poder"
             }
         ) {
             Class<Object>[] types = new Class [] {
@@ -337,15 +348,37 @@ public class ViewEditTrainer extends javax.swing.JFrame {
 
     /**
      * Carrega os dados do treinador no formulário
-     * @param id ID do treinador
+     * @param idTrainer ID do treinador
      */
-    private void loadTrainerData(int id){
-        trainer = controllerTrainer.getTrainerByIDController(id);
+    private void loadTrainerData(int idTrainer){
+        trainer = controllerTrainer.getTrainerByIDController(idTrainer);
         IDTextField.setText(String.valueOf(trainer.getId()));
         NameTextField.setText(trainer.getName());
         AgeTextField.setText(String.valueOf(trainer.getAge()));
         BagdesTextField.setText(String.valueOf(trainer.getBadges()));
         RegionsComboBox.setSelectedItem(trainer.getRegion());
+    }
+
+    /**
+     * Carrega os pokemons do treinador na tabela de pokemons treinados
+     * @param idTrainer ID do treinador
+     */
+    private void loadTrainerPokemons(int idTrainer){
+        DefaultTableModel model = (DefaultTableModel) TrainedPokemonsTable.getModel();
+        model.setNumRows(0);
+
+        trainedPokemons = controllerPokemon.getTrainedPokemonsController(idTrainer);
+        
+        for(TrainedPokemon pokemon : trainedPokemons){
+            model.addRow(new Object[]{
+                pokemon.getId(),
+                pokemon.getName(),
+                pokemon.getFirstType(),
+                pokemon.getSecondType(),
+                pokemon.getTotal(),
+            });
+        }
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
