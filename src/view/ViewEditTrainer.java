@@ -67,6 +67,22 @@ public class ViewEditTrainer extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        TrainedPokemonsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if (evt.getClickCount() == 2) {
+                    showPokemonDetails(evt, TrainedPokemonsTable);
+                }
+            }
+        });
+
+        PokemonPartyTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if (evt.getClickCount() == 2) {
+                    showPokemonDetails(evt, PokemonPartyTable);
+                }
+            }
+        });
+
         TitleLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
         TitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TitleLabel.setText("Editar Treinador");
@@ -485,6 +501,17 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         model.setNumRows(0);
         loadTrainerParty(trainer.getId());
     }
+
+    /**
+     * Abre a tela de detalhes do pokemon
+     * @param Table Tabela que será verificada
+     * @param evt
+     */
+     private void showPokemonDetails(java.awt.event.MouseEvent evt, javax.swing.JTable Table) {//GEN-FIRST:event_showPokemonDetails
+        int idPokemon = (int) Table.getValueAt(Table.getSelectedRow(), 0);
+        ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(idPokemon);
+        viewPokemonDetails.setVisible(true);
+    }//GEN-LAST:event_showPokemonDetails
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgeLabel;
