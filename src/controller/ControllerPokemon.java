@@ -81,5 +81,15 @@ public class ControllerPokemon {
             return false;
         }
     }
+
+    /**
+     * Retorna o pokemon treinado com o ID passado como parâmetro
+     * @param idPokemon int - ID do pokemon treinado
+     * @param idTrainer int - ID do treinador
+     * @return TrainedPokemon - Pokemon treinado do banco de dados
+     */
+    public TrainedPokemon getTrainedPokemonByIdController(int idPokemon, int idTrainer) {
+        return this.daoPokemon.getTrainedPokemonById(idPokemon, idTrainer);
+    }
 }
 

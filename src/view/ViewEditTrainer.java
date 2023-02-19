@@ -3,10 +3,12 @@ package view;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import controller.ControllerPokemon;
 import controller.ControllerTrainer;
+import controller.ControllerTrainerParty;
 import model.Regions;
 import model.TrainedPokemon;
 import model.Trainer;
@@ -20,6 +22,8 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     
     static ControllerPokemon controllerPokemon = new ControllerPokemon();
     static List<TrainedPokemon> trainedPokemons = new ArrayList<>();
+
+    ControllerTrainerParty controllerTrainerParty = new ControllerTrainerParty();
 
     public ViewEditTrainer(int idTrainer) {
         initComponents();
@@ -108,10 +112,10 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TrainedPokemonsTable);
         if (TrainedPokemonsTable.getColumnModel().getColumnCount() > 0) {
-            TrainedPokemonsTable.getColumnModel().getColumn(0).setMinWidth(30);
-            TrainedPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(30);
-            TrainedPokemonsTable.getColumnModel().getColumn(1).setMinWidth(125);
-            TrainedPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(125);
+            TrainedPokemonsTable.getColumnModel().getColumn(0).setMinWidth(40);
+            TrainedPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(40);
+            TrainedPokemonsTable.getColumnModel().getColumn(1).setMinWidth(100);
+            TrainedPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(100);
         }
 
         ExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/exit.png"))); // NOI18N
@@ -139,12 +143,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
 
         PokemonPartyTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Nome", "Tipo 1", "Tipo 2", "Poder"
@@ -167,10 +166,10 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(PokemonPartyTable);
         if (PokemonPartyTable.getColumnModel().getColumnCount() > 0) {
-            PokemonPartyTable.getColumnModel().getColumn(0).setMinWidth(30);
-            PokemonPartyTable.getColumnModel().getColumn(0).setMaxWidth(30);
-            PokemonPartyTable.getColumnModel().getColumn(1).setMinWidth(125);
-            PokemonPartyTable.getColumnModel().getColumn(1).setMaxWidth(125);
+            PokemonPartyTable.getColumnModel().getColumn(0).setMinWidth(40);
+            PokemonPartyTable.getColumnModel().getColumn(0).setMaxWidth(40);
+            PokemonPartyTable.getColumnModel().getColumn(1).setMinWidth(100);
+            PokemonPartyTable.getColumnModel().getColumn(1).setMaxWidth(100);
         }
 
         addToPartyButton.setText("Enviar para o Time ->");
@@ -196,12 +195,6 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(144, 144, 144)
-                .addComponent(PokemonsLabel)
-                .addGap(450, 450, 450)
-                .addComponent(PartyLabel)
-                .addGap(174, 174, 174))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(334, 334, 334)
@@ -213,7 +206,15 @@ public class ViewEditTrainer extends javax.swing.JFrame {
                         .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 855, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(TitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addComponent(PokemonsLabel)
+                        .addGap(450, 450, 450)
+                        .addComponent(PartyLabel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(230, 230, 230)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -248,9 +249,6 @@ public class ViewEditTrainer extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(BagdesTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(30, 30, 30))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(TitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -319,7 +317,8 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * @param evt
      */
     private void removeFromPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFromPartyButtonActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) PokemonPartyTable.getModel();
+        model.removeRow(PokemonPartyTable.getSelectedRow());
     }//GEN-LAST:event_removeFromPartyButtonActionPerformed
     
     /**
@@ -327,14 +326,35 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * @param evt
      */
     private void addToPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToPartyButtonActionPerformed
-        // TODO add your handling code here:
+        int idPokemon = (int) TrainedPokemonsTable.getValueAt(TrainedPokemonsTable.getSelectedRow(), 0);
+        DefaultTableModel model = (DefaultTableModel) PokemonPartyTable.getModel();
+
+        for (int i = 0; i < model.getRowCount(); i++) {
+            if (idPokemon == (int) model.getValueAt(i, 0)) {
+                JOptionPane.showMessageDialog(null, "O pokemon já está no grupo do treinador!", "Atenção", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }
+        
+        if (model.getRowCount() < 6){
+            model.addRow(new Object[]{
+                idPokemon,
+                controllerPokemon.getWildPokemonByIdController(idPokemon).getName(),
+                controllerPokemon.getWildPokemonByIdController(idPokemon).getFirstType(),
+                controllerPokemon.getWildPokemonByIdController(idPokemon).getSecondType(),
+                controllerPokemon.getWildPokemonByIdController(idPokemon).getTotal()
+            });
+        } else {
+            JOptionPane.showMessageDialog(null, "O grupo do treinador já está completo!", "Atenção", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_addToPartyButtonActionPerformed
     
     /**
-     * Salva as alterações feitas no treinador
+     * Salva as alterações feitas no treinador e no seu time
      * @param evt
      */
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        updateTrainerParty();
         updateTrainer();
     }//GEN-LAST:event_SaveButtonActionPerformed
     
@@ -384,12 +404,38 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * Atualiza informações do treinador no banco de dados
      */
     private void updateTrainer(){
-        int id = Integer.parseInt(IDTextField.getText());
-        String region = RegionsComboBox.getSelectedItem().toString();
-        int age = Integer.parseInt(AgeTextField.getText());
-        int badges = Integer.parseInt(BagdesTextField.getText());
-        controllerTrainer.updateTrainerController(id, region, age, badges);
-        ViewTrainers.updateTable();
+        try{
+            int id = Integer.parseInt(IDTextField.getText());
+            String region = RegionsComboBox.getSelectedItem().toString();
+            int age = Integer.parseInt(AgeTextField.getText());
+            if(age < 10){
+                JOptionPane.showMessageDialog(null, "Atenção, a idade mínima é 10 anos!", "Atenção", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            int badges = Integer.parseInt(BagdesTextField.getText());
+            if (badges < 0){
+                JOptionPane.showMessageDialog(null, "Atenção, a quantidade de medalhas não pode ser negativa!", "Atenção", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+            controllerTrainer.updateTrainerController(id, region, age, badges);
+            ViewTrainers.updateTable();
+        } catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Erro ao atualizar treinador, os campos de número só podem receber valores inteiros!", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    /**
+     * Atualiza o grupo do treinador no banco de dados
+     */
+    private void updateTrainerParty(){
+        DefaultTableModel model = (DefaultTableModel) PokemonPartyTable.getModel();
+        List<TrainedPokemon> party = new ArrayList<>();
+        int idTrainer = Integer.parseInt(IDTextField.getText());
+        for (int i = 0; i < model.getRowCount(); i++) {
+            int idPokemon = (int) model.getValueAt(i, 0);
+            TrainedPokemon pokemon = controllerPokemon.getTrainedPokemonByIdController(idPokemon, idTrainer);
+            party.add(pokemon);
+        }
+        controllerTrainerParty.saveTrainerPartyController(idTrainer, party);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

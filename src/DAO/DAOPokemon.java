@@ -271,4 +271,48 @@ public class DAOPokemon extends SQLiteConnection {
         return true;
      }
 
+     /**
+      * Retorna um pokemon treinado pelo ID do pokemon e do treinador
+      * @param idPokemon int - ID do pokemon
+      * @param idTrainer int - ID do treinador
+      * @return TrainedPokemon - Pokemon treinado
+      */
+     public TrainedPokemon getTrainedPokemonById(int idPokemon, int idTrainer) {
+        TrainedPokemon trainedPokemon = new TrainedPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
+        
+        connect();
+        String sql = "SELECT * FROM T_POKEMON WHERE PK_PW_ID = ? AND FK_TRAINER_ID = ?";
+        
+        try {
+            PreparedStatement preparedStatement = createPreparedStatement(sql);
+            preparedStatement.setInt(1, idPokemon);
+            preparedStatement.setInt(2, idTrainer);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                trainedPokemon.setId(resultSet.getInt(1));
+                trainedPokemon.setName(resultSet.getString(2));
+                trainedPokemon.setFirstType(resultSet.getString(3));
+                trainedPokemon.setSecondType(resultSet.getString(4));
+                trainedPokemon.setShiny(resultSet.getBoolean(5));
+                trainedPokemon.setHp(resultSet.getInt(6));
+                trainedPokemon.setAttack(resultSet.getInt(7));
+                trainedPokemon.setDefense(resultSet.getInt(8));
+                trainedPokemon.setSpeed(resultSet.getInt(9));
+                trainedPokemon.setSpAttack(resultSet.getInt(10));
+                trainedPokemon.setSpDefense(resultSet.getInt(11));
+                trainedPokemon.setTotal(resultSet.getInt(12));
+                trainedPokemon.setHeight(resultSet.getFloat(13));
+                trainedPokemon.setWeight(resultSet.getFloat(14));
+                trainedPokemon.setIsWild(resultSet.getBoolean(15));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        } finally {
+            disconnect();
+        }
+
+        return trainedPokemon;
+    }
 }

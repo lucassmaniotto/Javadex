@@ -41,13 +41,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
-                  <Component id="PokemonsLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="450" max="-2" attributes="0"/>
-                  <Component id="PartyLabel" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="174" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -63,8 +56,18 @@
                   </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="TitleLabel" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="PokemonsLabel" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="450" max="-2" attributes="0"/>
+                          <Component id="PartyLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
                           <Component id="jSeparator2" min="-2" pref="420" max="-2" attributes="0"/>
@@ -108,10 +111,6 @@
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="TitleLabel" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -242,17 +241,17 @@
                     <Column editable="false" title="Nome" type="java.lang.String"/>
                     <Column editable="false" title="Tipo 1" type="java.lang.String"/>
                     <Column editable="false" title="Tipo 2" type="java.lang.String"/>
-                    <Column editable="false" title="Total" type="java.lang.Integer"/>
+                    <Column editable="false" title="Poder" type="java.lang.Integer"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
-                    <Column maxWidth="30" minWidth="30" prefWidth="-1" resizable="true">
+                    <Column maxWidth="40" minWidth="40" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
-                    <Column maxWidth="125" minWidth="125" prefWidth="-1" resizable="true">
+                    <Column maxWidth="100" minWidth="100" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
@@ -337,17 +336,17 @@
                     <Column editable="false" title="Nome" type="java.lang.String"/>
                     <Column editable="false" title="Tipo 1" type="java.lang.String"/>
                     <Column editable="false" title="Tipo 2" type="java.lang.String"/>
-                    <Column editable="false" title="Total" type="java.lang.Integer"/>
+                    <Column editable="false" title="Poder" type="java.lang.Integer"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
-                    <Column maxWidth="30" minWidth="30" prefWidth="-1" resizable="true">
+                    <Column maxWidth="40" minWidth="40" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
                     </Column>
-                    <Column maxWidth="125" minWidth="125" prefWidth="-1" resizable="true">
+                    <Column maxWidth="100" minWidth="100" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
