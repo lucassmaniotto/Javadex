@@ -81,5 +81,5 @@ Ao selecionar um registro da tabela e precissonar o botão Remover Treinador, é
 
 | ![Lucas Smaniotto](https://github.com/lucassmaniotto.png) | ![Valtemir Junior](https://github.com/ValtemirJr.png)    |
 | -------------  | --- |
-| [Lucas Smaniotto](https://https://hello-world-lucassmaniotto.vercel.app)     | [Valtemir Junior](https://github.com/ValtemirJr)    |
+| [Lucas Smaniotto](https://hello-world-lucassmaniotto.vercel.app)     | [Valtemir Junior](https://github.com/ValtemirJr)    |
 
