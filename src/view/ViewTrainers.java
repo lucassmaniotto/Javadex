@@ -25,6 +25,7 @@ public class ViewTrainers extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Treinadores");
+        setFocusable(rootPaneCheckingEnabled);
         updateTable();
     }
     
@@ -47,6 +48,15 @@ public class ViewTrainers extends javax.swing.JFrame {
         RemoveTrainerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        FilterTextField.addFocusListener(new java.awt.event.FocusAdapter(){
+            public void focusGained(java.awt.event.FocusEvent evt){
+                FilterTextFieldFocusGaned(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt){
+                FilterTextFieldFocusLost(evt);
+            }
+        });
 
         TrainersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -385,6 +395,26 @@ public class ViewTrainers extends javax.swing.JFrame {
                 trainer.getAge(),
                 trainer.getRegion()
             });
+        }
+    }
+
+    /**
+     * Metodo que limpa o campo de texto do filtro quando é focado.
+     * @param evt
+     */
+    private void FilterTextFieldFocusGaned(java.awt.event.FocusEvent evt){
+        if(FilterTextField.getText().equals("O que você procura?")){
+            FilterTextField.setText("");
+        }
+    }
+
+    /**
+     * Metodo que preenche o campo de texto do filtro quando é desfocado.
+     * @param evt
+     */
+    private void FilterTextFieldFocusLost(java.awt.event.FocusEvent evt){
+        if(FilterTextField.getText().equals("")){
+            FilterTextField.setText("O que você procura?");
         }
     }
 

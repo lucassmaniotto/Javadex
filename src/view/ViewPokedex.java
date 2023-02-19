@@ -26,6 +26,7 @@ public class ViewPokedex extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setTitle("Pokedex");
         setResizable(false);
+        setFocusable(rootPaneCheckingEnabled);
         updateTable();
     }
 
@@ -46,6 +47,15 @@ public class ViewPokedex extends javax.swing.JFrame {
         PokemonImageLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        FilterTextField.addFocusListener(new java.awt.event.FocusAdapter(){
+            public void focusGained(java.awt.event.FocusEvent evt){
+                FilterTextFieldFocusGaned(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt){
+                FilterTextFieldFocusLost(evt);
+            }
+        });
 
         WildPokemonTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -357,6 +367,27 @@ public class ViewPokedex extends javax.swing.JFrame {
             });
         }
     }
+
+    /**
+     * Metodo que limpa o campo de texto do filtro quando é focado.
+     * @param evt
+     */
+    private void FilterTextFieldFocusGaned(java.awt.event.FocusEvent evt){
+        if(FilterTextField.getText().equals("O que você procura?")){
+            FilterTextField.setText("");
+        }
+    }
+
+    /**
+     * Metodo que preenche o campo de texto do filtro quando é desfocado.
+     * @param evt
+     */
+    private void FilterTextFieldFocusLost(java.awt.event.FocusEvent evt){
+        if(FilterTextField.getText().equals("")){
+            FilterTextField.setText("O que você procura?");
+        }
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton FilterButton;
