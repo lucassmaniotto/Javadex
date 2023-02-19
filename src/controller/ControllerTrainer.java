@@ -7,6 +7,7 @@ import model.Trainer;
 
 /**
  * Classe responsável por controlar as ações do usuário relacionadas ao Objeto Trainer.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ControllerTrainer {
     DAOTrainer daoTrainer = new DAOTrainer();

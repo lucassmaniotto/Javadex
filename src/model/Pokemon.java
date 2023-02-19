@@ -2,6 +2,7 @@ package model;
 
 /**
  * Classe abstrata que representa um Pokémon.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public abstract class Pokemon {
     private int id;

@@ -14,6 +14,7 @@ import model.TrainedPokemon;
 
 /**
  * Classe responsável por realizar as operações de CRUD no banco de dados para a tabela T_TRAINER_PARTY.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class DAOTrainerParty extends SQLiteConnection {
     

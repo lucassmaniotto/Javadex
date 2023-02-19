@@ -15,6 +15,7 @@ import model.Trainer;
 
 /**
  * Classe que representa a interface gráfica de edição de treinadores.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewEditTrainer extends javax.swing.JFrame {
     ControllerTrainer controllerTrainer = new ControllerTrainer();

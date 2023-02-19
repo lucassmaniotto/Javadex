@@ -7,6 +7,7 @@ import model.Trainer;
 
 /**
  * Classe que representa a interface gráfica de cadastro de treinadores.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewRegisterTrainer extends javax.swing.JFrame {
     Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());

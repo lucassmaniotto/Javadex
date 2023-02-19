@@ -15,7 +15,8 @@ import model.TrainedPokemon;
 import model.WildPokemon;
 
 /**
- * Classe responsável por realizar as operações de CRUD no banco de dados com o Objeto Pokemon
+ * Classe responsável por realizar as operações de CRUD no banco de dados para a tabela T_POKEMON.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class DAOPokemon extends SQLiteConnection {
     

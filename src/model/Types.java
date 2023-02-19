@@ -2,6 +2,7 @@ package model;
 
 /**
  * Enum que representa os tipos de Pokémon.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public enum Types {
     NONE,

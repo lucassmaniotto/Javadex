@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Classe que representa um treinador Pokémon.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class Trainer {
     private int id;

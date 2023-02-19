@@ -15,7 +15,8 @@ import model.Regions;
 import model.Trainer;
 
 /**
- * Classe responsável por fazer as operações de CRUD no banco de dados com o Objeto Trainer
+ * Classe responsável por fazer as operações de CRUD no banco de dados para a tabela T_TRAINER.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class DAOTrainer extends SQLiteConnection {
     

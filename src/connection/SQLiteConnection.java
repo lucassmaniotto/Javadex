@@ -8,6 +8,7 @@ import java.sql.Statement;
 
 /**
  * Classe que representa uma conexão com o banco de dados SQLite.
+ * @author Lucas Smaniotto
  */
 public class SQLiteConnection {
     private Connection connection;

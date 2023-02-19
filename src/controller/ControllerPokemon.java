@@ -7,7 +7,8 @@ import model.TrainedPokemon;
 import model.WildPokemon;
 
 /**
- * Classe responsável por controlar as ações do usuário relacionadas ao Objeto Pokemon
+ * Classe responsável por controlar as ações do usuário relacionadas ao Objetos WildPokemon e TrainedPokemon
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ControllerPokemon {
     DAOPokemon daoPokemon = new DAOPokemon();

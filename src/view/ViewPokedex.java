@@ -15,6 +15,7 @@ import model.WildPokemon;
 
 /**
  * Classe que representa a interface gráfica da Pokedex
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewPokedex extends javax.swing.JFrame {
     WildPokemon wildPokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);

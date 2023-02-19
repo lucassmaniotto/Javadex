@@ -2,6 +2,7 @@ import view.ViewPokedex;
 
 /**
  * Classe principal do projeto.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class Main {
     public static void main(String args[]) {

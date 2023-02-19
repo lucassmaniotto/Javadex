@@ -6,7 +6,9 @@ import DAO.DAOTrainerParty;
 import model.TrainedPokemon;
 
 /**
- * Classe responsável por controlar as ações do usuário relacionadas ao Time do treinador.
+ * Classe responsável por controlar as ações do usuário relacionadas ao Time do treinador,
+ * sendo utilizado os objetos TrainedPokemon e Trainer.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ControllerTrainerParty {
     DAOTrainerParty daoTrainerParty = new DAOTrainerParty();

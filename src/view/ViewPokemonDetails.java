@@ -12,6 +12,7 @@ import model.WildPokemon;
 
 /**
  * Classe que representa a interface gráfica de detalhes de um Pokémon.
+ * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewPokemonDetails extends javax.swing.JFrame {
     WildPokemon wildPokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
