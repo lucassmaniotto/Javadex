@@ -23,7 +23,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     static ControllerPokemon controllerPokemon = new ControllerPokemon();
     static List<TrainedPokemon> trainedPokemons = new ArrayList<>();
 
-    ControllerTrainerParty controllerTrainerParty = new ControllerTrainerParty();
+    static ControllerTrainerParty controllerTrainerParty = new ControllerTrainerParty();
 
     public ViewEditTrainer(int idTrainer) {
         initComponents();
@@ -32,6 +32,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         setTitle("Editar Treinador");
         loadTrainerData(idTrainer);
         loadTrainerPokemons(idTrainer);
+        loadTrainerParty(idTrainer);
     }
 
     
@@ -318,7 +319,10 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      */
     private void removeFromPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFromPartyButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) PokemonPartyTable.getModel();
+        int idPokemon = (int) PokemonPartyTable.getValueAt(PokemonPartyTable.getSelectedRow(), 0);
+        int idTrainer = Integer.parseInt(IDTextField.getText());
         model.removeRow(PokemonPartyTable.getSelectedRow());
+        controllerTrainerParty.removePokemonFromTrainerPartyController(idTrainer, idPokemon);
     }//GEN-LAST:event_removeFromPartyButtonActionPerformed
     
     /**
@@ -354,6 +358,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * @param evt
      */
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        saveTrainerParty();
         updateTrainerParty();
         updateTrainer();
     }//GEN-LAST:event_SaveButtonActionPerformed
@@ -399,6 +404,27 @@ public class ViewEditTrainer extends javax.swing.JFrame {
             });
         }
     }
+    
+    /**
+     * Carrega o time do treinador na tabela de time
+     * @param idTrainer ID do treinador
+     */
+    public static void loadTrainerParty(int idTrainer){
+        DefaultTableModel model = (DefaultTableModel) PokemonPartyTable.getModel();
+        model.setNumRows(0);
+        
+        List<TrainedPokemon> party = controllerTrainerParty.getTrainerPartyController(idTrainer);
+        
+        for(TrainedPokemon pokemon : party){
+            model.addRow(new Object[]{
+                pokemon.getId(),
+                pokemon.getName(),
+                pokemon.getFirstType(),
+                pokemon.getSecondType(),
+                pokemon.getTotal(),
+            });
+        }
+    }
 
     /**
      * Atualiza informações do treinador no banco de dados
@@ -423,10 +449,11 @@ public class ViewEditTrainer extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Erro ao atualizar treinador, os campos de número só podem receber valores inteiros!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+    
     /**
-     * Atualiza o grupo do treinador no banco de dados
+     * Salva o time do treinador no banco de dados
      */
-    private void updateTrainerParty(){
+    private void saveTrainerParty(){
         DefaultTableModel model = (DefaultTableModel) PokemonPartyTable.getModel();
         List<TrainedPokemon> party = new ArrayList<>();
         int idTrainer = Integer.parseInt(IDTextField.getText());
@@ -435,7 +462,21 @@ public class ViewEditTrainer extends javax.swing.JFrame {
             TrainedPokemon pokemon = controllerPokemon.getTrainedPokemonByIdController(idPokemon, idTrainer);
             party.add(pokemon);
         }
-        controllerTrainerParty.saveTrainerPartyController(idTrainer, party);
+        // se o pokemon do time não estiver no banco de dados, ele é adicionado
+        for (TrainedPokemon pokemon : party) {
+            if (!controllerTrainerParty.checkTrainerPartyController(pokemon.getId(), idTrainer)){
+                controllerTrainerParty.saveTrainerPartyController(idTrainer, party);
+            }
+        }
+    }
+
+    /**
+     * Atualiza o time do treinador na tabela
+     */
+    private void updateTrainerParty(){
+        DefaultTableModel model = (DefaultTableModel) PokemonPartyTable.getModel();
+        model.setNumRows(0);
+        loadTrainerParty(trainer.getId());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -449,7 +490,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     private javax.swing.JLabel NameLabel;
     private javax.swing.JTextField NameTextField;
     private javax.swing.JLabel PartyLabel;
-    private javax.swing.JTable PokemonPartyTable;
+    private static javax.swing.JTable PokemonPartyTable;
     private javax.swing.JLabel PokemonsLabel;
     private javax.swing.JComboBox<String> RegionsComboBox;
     private javax.swing.JLabel RegionsLabel;
