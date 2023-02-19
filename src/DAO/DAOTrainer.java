@@ -161,6 +161,11 @@ public class DAOTrainer extends SQLiteConnection {
         }
     }
 
+    /**
+     * Remove o vinculo de um treinador com seus pokemons
+     * quando é excluido pelo seu ID
+     * @param id int - ID do treinador a ser removido
+     */
     public void removeTrainerPokemons(int id) {
         connect();
 
@@ -170,6 +175,37 @@ public class DAOTrainer extends SQLiteConnection {
 
         try {
             preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            disconnect();
+        }
+    }
+
+    /**
+     * Atualiza um treinador no banco de dados
+     * @param int idTrainer - Treinador a ser atualizado
+     * @param String region - Região do treinador
+     * @param int age - Idade do treinador
+     * @param int badges - Quantidade de badges do treinador
+     */
+    public void updateTrainer(int idTrainer, String region, int age, int badges) {
+        connect();
+
+        String sql = "UPDATE T_TRAINER SET "
+                    + "TRAINER_REGION = ?, "
+                    + "TRAINER_AGE = ?, "
+                    + "TRAINER_BADGES = ? "
+                    + "WHERE PK_TRAINER_ID = ?";
+
+        PreparedStatement preparedStatement = createPreparedStatement(sql);
+
+        try {
+            preparedStatement.setString(1, region);
+            preparedStatement.setInt(2, age);
+            preparedStatement.setInt(3, badges);
+            preparedStatement.setInt(4, idTrainer);
             preparedStatement.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);

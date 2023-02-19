@@ -18,8 +18,8 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     ControllerTrainer controllerTrainer = new ControllerTrainer();
     Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
     
-    ControllerPokemon controllerPokemon = new ControllerPokemon();
-    List<TrainedPokemon> trainedPokemons = new ArrayList<>();
+    static ControllerPokemon controllerPokemon = new ControllerPokemon();
+    static List<TrainedPokemon> trainedPokemons = new ArrayList<>();
 
     public ViewEditTrainer(int idTrainer) {
         initComponents();
@@ -335,7 +335,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * @param evt
      */
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-        // TODO add your handling code here:
+        updateTrainer();
     }//GEN-LAST:event_SaveButtonActionPerformed
     
     /**
@@ -363,7 +363,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * Carrega os pokemons do treinador na tabela de pokemons treinados
      * @param idTrainer ID do treinador
      */
-    private void loadTrainerPokemons(int idTrainer){
+    public static void loadTrainerPokemons(int idTrainer){
         DefaultTableModel model = (DefaultTableModel) TrainedPokemonsTable.getModel();
         model.setNumRows(0);
 
@@ -378,7 +378,18 @@ public class ViewEditTrainer extends javax.swing.JFrame {
                 pokemon.getTotal(),
             });
         }
+    }
 
+    /**
+     * Atualiza informações do treinador no banco de dados
+     */
+    private void updateTrainer(){
+        int id = Integer.parseInt(IDTextField.getText());
+        String region = RegionsComboBox.getSelectedItem().toString();
+        int age = Integer.parseInt(AgeTextField.getText());
+        int badges = Integer.parseInt(BagdesTextField.getText());
+        controllerTrainer.updateTrainerController(id, region, age, badges);
+        ViewTrainers.updateTable();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -398,7 +409,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     private javax.swing.JLabel RegionsLabel;
     private javax.swing.JButton SaveButton;
     private javax.swing.JLabel TitleLabel;
-    private javax.swing.JTable TrainedPokemonsTable;
+    private static javax.swing.JTable TrainedPokemonsTable;
     private javax.swing.JButton addToPartyButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

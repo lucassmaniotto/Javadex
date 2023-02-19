@@ -341,6 +341,7 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Pokemon registrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             updateFieldsOnSave();
             ViewPokedex.updateTable();
+            ViewLinkPokemon.loadWildPokemons();
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao cadastrar usuário!", "Erro",JOptionPane.ERROR_MESSAGE);
         }

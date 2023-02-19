@@ -297,7 +297,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         } 
     }
 
-    /*
+    /**
      * Carrega os pokemons do treinador do banco de dados
      * @param id ID do treinador
      */
@@ -353,6 +353,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
             loadTrainedPokemons(idTrainer);
             loadWildPokemons();
             ViewPokedex.updateTable();
+            ViewEditTrainer.loadTrainerPokemons(idTrainer);
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao adicionar pokemon!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
@@ -371,6 +372,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
             loadTrainedPokemons(idTrainer);
             loadWildPokemons();
             ViewPokedex.updateTable();
+            ViewEditTrainer.loadTrainerPokemons(idTrainer);
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao libertar o pokemon!", "Erro", JOptionPane.ERROR_MESSAGE);
         }

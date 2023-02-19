@@ -52,4 +52,15 @@ public class ControllerTrainer {
         this.daoTrainer.removeTrainer(idTrainer);
         this.daoTrainer.removeTrainerPokemons(idTrainer);
     }
+
+    /**
+     * Atualiza um treinador no banco de dados
+     * @param int idTrainer - Treinador a ser atualizado
+     * @param String region - Região do treinador
+     * @param int age - Idade do treinador
+     * @param int badges - Quantidade de badges do treinador
+     */
+    public void updateTrainerController(int idTrainer, String region, int age, int badges) {
+        this.daoTrainer.updateTrainer(idTrainer, region, age, badges);
+    }
 }
