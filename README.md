@@ -15,7 +15,7 @@ Projeto feito para o Trabalho Final da disciplina de Programação I da [Univers
 
 Javadéx é um projeto 100% em Java que consiste na implementação de uma Pokedéx do Anime Pokémon, utilizando conceitos de Herança, Polimorfismo, Classes Abstratas, arquitetura MVC, NetBeans para Front-end, bibliotecas do SQL, Swing e Regex e Banco de Dados com tabelas relacionadas.
 
-![image](https://user-images.githubusercontent.com/101435037/219979526-e7ab90d8-5da4-49c8-b85c-9a977826af60.png)
+![image](https://user-images.githubusercontent.com/101435037/219979526-e7ab90d8-5da4-49c8-b85c-9a977826af60.png#vitrinedev)
 
 ### ▶️ Executando o projeto
 Para execução do projeto, basta rodar o arquivo Main.java nas IDE's NetBeans ou VSCode, que está localizado na pasta src.
