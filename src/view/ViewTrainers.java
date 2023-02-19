@@ -428,8 +428,11 @@ public class ViewTrainers extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Metodo que altera a imagem do treinador conforme o treinador selecionado na tabela.
+     * @param evt
+     */
     private void ChangeTrainerImage(ListSelectionEvent evt) {
-
         try{
             TrainerImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/" + TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 1) + ".png")));   
         }
@@ -437,9 +440,6 @@ public class ViewTrainers extends javax.swing.JFrame {
             TrainerImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/BugCatcher.png")));   
         }
     }
-
-
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EditTrainerButton;
