@@ -56,7 +56,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
 
         BadgesLabel.setText("Insígnias:");
 
-        BagdesTextField.setToolTipText("OBS: o número máx. de insígnias são 6 por treinador");
+        BagdesTextField.setToolTipText("Insira a quantidade de insígnias do treinador");
 
         RegionsLabel.setText("Região:");
 
@@ -183,7 +183,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
             trainer.setBadges(Integer.parseInt(BagdesTextField.getText()));
 
         } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Os campos de Idade e Insígneas devem ser preenchidos com números inteiros!", "Erro",JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Os campos de Idade e Insígnias devem ser preenchidos com números inteiros!", "Erro",JOptionPane.ERROR_MESSAGE);
             AgeTextField.setText("10");
             BagdesTextField.setText("0");
             return;

@@ -131,7 +131,6 @@ public class ViewTrainers extends javax.swing.JFrame {
 
         RegisterTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/add-trainer.png"))); // NOI18N
         RegisterTrainerButton.setText("ADICIONAR TREINADOR");
-        RegisterTrainerButton.setToolTipText("");
         RegisterTrainerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RegisterTrainerButtonActionPerformed(evt);

@@ -381,9 +381,14 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * @param evt
      */
     private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-        saveTrainerParty();
-        updateTrainerParty();
-        updateTrainer();
+        try {
+            saveTrainerParty();
+            updateTrainerParty();
+            updateTrainer();
+            JOptionPane.showMessageDialog(null, "Dados salvos com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro ao salvar os dados do treinador!", "Erro", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_SaveButtonActionPerformed
     
     /**
@@ -485,7 +490,6 @@ public class ViewEditTrainer extends javax.swing.JFrame {
             TrainedPokemon pokemon = controllerPokemon.getTrainedPokemonByIdController(idPokemon, idTrainer);
             party.add(pokemon);
         }
-        // se o pokemon do time não estiver no banco de dados, ele é adicionado
         for (TrainedPokemon pokemon : party) {
             if (!controllerTrainerParty.checkTrainerPartyController(pokemon.getId(), idTrainer)){
                 controllerTrainerParty.saveTrainerPartyController(idTrainer, party);

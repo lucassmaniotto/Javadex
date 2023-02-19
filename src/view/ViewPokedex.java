@@ -264,7 +264,7 @@ public class ViewPokedex extends javax.swing.JFrame {
 
         try {
             if (FilterComboBox.getSelectedItem().equals("ID")) {
-            idSearch(model, FilterTextField.getText());
+                idSearch(model, FilterTextField.getText());
             } else if (FilterComboBox.getSelectedItem().equals("Nome")) {
                 nameSearch(model, FilterTextField.getText());
             } else if (FilterComboBox.getSelectedItem().equals("Tipo")) {
