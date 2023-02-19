@@ -319,10 +319,14 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      */
     private void removeFromPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFromPartyButtonActionPerformed
         DefaultTableModel model = (DefaultTableModel) PokemonPartyTable.getModel();
-        int idPokemon = (int) PokemonPartyTable.getValueAt(PokemonPartyTable.getSelectedRow(), 0);
-        int idTrainer = Integer.parseInt(IDTextField.getText());
-        model.removeRow(PokemonPartyTable.getSelectedRow());
-        controllerTrainerParty.removePokemonFromTrainerPartyController(idTrainer, idPokemon);
+        try {
+            int idPokemon = (int) PokemonPartyTable.getValueAt(PokemonPartyTable.getSelectedRow(), 0);
+            int idTrainer = Integer.parseInt(IDTextField.getText());
+            model.removeRow(PokemonPartyTable.getSelectedRow());
+            controllerTrainerParty.removePokemonFromTrainerPartyController(idTrainer, idPokemon);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Selecione um pokemon para remover!", "Atenção", JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_removeFromPartyButtonActionPerformed
     
     /**
@@ -330,26 +334,29 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * @param evt
      */
     private void addToPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToPartyButtonActionPerformed
-        int idPokemon = (int) TrainedPokemonsTable.getValueAt(TrainedPokemonsTable.getSelectedRow(), 0);
         DefaultTableModel model = (DefaultTableModel) PokemonPartyTable.getModel();
-
-        for (int i = 0; i < model.getRowCount(); i++) {
-            if (idPokemon == (int) model.getValueAt(i, 0)) {
-                JOptionPane.showMessageDialog(null, "O pokemon já está no grupo do treinador!", "Atenção", JOptionPane.WARNING_MESSAGE);
-                return;
+        try{       
+            int idPokemon = (int) TrainedPokemonsTable.getValueAt(TrainedPokemonsTable.getSelectedRow(), 0);
+            for (int i = 0; i < model.getRowCount(); i++) {
+                if (idPokemon == (int) model.getValueAt(i, 0)) {
+                    JOptionPane.showMessageDialog(null, "O pokemon já está no grupo do treinador!", "Atenção", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
             }
-        }
-        
-        if (model.getRowCount() < 6){
-            model.addRow(new Object[]{
-                idPokemon,
-                controllerPokemon.getWildPokemonByIdController(idPokemon).getName(),
-                controllerPokemon.getWildPokemonByIdController(idPokemon).getFirstType(),
-                controllerPokemon.getWildPokemonByIdController(idPokemon).getSecondType(),
-                controllerPokemon.getWildPokemonByIdController(idPokemon).getTotal()
-            });
-        } else {
-            JOptionPane.showMessageDialog(null, "O grupo do treinador já está completo!", "Atenção", JOptionPane.WARNING_MESSAGE);
+            
+            if (model.getRowCount() < 6){
+                model.addRow(new Object[]{
+                    idPokemon,
+                    controllerPokemon.getWildPokemonByIdController(idPokemon).getName(),
+                    controllerPokemon.getWildPokemonByIdController(idPokemon).getFirstType(),
+                    controllerPokemon.getWildPokemonByIdController(idPokemon).getSecondType(),
+                    controllerPokemon.getWildPokemonByIdController(idPokemon).getTotal()
+                });
+            } else {
+                JOptionPane.showMessageDialog(null, "O grupo do treinador já está completo!", "Atenção", JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Selecione um pokemon para adicionar!", "Atenção", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_addToPartyButtonActionPerformed
     
