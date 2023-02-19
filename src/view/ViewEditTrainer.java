@@ -18,7 +18,7 @@ import model.Trainer;
  */
 public class ViewEditTrainer extends javax.swing.JFrame {
     ControllerTrainer controllerTrainer = new ControllerTrainer();
-    Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
+    Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());
     
     static ControllerPokemon controllerPokemon = new ControllerPokemon();
     static List<TrainedPokemon> trainedPokemons = new ArrayList<>();

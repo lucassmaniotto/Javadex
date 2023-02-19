@@ -17,7 +17,7 @@ import model.Trainer;
  * Classe que representa a interface gráfica de visualização de treinadores.
  */
 public class ViewTrainers extends javax.swing.JFrame {
-    Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
+    Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());
     static ControllerTrainer controllerTrainer = new ControllerTrainer();
     static List<Trainer> trainersList = new ArrayList<>();
     static ControllerTrainerParty controllerTrainerParty = new ControllerTrainerParty();

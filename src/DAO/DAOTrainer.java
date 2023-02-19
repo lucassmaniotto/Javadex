@@ -64,7 +64,7 @@ public class DAOTrainer extends SQLiteConnection {
         String sql = "SELECT * FROM T_TRAINER WHERE PK_TRAINER_ID = ?";
 
         PreparedStatement preparedStatement = createPreparedStatement(sql);
-        Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
+        Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());
         try {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -122,7 +122,7 @@ public class DAOTrainer extends SQLiteConnection {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
+                Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());
                 trainer.setId(resultSet.getInt("PK_TRAINER_ID"));
                 trainer.setName(resultSet.getString("TRAINER_NAME"));
                 trainer.setAge(resultSet.getInt("TRAINER_AGE"));

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Classe que representa um treinador Pokémon.
@@ -11,16 +12,14 @@ public class Trainer {
     private int age;
     private int badges;
     private String region;
-    private int pokemonCount;
-    private ArrayList<TrainedPokemon> pokemonList = new ArrayList<TrainedPokemon>();
+    private List<TrainedPokemon> pokemonList = new ArrayList<TrainedPokemon>();
     private TrainedPokemon[] party = new TrainedPokemon[6];
     
-    public Trainer(String name, int age, int badges, String region, int pokemonCount) {
+    public Trainer(String name, int age, int badges, String region) {
         this.name = name;
         this.age = age;
         this.badges = badges;
         this.region = region;
-        this.pokemonCount = pokemonCount;
     }
     
     public int getId() {
@@ -43,11 +42,7 @@ public class Trainer {
         return region;
     }
 
-    public int getPokemonCount() {
-        return pokemonCount;
-    }
-
-    public ArrayList<TrainedPokemon> getPokemonList() {
+    public List<TrainedPokemon> getPokemonList() {
         return pokemonList;
     }
 
@@ -75,11 +70,7 @@ public class Trainer {
         this.region = region;
     }
 
-    public void setPokemonCount(int pokemonCount) {
-        this.pokemonCount = pokemonCount;
-    }
-
-    public void setPokemonList(ArrayList<TrainedPokemon> pokemonList) {
+    public void setPokemonList(List<TrainedPokemon> pokemonList) {
         this.pokemonList = pokemonList;
     }
 
