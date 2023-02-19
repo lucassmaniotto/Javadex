@@ -6,6 +6,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.swing.JOptionPane;
+import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.DefaultTableModel;
 
 import controller.ControllerTrainer;
@@ -50,6 +51,12 @@ public class ViewTrainers extends javax.swing.JFrame {
         RemoveTrainerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        TrainersTable.getSelectionModel().addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                ChangeTrainerImage(evt);
+            }
+        });
 
         FilterTextField.addFocusListener(new java.awt.event.FocusAdapter(){
             public void focusGained(java.awt.event.FocusEvent evt){
@@ -420,6 +427,19 @@ public class ViewTrainers extends javax.swing.JFrame {
             FilterTextField.setText("O que você procura?");
         }
     }
+
+    private void ChangeTrainerImage(ListSelectionEvent evt) {
+
+        try{
+            TrainerImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/" + TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 1) + ".png")));   
+        }
+        catch (Exception e){
+            TrainerImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/BugCatcher.png")));   
+        }
+    }
+
+
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton EditTrainerButton;
