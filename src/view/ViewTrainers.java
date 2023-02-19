@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 import controller.ControllerTrainer;
+import controller.ControllerTrainerParty;
 import model.Regions;
 import model.Trainer;
 
@@ -19,6 +20,7 @@ public class ViewTrainers extends javax.swing.JFrame {
     Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString(), 0);
     static ControllerTrainer controllerTrainer = new ControllerTrainer();
     static List<Trainer> trainersList = new ArrayList<>();
+    static ControllerTrainerParty controllerTrainerParty = new ControllerTrainerParty();
 
     public ViewTrainers() {
         initComponents();
@@ -263,6 +265,7 @@ public class ViewTrainers extends javax.swing.JFrame {
         try {
             int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
             controllerTrainer.removeTrainerController(id);
+            controllerTrainerParty.removeAllTrainerPartyController(id);
             updateTable();
             ViewPokedex.updateTable();
             ViewLinkPokemon.loadWildPokemons();

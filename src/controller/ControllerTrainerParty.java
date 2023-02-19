@@ -47,4 +47,8 @@ public class ControllerTrainerParty {
     public boolean checkTrainerPartyController(int idPokemon, int idTrainer) {
         return this.daoTrainerParty.checkIfPokemonAlreadyExists(idPokemon, idTrainer);
     }
+
+    public void removeAllTrainerPartyController(int idTrainer) {
+        this.daoTrainerParty.removeAllTrainerParty(idTrainer);
+    }
 }

@@ -139,4 +139,19 @@ public class DAOTrainerParty extends SQLiteConnection {
         }
         return false;
     }
+
+    public void removeAllTrainerParty(int idTrainer) {
+        connect();
+        String sql = "DELETE FROM T_TRAINER_PARTY WHERE FK_TRAINER_ID = ?";
+
+        try {
+            PreparedStatement preparedStatement = createPreparedStatement(sql);
+            preparedStatement.setInt(1, idTrainer);
+            preparedStatement.executeUpdate();
+        } catch (SQLException ex) {
+            Logger.getLogger(DAOPokemon.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            disconnect();
+        }
+    }
 }
