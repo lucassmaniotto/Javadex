@@ -33,16 +33,16 @@ O programa consiste em uma tela principal Pokédex, na qual possui uma tabela qu
 ![image](https://user-images.githubusercontent.com/101435037/219979976-b1774116-502f-4c43-8840-55e5a0d48721.png)
 
 #### Adicionar Pokémon Selvagem
-Também podemos adicionar novos Pokémons ao precionar o botão "Adicionar Pokémon", que abre uma tela com um pequeno formulário.
+Também podemos adicionar novos Pokémons ao pressionar o botão "Adicionar Pokémon", que abre uma tela com um pequeno formulário.
 
 ![image](https://user-images.githubusercontent.com/101435037/219980121-5c48b8c0-3f02-4b44-9442-c6367abfa3b0.png)
 
 Caso algum Pokémon que não seja os 151 primeiros for registrado, sua imagem será setada com a do MissigNo na tabela da Pokedéx e nos detalhes.
 
-![image](https://user-images.githubusercontent.com/101435037/219980177-8e4412a9-91c2-4cc3-8481-fb1349d9ec04.png)
+![missingno](https://user-images.githubusercontent.com/101435037/220159675-8fe55a6c-7d1d-4c3b-b3c5-0c509a62b958.png)
 
 #### Treinadores
-A segunda tela pode ser acessada no botão "Visualizar Treinadores" que também possui funcionalidades semelhantes aos da Pokédex, com filtros e tabela de treinadores.
+A segunda tela pode ser acessada no botão "Visualizar Treinadores", que também possui funcionalidades semelhantes aos da Pokédex, com filtros e tabela de treinadores.
 
 ![image](https://user-images.githubusercontent.com/101435037/219980630-4814c035-23c3-404b-aa4a-d63ddc8da923.png)
 
@@ -61,21 +61,23 @@ Ao pressionar o botão "Adicionar Treinador", a tela de cadastro é aberta com u
 ![image](https://user-images.githubusercontent.com/101435037/219980913-e92d6e53-7c60-4df3-a6f3-674ce063b88b.png)
 
 #### Editar um treinador
-Para as próximas funcionalidades, é preciso primeiro selecioanr uma linha da tabela para continuar.
+Para as próximas funcionalidades, é preciso primeiro selecionar uma linha da tabela para continuar.
 
 ![image](https://user-images.githubusercontent.com/101435037/219980990-42acfde0-c131-4511-a9ac-bf0c52ae9734.png)
 
-Selecionando um treinador da lista e apertando no botão "Editar Treinador", podemos mudar sua Região, Idade e Insígnias, além de poder administrar su time com os Pokémons Treinados.
+Selecionando um treinador da lista e apertando no botão "Editar Treinador" (ou clicando duas vezes em um registro da tabela), podemos mudar sua Região, Idade e Insígnias, além de poder administrar seu time com os Pokémons Treinados.
 
-![image](https://user-images.githubusercontent.com/101435037/219981094-0f794426-0fb2-49f4-aaed-1b8bae873c50.png)
+![image](https://user-images.githubusercontent.com/101435037/220160470-11cb9858-f574-4c79-b4e5-5d1493c9753e.png)
 
 #### Vincular Pokémons aos Treinadores
 Selecionando um treinador da lista e apertando no botão "Vincular Pokémons aos Treinadores", podemos capturar os Pokémons selvagens que estão disponíveis e torná-los treinados, ou soltar eles na natureza, virando um Pokémon selvagem.
 
-![image](https://user-images.githubusercontent.com/101435037/219981182-7cdbe1a7-473f-464b-bd22-3cb45773cc44.png)
+![image](https://user-images.githubusercontent.com/101435037/220160510-48de3e5a-2aa2-438a-be6b-4f3b452ecf4e.png)
 
 #### Remover Treinador
-Ao selecionar um registro da tabela e precissonar o botão Remover Treinador, é excluido seu registro e seus Pokémons treinados se tornam Pokémons selvagens.
+Ao selecionar um registro da tabela e pressionar o botão Remover Treinador, é excluido seu registro e seus Pokémons treinados se tornam Pokémons selvagens.
+
+![image](https://user-images.githubusercontent.com/101435037/220163133-84dac79d-740c-4908-96bd-08c0c373daf9.png)
 
 ## 🤝 Autores
 
