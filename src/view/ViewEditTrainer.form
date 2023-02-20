@@ -23,7 +23,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Component id="jPanel1" min="-2" pref="894" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -41,6 +41,10 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="TitleLabel" min="-2" pref="909" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -53,15 +57,6 @@
                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                           <Component id="jSeparator3" min="-2" pref="855" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <Component id="TitleLabel" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-              </Group>
-              <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="144" max="-2" attributes="0"/>
                           <Component id="PokemonsLabel" min="-2" max="-2" attributes="0"/>
@@ -84,33 +79,11 @@
                           <Component id="jScrollPane3" min="-2" pref="329" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="346" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="AgeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="RegionsLabel" min="-2" pref="44" max="-2" attributes="0"/>
-                              <Component id="NameLabel" min="-2" pref="38" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="NameTextField" min="-2" pref="87" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="IDLabel" min="-2" pref="17" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="IDTextField" min="-2" pref="40" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="RegionsComboBox" alignment="0" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="AgeTextField" min="-2" pref="40" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="BadgesLabel" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="BagdesTextField" min="-2" pref="40" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
+                          <EmptySpace min="-2" pref="279" max="-2" attributes="0"/>
+                          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,26 +91,9 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="TitleLabel" min="-2" pref="69" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="NameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="NameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="IDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="IDTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="RegionsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="RegionsComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="AgeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="AgeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BadgesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="BagdesTextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                  <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="PartyLabel" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -179,52 +135,6 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="Editar Treinador"/>
           </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="NameLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Nome:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="NameTextField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-            <Property name="toolTipText" type="java.lang.String" value="Digite o nome do treinador"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="AgeLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Idade:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="AgeTextField">
-          <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="Informe a idade do treinador"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="BadgesLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Ins&#xed;gnias:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="BagdesTextField">
-          <Properties>
-            <Property name="toolTipText" type="java.lang.String" value="OBS: o n&#xfa;mero m&#xe1;x. de ins&#xed;gnias s&#xe3;o 6 por treinador"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="RegionsLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Regi&#xe3;o:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JComboBox" name="RegionsComboBox">
-          <Properties>
-            <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] {Regions.KANTO.toString(), Regions.JOHTO.toString(), Regions.HOENN.toString(), Regions.SINNOH.toString(), Regions.UNOVA.toString(), Regions.KALOS.toString(), Regions.ALOLA.toString(), Regions.GALAR.toString(), Regions.UNKNOWN.toString()})" type="code"/>
-            </Property>
-          </Properties>
-          <AuxValues>
-            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
-          </AuxValues>
         </Component>
         <Container class="javax.swing.JScrollPane" name="jScrollPane1">
           <AuxValues>
@@ -393,16 +303,143 @@
         </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator3">
         </Component>
-        <Component class="javax.swing.JLabel" name="IDLabel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ID:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JTextField" name="IDTextField">
-          <Properties>
-            <Property name="editable" type="boolean" value="false"/>
-          </Properties>
-        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="AgeLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="RegionsLabel" min="-2" pref="44" max="-2" attributes="0"/>
+                          <Component id="NameLabel" min="-2" pref="38" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="NameTextField" min="-2" pref="87" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="IDLabel" min="-2" pref="17" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="IDTextField" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="RegionsComboBox" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="AgeTextField" min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="BadgesLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="BagdesTextField" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="ImageTrainerLabel" min="-2" pref="80" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="NameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="NameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IDTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="IDLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="RegionsLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="RegionsComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="AgeTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="AgeLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BadgesLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="BagdesTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="ImageTrainerLabel" min="-2" pref="80" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JTextField" name="AgeTextField">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="Informe a idade do treinador"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="IDTextField">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="RegionsComboBox">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] {Regions.KANTO.toString(), Regions.JOHTO.toString(), Regions.HOENN.toString(), Regions.SINNOH.toString(), Regions.UNOVA.toString(), Regions.KALOS.toString(), Regions.ALOLA.toString(), Regions.GALAR.toString(), Regions.UNKNOWN.toString()})" type="code"/>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="AgeLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Idade:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="ImageTrainerLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+                    <EtchetBorder/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="NameLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nome:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="BadgesLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Ins&#xed;gnias:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="NameTextField">
+              <Properties>
+                <Property name="editable" type="boolean" value="false"/>
+                <Property name="toolTipText" type="java.lang.String" value="Digite o nome do treinador"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="BagdesTextField">
+              <Properties>
+                <Property name="toolTipText" type="java.lang.String" value="OBS: o n&#xfa;mero m&#xe1;x. de ins&#xed;gnias s&#xe3;o 6 por treinador"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="RegionsLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Regi&#xe3;o:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="IDLabel">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ID:"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

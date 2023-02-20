@@ -59,6 +59,14 @@ public class ViewTrainers extends javax.swing.JFrame {
             }
         });
 
+        TrainersTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                if (evt.getClickCount() == 2) {
+                    TrainersTableMouseClicked(evt);
+                }
+            }
+        });
+
         FilterTextField.addFocusListener(new java.awt.event.FocusAdapter(){
             public void focusGained(java.awt.event.FocusEvent evt){
                 FilterTextFieldFocusGaned(evt);
@@ -438,6 +446,19 @@ public class ViewTrainers extends javax.swing.JFrame {
         }
         catch (Exception e){
             TrainerImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/BugCatcher.png")));   
+        }
+    }
+
+    /**
+     * Quando clicado duas vezes na linha selecionada da TrainersTable,
+     * abre a tela de edição de treinador.
+     * @param evt
+     */
+    private void TrainersTableMouseClicked(java.awt.event.MouseEvent evt) {
+        if (evt.getClickCount() == 2) {
+            int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
+            ViewEditTrainer editTrainer = new ViewEditTrainer(id);
+            editTrainer.setVisible(true);
         }
     }
 
