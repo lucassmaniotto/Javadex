@@ -289,6 +289,7 @@ public class ViewTrainers extends javax.swing.JFrame {
             controllerTrainerParty.removeAllTrainerPartyController(id);
             updateTable();
             JOptionPane.showMessageDialog(null, "Treinador removido com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            ViewEditTrainer.clearTables();
             ViewPokedex.updateTable();
             ViewLinkPokemon.loadWildPokemons();
             ViewLinkPokemon.loadTrainedPokemons(id);

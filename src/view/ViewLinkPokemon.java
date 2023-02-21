@@ -315,20 +315,22 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * Carrega os pokemons selvagens do banco de dados
      */
     public static void loadWildPokemons(){
-        DefaultTableModel model = (DefaultTableModel) WildPokemonsTable.getModel();
-        model.setRowCount(0);
+        if(WildPokemonsTable != null){        
+            DefaultTableModel model = (DefaultTableModel) WildPokemonsTable.getModel();
+            model.setRowCount(0);
 
-        pokemonsList = controllerPokemon.getWildPokemonsController();
+            pokemonsList = controllerPokemon.getWildPokemonsController();
 
-        for(WildPokemon pokemon : pokemonsList){
-            model.addRow(new Object[]{
-                pokemon.getId(),
-                pokemon.getName(),
-                pokemon.getFirstType(),
-                pokemon.getSecondType(),
-                pokemon.getTotal()
-            });
-        } 
+            for(WildPokemon pokemon : pokemonsList){
+                model.addRow(new Object[]{
+                    pokemon.getId(),
+                    pokemon.getName(),
+                    pokemon.getFirstType(),
+                    pokemon.getSecondType(),
+                    pokemon.getTotal()
+                });
+            } 
+        }
     }
 
     /**
@@ -336,19 +338,21 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * @param id ID do treinador
      */
     public static void loadTrainedPokemons(int id){
-        DefaultTableModel model = (DefaultTableModel) TrainerPokemonsTable.getModel();
-        model.setRowCount(0);
+        if(TrainerPokemonsTable != null){
+            DefaultTableModel model = (DefaultTableModel) TrainerPokemonsTable.getModel();
+            model.setRowCount(0);
 
-        trainedPokemonsList = controllerPokemon.getTrainedPokemonsController(id);
+            trainedPokemonsList = controllerPokemon.getTrainedPokemonsController(id);
 
-        for(TrainedPokemon pokemon : trainedPokemonsList){
-            model.addRow(new Object[]{
-                pokemon.getId(),
-                pokemon.getName(),
-                pokemon.getFirstType(),
-                pokemon.getSecondType(),
-                pokemon.getTotal()
-            });
+            for(TrainedPokemon pokemon : trainedPokemonsList){
+                model.addRow(new Object[]{
+                    pokemon.getId(),
+                    pokemon.getName(),
+                    pokemon.getFirstType(),
+                    pokemon.getSecondType(),
+                    pokemon.getTotal()
+                });
+            }
         }
     }
 

@@ -430,6 +430,14 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     /**
+     * Fecha a janela caso o treinador seja excluído na
+     * janela ViewTrainers
+     */
+    public static void clearTables(){
+        ExitButton.doClick();
+    }
+
+    /**
      * Carrega os dados do treinador no formulário
      * @param idTrainer ID do treinador
      */
@@ -557,7 +565,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
     private javax.swing.JTextField AgeTextField;
     private javax.swing.JLabel BadgesLabel;
     private javax.swing.JTextField BagdesTextField;
-    private javax.swing.JButton ExitButton;
+    private static javax.swing.JButton ExitButton;
     private javax.swing.JLabel IDLabel;
     private javax.swing.JTextField IDTextField;
     private javax.swing.JLabel ImageTrainerLabel;
