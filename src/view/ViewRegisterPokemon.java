@@ -20,6 +20,10 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
         setTitle("Cadastro de Pokémon");
     }
 
+    /**
+     * Método de inicialização dos componentes da interface gráfica.
+     * Criado automaticamente pelo NetBeans.
+     */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 

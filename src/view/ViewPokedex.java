@@ -31,6 +31,10 @@ public class ViewPokedex extends javax.swing.JFrame {
         updateTable();
     }
 
+    /**
+     * Método de inicialização dos componentes da interface gráfica.
+     * Criado automaticamente pelo NetBeans.
+     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -389,7 +393,6 @@ public class ViewPokedex extends javax.swing.JFrame {
         }
     }
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton FilterButton;
     private javax.swing.JComboBox<String> FilterComboBox;
@@ -403,5 +406,4 @@ public class ViewPokedex extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
-
 }

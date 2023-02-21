@@ -36,7 +36,10 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         loadTrainerParty(idTrainer);
     }
 
-    
+    /**
+     * Método de inicialização dos componentes da interface gráfica.
+     * Criado automaticamente pelo NetBeans.
+     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

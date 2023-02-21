@@ -50,6 +50,10 @@ public class ControllerTrainerParty {
         return this.daoTrainerParty.checkIfPokemonAlreadyExists(idPokemon, idTrainer);
     }
 
+    /**
+     * Remove todos os Pokémons do Time do treinador, recebendo o ID do treinador,
+     * @param idTrainer ID do treinador.
+     */
     public void removeAllTrainerPartyController(int idTrainer) {
         this.daoTrainerParty.removeAllTrainerParty(idTrainer);
     }

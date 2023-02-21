@@ -33,6 +33,10 @@ public class ViewTrainers extends javax.swing.JFrame {
         updateTable();
     }
     
+    /**
+     * Método de inicialização dos componentes da interface gráfica.
+     * Criado automaticamente pelo NetBeans.
+     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -323,8 +327,6 @@ public class ViewTrainers extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_FilterButtonActionPerformed
-
-
     
     /**
      * Busca os treinadores pelo ID

@@ -140,6 +140,11 @@ public class DAOPokemon extends SQLiteConnection {
         return wildPokemonsList;
     }
 
+    /**
+     * Retorna um pokemon selvagem do banco de dados a partir do ID
+     * @param id int - ID do pokemon a ser retornado
+     * @return WildPokemon - Pokemon selvagem
+     */
     public WildPokemon getWildPokemonById(int id) {
         WildPokemon wildPokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
         

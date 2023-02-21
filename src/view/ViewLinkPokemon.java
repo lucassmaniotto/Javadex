@@ -25,10 +25,8 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
     static List<Trainer> trainersList = new ArrayList<>();
 
     static ControllerPokemon controllerPokemon = new ControllerPokemon();
-
     WildPokemon pokemon = new WildPokemon("", Types.NONE.toString(), Types.NONE.toString(), 0, 0, 0, 0, 0, 0, 0, 0);
     static List<WildPokemon> pokemonsList = new ArrayList<>();
-
     TrainedPokemon trainedPokemon = new TrainedPokemon("", Types.NONE.toString(), Types.NONE.toString(), 0, 0, 0, 0, 0, 0, 0, 0);
     static List<TrainedPokemon> trainedPokemonsList = new ArrayList<>();
     
@@ -42,7 +40,10 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         loadTrainedPokemons(idTrainer);
     }
 
-    
+    /**
+     * Método de inicialização dos componentes da interface gráfica.
+     * Criado automaticamente pelo NetBeans.
+     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -361,6 +362,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(id);
         viewPokemonDetails.setVisible(true);
     }
+
     /**
      * Método que quando clicado na linha selecionada da tabela TrainerPokemonsTable
      * abre a tela ViewPokemonDetails do pokemon selecionado
@@ -409,8 +411,6 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Erro ao libertar o pokemon!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_RemovePokemonButtonActionPerformed
-
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IDLabel;

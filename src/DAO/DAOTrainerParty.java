@@ -141,6 +141,10 @@ public class DAOTrainerParty extends SQLiteConnection {
         return false;
     }
 
+    /**
+     * Remove todos os Pokémons do Time do treinador, recebendo o ID do treinador
+     * @param idTrainer ID do treinador.
+     */
     public void removeAllTrainerParty(int idTrainer) {
         connect();
         String sql = "DELETE FROM T_TRAINER_PARTY WHERE FK_TRAINER_ID = ?";

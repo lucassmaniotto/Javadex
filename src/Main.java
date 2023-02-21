@@ -1,7 +1,7 @@
 import view.ViewPokedex;
 
 /**
- * Classe principal do projeto.
+ * Classe principal do projeto, responsável por iniciar a aplicação.
  * @author Lucas Smaniotto & Valtemir Junior
  */
 public class Main {

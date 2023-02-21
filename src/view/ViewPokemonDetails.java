@@ -28,6 +28,10 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         loadPokemonData(id);
     }
     
+    /**
+     * Método de inicialização dos componentes da interface gráfica.
+     * Criado automaticamente pelo NetBeans.
+     */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -382,7 +386,7 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
     }
 
     /**
-     * Seta o look and feel da tela
+     * Seta o look and feel customizado na tela
      */
     private void setLookAndFeel() {
         try {
@@ -399,7 +403,8 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
     }
 
     /**
-     * Depois da tela ser carregada, muda a look and feel para Nimbus
+     * Depois da tela ser carregada, muda a look and feel para Nimbus,
+     * não afetando o restante da aplicação
      * @param evt
      */
     private void formWindowOpened(java.awt.event.WindowEvent evt) {
