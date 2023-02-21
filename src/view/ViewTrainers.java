@@ -284,15 +284,17 @@ public class ViewTrainers extends javax.swing.JFrame {
     private void removeTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveTrainerButtonActionPerformed
         try {
             int id = (int) trainersTable.getValueAt(trainersTable.getSelectedRow(), 0);
-            trainersTable.clearSelection();
-            controllerTrainer.removeTrainerController(id);
-            controllerTrainerParty.removeAllTrainerPartyController(id);
-            updateTable();
-            JOptionPane.showMessageDialog(null, "Treinador removido com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-            ViewEditTrainer.clearTables();
-            ViewPokedex.updateTable();
-            ViewLinkPokemon.loadWildPokemons();
-            ViewLinkPokemon.loadTrainedPokemons(id);
+            if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o treinador?", "Atenção", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE) == JOptionPane.YES_OPTION) {
+                trainersTable.clearSelection();
+                controllerTrainer.removeTrainerController(id);
+                controllerTrainerParty.removeAllTrainerPartyController(id);
+                updateTable();
+                JOptionPane.showMessageDialog(null, "Treinador removido com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+                ViewEditTrainer.clearTables();
+                ViewPokedex.updateTable();
+                ViewLinkPokemon.loadWildPokemons();
+                ViewLinkPokemon.loadTrainedPokemons(id);
+            }
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Não há pokemons vinculados ao treinador!", "Atenção", JOptionPane.WARNING_MESSAGE);
         } catch (Exception e) {
