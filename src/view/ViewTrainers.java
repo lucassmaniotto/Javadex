@@ -289,11 +289,9 @@ public class ViewTrainers extends javax.swing.JFrame {
             controllerTrainerParty.removeAllTrainerPartyController(id);
             updateTable();
             JOptionPane.showMessageDialog(null, "Treinador removido com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-            if (!controllerTrainerParty.getTrainerPartyController(id).isEmpty()) {
-                ViewPokedex.updateTable();
-                ViewLinkPokemon.loadWildPokemons();
-                ViewLinkPokemon.loadTrainedPokemons(id);
-            }
+            ViewPokedex.updateTable();
+            ViewLinkPokemon.loadWildPokemons();
+            ViewLinkPokemon.loadTrainedPokemons(id);
         } catch (NullPointerException e) {
             JOptionPane.showMessageDialog(null, "Não há pokemons vinculados ao treinador!", "Atenção", JOptionPane.WARNING_MESSAGE);
         } catch (Exception e) {
