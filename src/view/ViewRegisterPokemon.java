@@ -29,106 +29,106 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        TitleLabel = new javax.swing.JLabel();
-        NameLabel = new javax.swing.JLabel();
-        NameTextField = new javax.swing.JTextField();
-        FirstTypeLabel = new javax.swing.JLabel();
-        FirstTypeComboBox = new javax.swing.JComboBox<>();
-        SecondTypeComboBox = new javax.swing.JComboBox<>();
-        SecondTypeLabel = new javax.swing.JLabel();
-        ShinyCheckBox = new javax.swing.JCheckBox();
-        HeightLabel = new javax.swing.JLabel();
-        WeightLabel = new javax.swing.JLabel();
-        HeightTextField = new javax.swing.JTextField();
-        WeightTextField = new javax.swing.JTextField();
+        titleLabel = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
+        nameTextField = new javax.swing.JTextField();
+        firstTypeLabel = new javax.swing.JLabel();
+        firstTypeComboBox = new javax.swing.JComboBox<>();
+        secondTypeComboBox = new javax.swing.JComboBox<>();
+        secondTypeLabel = new javax.swing.JLabel();
+        shinyCheckBox = new javax.swing.JCheckBox();
+        heightLabel = new javax.swing.JLabel();
+        weightLabel = new javax.swing.JLabel();
+        heightTextField = new javax.swing.JTextField();
+        weightTextField = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        HPLabel = new javax.swing.JLabel();
-        ATQLabel = new javax.swing.JLabel();
-        DEFLabel = new javax.swing.JLabel();
-        SpeedLabel = new javax.swing.JLabel();
+        hPLabel = new javax.swing.JLabel();
+        aTQLabel = new javax.swing.JLabel();
+        dEFLabel = new javax.swing.JLabel();
+        speedLabel = new javax.swing.JLabel();
         sATQLabel = new javax.swing.JLabel();
         sDEFLabel = new javax.swing.JLabel();
-        HPTextField = new javax.swing.JTextField();
-        ATQTextField = new javax.swing.JTextField();
-        DEFTextField = new javax.swing.JTextField();
-        SpeedTextField = new javax.swing.JTextField();
-        TotalLabel = new javax.swing.JLabel();
-        TotalValueLabel = new javax.swing.JLabel();
-        SaveButton = new javax.swing.JButton();
-        ExitButton = new javax.swing.JButton();
+        hPTextField = new javax.swing.JTextField();
+        aTQTextField = new javax.swing.JTextField();
+        dEFTextField = new javax.swing.JTextField();
+        speedTextField = new javax.swing.JTextField();
+        totalLabel = new javax.swing.JLabel();
+        totalValueLabel = new javax.swing.JLabel();
+        saveButton = new javax.swing.JButton();
+        exitButton = new javax.swing.JButton();
         sATQTextField = new javax.swing.JTextField();
         sDEFTextField = new javax.swing.JTextField();
-        IDLabel = new javax.swing.JLabel();
-        IDTextField = new javax.swing.JTextField();
+        iDLabel = new javax.swing.JLabel();
+        iDTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        TitleLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
-        TitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TitleLabel.setText("Cadastro de Pokémon");
+        titleLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleLabel.setText("Cadastro de Pokémon");
 
-        NameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        NameLabel.setText("Nome:");
+        nameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        nameLabel.setText("Nome:");
 
-        NameTextField.setToolTipText("Digite o nome de seu Pokémon");
+        nameTextField.setToolTipText("Digite o nome de seu Pokémon");
 
-        FirstTypeLabel.setText("Tipo 1:");
+        firstTypeLabel.setText("Tipo 1:");
 
-        FirstTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { Types.NONE.toString(), Types.NORMAL.toString(), Types.FIRE.toString(), Types.WATER.toString(), Types.GRASS.toString(), Types.FLYING.toString(), Types.FIGHTING.toString(), Types.POISON.toString(), Types.ELECTRIC.toString(), Types.GROUND.toString(), Types.ROCK.toString(), Types.PSYCHIC.toString(), Types.ICE.toString(), Types.BUG.toString(), Types.GHOST.toString(), Types.STEEL.toString(), Types.DRAGON.toString(), Types.DARK.toString(), Types.FAIRY.toString()}));
+        firstTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { Types.NONE.toString(), Types.NORMAL.toString(), Types.FIRE.toString(), Types.WATER.toString(), Types.GRASS.toString(), Types.FLYING.toString(), Types.FIGHTING.toString(), Types.POISON.toString(), Types.ELECTRIC.toString(), Types.GROUND.toString(), Types.ROCK.toString(), Types.PSYCHIC.toString(), Types.ICE.toString(), Types.BUG.toString(), Types.GHOST.toString(), Types.STEEL.toString(), Types.DRAGON.toString(), Types.DARK.toString(), Types.FAIRY.toString()}));
 
-        SecondTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { Types.NONE.toString(), Types.NORMAL.toString(), Types.FIRE.toString(), Types.WATER.toString(), Types.GRASS.toString(), Types.FLYING.toString(), Types.FIGHTING.toString(), Types.POISON.toString(), Types.ELECTRIC.toString(), Types.GROUND.toString(), Types.ROCK.toString(), Types.PSYCHIC.toString(), Types.ICE.toString(), Types.BUG.toString(), Types.GHOST.toString(), Types.STEEL.toString(), Types.DRAGON.toString(), Types.DARK.toString(), Types.FAIRY.toString()}));
+        secondTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { Types.NONE.toString(), Types.NORMAL.toString(), Types.FIRE.toString(), Types.WATER.toString(), Types.GRASS.toString(), Types.FLYING.toString(), Types.FIGHTING.toString(), Types.POISON.toString(), Types.ELECTRIC.toString(), Types.GROUND.toString(), Types.ROCK.toString(), Types.PSYCHIC.toString(), Types.ICE.toString(), Types.BUG.toString(), Types.GHOST.toString(), Types.STEEL.toString(), Types.DRAGON.toString(), Types.DARK.toString(), Types.FAIRY.toString()}));
 
-        SecondTypeLabel.setText("Tipo 2:");
+        secondTypeLabel.setText("Tipo 2:");
 
-        ShinyCheckBox.setText("Shiny");
+        shinyCheckBox.setText("Shiny");
 
-        HeightLabel.setText("Altura:");
+        heightLabel.setText("Altura:");
 
-        WeightLabel.setText("Peso:");
+        weightLabel.setText("Peso:");
 
-        HeightTextField.setToolTipText("Informe a altura do Pokémon");
+        heightTextField.setToolTipText("Informe a altura do Pokémon");
 
-        WeightTextField.setToolTipText("Informe o peso do Pokémon");
+        weightTextField.setToolTipText("Informe o peso do Pokémon");
 
-        HPLabel.setText("HP:");
+        hPLabel.setText("HP:");
 
-        ATQLabel.setText("ATQ:");
+        aTQLabel.setText("ATQ:");
 
-        DEFLabel.setText("DEF:");
+        dEFLabel.setText("DEF:");
 
-        SpeedLabel.setText("VELOC:");
+        speedLabel.setText("VELOC:");
 
         sATQLabel.setText("S. ATQ:");
 
         sDEFLabel.setText("S. DEF:");
 
-        HPTextField.setToolTipText("Informe os Pontos de Vida do Pokémon");
+        hPTextField.setToolTipText("Informe os Pontos de Vida do Pokémon");
 
-        ATQTextField.setToolTipText("Informe os Pontos de Ataque do Pokémon");
+        aTQTextField.setToolTipText("Informe os Pontos de Ataque do Pokémon");
 
-        DEFTextField.setToolTipText("Informe os Pontos de Defesa do Pokémon");
+        dEFTextField.setToolTipText("Informe os Pontos de Defesa do Pokémon");
 
-        SpeedTextField.setToolTipText("Informe a Velocidade do Pokémon");
+        speedTextField.setToolTipText("Informe a Velocidade do Pokémon");
 
-        TotalLabel.setText("TOTAL:");
+        totalLabel.setText("TOTAL:");
 
-        TotalValueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TotalValueLabel.setText("???");
-        TotalValueLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        totalValueLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        totalValueLabel.setText("???");
+        totalValueLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        SaveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/save.png"))); // NOI18N
-        SaveButton.setText("Salvar");
-        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+        saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/save.png"))); // NOI18N
+        saveButton.setText("Salvar");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveButtonActionPerformed(evt);
+                saveButtonActionPerformed(evt);
             }
         });
 
-        ExitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/exit.png"))); // NOI18N
-        ExitButton.setText("Sair");
-        ExitButton.addActionListener(new java.awt.event.ActionListener() {
+        exitButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/exit.png"))); // NOI18N
+        exitButton.setText("Sair");
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ExitButtonActionPerformed(evt);
+                exitButtonActionPerformed(evt);
             }
         });
 
@@ -136,19 +136,19 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
 
         sDEFTextField.setToolTipText("Informe o valor da Defesa Especial do Pokémon");
 
-        IDLabel.setText("ID:");
+        iDLabel.setText("ID:");
 
-        IDTextField.setEditable(false);
+        iDTextField.setEditable(false);
 
-        IDTextField.setToolTipText("ID do Pokémon");
+        iDTextField.setToolTipText("ID do Pokémon");
 
-        IDTextField.setText(String.valueOf(controllerPokemon.getTheNextIdToInsertController()));
+        iDTextField.setText(String.valueOf(controllerPokemon.getTheNextIdToInsertController()));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -156,31 +156,31 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(NameLabel)
-                                    .addComponent(FirstTypeLabel))
+                                    .addComponent(nameLabel)
+                                    .addComponent(firstTypeLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(FirstTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(firstTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ShinyCheckBox))
-                                    .addComponent(NameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(shinyCheckBox))
+                                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(SecondTypeLabel)
+                                .addComponent(secondTypeLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SecondTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(secondTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(WeightLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(HeightLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
-                            .addComponent(IDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(weightLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(heightLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE)
+                            .addComponent(iDLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(HeightTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
-                                .addComponent(IDTextField))
-                            .addComponent(WeightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(heightTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                                .addComponent(iDTextField))
+                            .addComponent(weightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -190,12 +190,12 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(DEFLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(dEFLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(ATQTextField)
-                                            .addComponent(DEFTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(ATQLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(aTQTextField)
+                                            .addComponent(dEFTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(aTQLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(53, 53, 53)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(sDEFLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
@@ -205,85 +205,85 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
                                     .addComponent(sATQTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(sDEFTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(HPLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(hPLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(HPTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(hPTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(53, 53, 53)
-                                .addComponent(SpeedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(speedLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(SpeedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))))
+                                .addComponent(speedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 1, Short.MAX_VALUE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(155, 155, 155)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(TotalValueLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(totalValueLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(TotalLabel)
+                                .addComponent(totalLabel)
                                 .addGap(25, 25, 25))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(93, 93, 93)
-                        .addComponent(ExitButton)
+                        .addComponent(exitButton)
                         .addGap(54, 54, 54)
-                        .addComponent(SaveButton)))
+                        .addComponent(saveButton)))
                 .addContainerGap(16, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(TitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IDLabel)
-                    .addComponent(IDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(iDLabel)
+                    .addComponent(iDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(FirstTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FirstTypeLabel)
-                            .addComponent(ShinyCheckBox))
+                            .addComponent(firstTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(firstTypeLabel)
+                            .addComponent(shinyCheckBox))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SecondTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SecondTypeLabel))
+                            .addComponent(secondTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(secondTypeLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(HPLabel)
-                            .addComponent(SpeedLabel)
-                            .addComponent(HPTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(SpeedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(hPLabel)
+                            .addComponent(speedLabel)
+                            .addComponent(hPTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(speedTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(ATQTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ATQLabel)
+                            .addComponent(aTQTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(aTQLabel)
                             .addComponent(sATQLabel)
                             .addComponent(sATQTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(5, 5, 5)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DEFLabel)
-                            .addComponent(DEFTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dEFLabel)
+                            .addComponent(dEFTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(sDEFLabel)
                             .addComponent(sDEFTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
-                        .addComponent(TotalLabel)
+                        .addComponent(totalLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TotalValueLabel)
+                        .addComponent(totalValueLabel)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(SaveButton)
-                            .addComponent(ExitButton))
+                            .addComponent(saveButton)
+                            .addComponent(exitButton))
                         .addGap(9, 9, 9))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(HeightLabel)
-                            .addComponent(HeightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(heightLabel)
+                            .addComponent(heightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(WeightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(WeightLabel))
+                            .addComponent(weightTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(weightLabel))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -305,43 +305,43 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
      * Método para capturar os dados do Pokémon a serem cadastrados no formulário e enviá-los para o banco de dados.
      * @param evt
      */
-    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
-        pokemon.setName(NameTextField.getText());
-        if (NameTextField.getText().equals("")) {
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        pokemon.setName(nameTextField.getText());
+        if (nameTextField.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "O Pokemón precisa de um nome!", "Erro",JOptionPane.ERROR_MESSAGE);
             return;
         }
-        pokemon.setFirstType(FirstTypeComboBox.getSelectedItem().toString());
-        pokemon.setSecondType(SecondTypeComboBox.getSelectedItem().toString());
-        pokemon.setShiny(ShinyCheckBox.isSelected());
+        pokemon.setFirstType(firstTypeComboBox.getSelectedItem().toString());
+        pokemon.setSecondType(secondTypeComboBox.getSelectedItem().toString());
+        pokemon.setShiny(shinyCheckBox.isSelected());
         try {
-            pokemon.setHp(Integer.parseInt(HPTextField.getText()));
-            pokemon.setAttack(Integer.parseInt(ATQTextField.getText()));
-            pokemon.setDefense(Integer.parseInt(DEFTextField.getText()));
+            pokemon.setHp(Integer.parseInt(hPTextField.getText()));
+            pokemon.setAttack(Integer.parseInt(aTQTextField.getText()));
+            pokemon.setDefense(Integer.parseInt(dEFTextField.getText()));
             pokemon.setSpAttack(Integer.parseInt(sATQTextField.getText()));
             pokemon.setSpDefense(Integer.parseInt(sDEFTextField.getText()));
-            pokemon.setSpeed(Integer.parseInt(SpeedTextField.getText()));
+            pokemon.setSpeed(Integer.parseInt(speedTextField.getText()));
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "Os atributos do Pokémon devem ser números inteiros!", "Erro",JOptionPane.ERROR_MESSAGE);
-            HPTextField.setText("0");
-            ATQTextField.setText("0");
-            DEFTextField.setText("0");
+            hPTextField.setText("0");
+            aTQTextField.setText("0");
+            dEFTextField.setText("0");
             sATQTextField.setText("0");
             sDEFTextField.setText("0");
-            SpeedTextField.setText("0");
+            speedTextField.setText("0");
             return;
         }
         try {
-            pokemon.setHeight(Float.parseFloat(HeightTextField.getText()));
-            pokemon.setWeight(Float.parseFloat(WeightTextField.getText()));
+            pokemon.setHeight(Float.parseFloat(heightTextField.getText()));
+            pokemon.setWeight(Float.parseFloat(weightTextField.getText()));
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "A altura e o peso do Pokémon devem ser números reais e escritos com '.'!", "Erro",JOptionPane.ERROR_MESSAGE);
-            HeightTextField.setText("0.0");
-            WeightTextField.setText("0.0");
+            heightTextField.setText("0.0");
+            weightTextField.setText("0.0");
             return;
         }
         pokemon.setTotal(pokemon.getHp() + pokemon.getAttack() + pokemon.getDefense() + pokemon.getSpAttack() + pokemon.getSpDefense() + pokemon.getSpeed());
-        TotalValueLabel.setText(String.valueOf(pokemon.getTotal()));
+        totalValueLabel.setText(String.valueOf(pokemon.getTotal()));
         
         if(controllerPokemon.saveWildPokemonController(pokemon)){
             JOptionPane.showMessageDialog(this, "Pokemon registrado com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
@@ -357,54 +357,54 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
      * Limpa os campos do formulário e atualiza o ID do Pokémon.
      */
     private void updateFieldsOnSave(){
-        NameTextField.setText("");
-        FirstTypeComboBox.setSelectedIndex(0);
-        SecondTypeComboBox.setSelectedIndex(0);
-        ShinyCheckBox.setSelected(false);
-        HPTextField.setText("");
-        ATQTextField.setText("");
-        DEFTextField.setText("");
+        nameTextField.setText("");
+        firstTypeComboBox.setSelectedIndex(0);
+        secondTypeComboBox.setSelectedIndex(0);
+        shinyCheckBox.setSelected(false);
+        hPTextField.setText("");
+        aTQTextField.setText("");
+        dEFTextField.setText("");
         sATQTextField.setText("");
         sDEFTextField.setText("");
-        SpeedTextField.setText("");
-        HeightTextField.setText("");
-        WeightTextField.setText("");
-        TotalValueLabel.setText("???");
-        IDTextField.setText(String.valueOf(Integer.parseInt(IDTextField.getText()) + 1));
+        speedTextField.setText("");
+        heightTextField.setText("");
+        weightTextField.setText("");
+        totalValueLabel.setText("???");
+        iDTextField.setText(String.valueOf(Integer.parseInt(iDTextField.getText()) + 1));
     }
 
-    private void ExitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
-        TotalValueLabel.setText("???");
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+        totalValueLabel.setText("???");
         this.dispose();
     }//GEN-LAST:event_ExitButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ATQLabel;
-    private javax.swing.JTextField ATQTextField;
-    private javax.swing.JLabel DEFLabel;
-    private javax.swing.JTextField DEFTextField;
-    private javax.swing.JButton ExitButton;
-    private javax.swing.JComboBox<String> FirstTypeComboBox;
-    private javax.swing.JLabel FirstTypeLabel;
-    private javax.swing.JLabel HPLabel;
-    private javax.swing.JTextField HPTextField;
-    private javax.swing.JLabel HeightLabel;
-    private javax.swing.JTextField HeightTextField;
-    private javax.swing.JLabel IDLabel;
-    private javax.swing.JTextField IDTextField;
-    private javax.swing.JLabel NameLabel;
-    private javax.swing.JTextField NameTextField;
-    private javax.swing.JButton SaveButton;
-    private javax.swing.JComboBox<String> SecondTypeComboBox;
-    private javax.swing.JLabel SecondTypeLabel;
-    private javax.swing.JCheckBox ShinyCheckBox;
-    private javax.swing.JLabel SpeedLabel;
-    private javax.swing.JTextField SpeedTextField;
-    private javax.swing.JLabel TitleLabel;
-    private javax.swing.JLabel TotalLabel;
-    private javax.swing.JLabel TotalValueLabel;
-    private javax.swing.JLabel WeightLabel;
-    private javax.swing.JTextField WeightTextField;
+    private javax.swing.JLabel aTQLabel;
+    private javax.swing.JTextField aTQTextField;
+    private javax.swing.JLabel dEFLabel;
+    private javax.swing.JTextField dEFTextField;
+    private javax.swing.JButton exitButton;
+    private javax.swing.JComboBox<String> firstTypeComboBox;
+    private javax.swing.JLabel firstTypeLabel;
+    private javax.swing.JLabel hPLabel;
+    private javax.swing.JTextField hPTextField;
+    private javax.swing.JLabel heightLabel;
+    private javax.swing.JTextField heightTextField;
+    private javax.swing.JLabel iDLabel;
+    private javax.swing.JTextField iDTextField;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nameTextField;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JComboBox<String> secondTypeComboBox;
+    private javax.swing.JLabel secondTypeLabel;
+    private javax.swing.JCheckBox shinyCheckBox;
+    private javax.swing.JLabel speedLabel;
+    private javax.swing.JTextField speedTextField;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JLabel totalLabel;
+    private javax.swing.JLabel totalValueLabel;
+    private javax.swing.JLabel weightLabel;
+    private javax.swing.JTextField weightTextField;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel sATQLabel;

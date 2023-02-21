@@ -44,44 +44,44 @@ public class ViewTrainers extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        TrainersTable = new javax.swing.JTable();
-        TitleLabel = new javax.swing.JLabel();
-        FilterTextField = new javax.swing.JTextField();
-        FilterComboBox = new javax.swing.JComboBox<>();
-        FilterButton = new javax.swing.JButton();
-        EditTrainerButton = new javax.swing.JButton();
+        trainersTable = new javax.swing.JTable();
+        titleLabel = new javax.swing.JLabel();
+        filterTextField = new javax.swing.JTextField();
+        filterComboBox = new javax.swing.JComboBox<>();
+        filterButton = new javax.swing.JButton();
+        editTrainerButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        RegisterTrainerButton = new javax.swing.JButton();
-        TrainerImageLabel = new javax.swing.JLabel();
-        LinkPokemonButton = new javax.swing.JButton();
-        RemoveTrainerButton = new javax.swing.JButton();
+        registerTrainerButton = new javax.swing.JButton();
+        trainerImageLabel = new javax.swing.JLabel();
+        linkPokemonButton = new javax.swing.JButton();
+        removeTrainerButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        TrainersTable.getSelectionModel().addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        trainersTable.getSelectionModel().addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                ChangeTrainerImage(evt);
+                changeTrainerImage(evt);
             }
         });
 
-        TrainersTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        trainersTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 if (evt.getClickCount() == 2) {
-                    TrainersTableMouseClicked(evt);
+                    trainersTableMouseClicked(evt);
                 }
             }
         });
 
-        FilterTextField.addFocusListener(new java.awt.event.FocusAdapter(){
+        filterTextField.addFocusListener(new java.awt.event.FocusAdapter(){
             public void focusGained(java.awt.event.FocusEvent evt){
-                FilterTextFieldFocusGaned(evt);
+                filterTextFieldFocusGaned(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt){
-                FilterTextFieldFocusLost(evt);
+                filterTextFieldFocusLost(evt);
             }
         });
 
-        TrainersTable.setModel(new javax.swing.table.DefaultTableModel(
+        trainersTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -104,69 +104,69 @@ public class ViewTrainers extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(TrainersTable);
-        if (TrainersTable.getColumnModel().getColumnCount() > 0) {
-            TrainersTable.getColumnModel().getColumn(0).setMinWidth(60);
-            TrainersTable.getColumnModel().getColumn(0).setMaxWidth(60);
-            TrainersTable.getColumnModel().getColumn(2).setMinWidth(60);
-            TrainersTable.getColumnModel().getColumn(2).setMaxWidth(60);
+        jScrollPane1.setViewportView(trainersTable);
+        if (trainersTable.getColumnModel().getColumnCount() > 0) {
+            trainersTable.getColumnModel().getColumn(0).setMinWidth(60);
+            trainersTable.getColumnModel().getColumn(0).setMaxWidth(60);
+            trainersTable.getColumnModel().getColumn(2).setMinWidth(60);
+            trainersTable.getColumnModel().getColumn(2).setMaxWidth(60);
         }
 
-        TitleLabel.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
-        TitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TitleLabel.setText("TREINADORES");
+        titleLabel.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleLabel.setText("TREINADORES");
 
-        FilterTextField.setForeground(new java.awt.Color(102, 102, 102));
-        FilterTextField.setText("O que você procura?");
-        FilterTextField.setToolTipText("Digite o valor que deseja buscar conforme o a caixa de seleção ao lado");
-        FilterTextField.setActionCommand("<Not Set>");
+        filterTextField.setForeground(new java.awt.Color(102, 102, 102));
+        filterTextField.setText("O que você procura?");
+        filterTextField.setToolTipText("Digite o valor que deseja buscar conforme o a caixa de seleção ao lado");
+        filterTextField.setActionCommand("<Not Set>");
 
-        FilterComboBox.setForeground(new java.awt.Color(102, 102, 102));
-        FilterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "ID", "Nome", "Idade", "Região" }));
+        filterComboBox.setForeground(new java.awt.Color(102, 102, 102));
+        filterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "ID", "Nome", "Idade", "Região" }));
 
-        FilterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/filter.png"))); // NOI18N
-        FilterButton.setText("FILTRAR");
+        filterButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/filter.png"))); // NOI18N
+        filterButton.setText("FILTRAR");
 
-        FilterButton.addActionListener(new java.awt.event.ActionListener() {
+        filterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FilterButtonActionPerformed(evt);
+                filterButtonActionPerformed(evt);
             }
         });
 
-        EditTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit-trainer.png"))); // NOI18N
-        EditTrainerButton.setText("EDITAR TREINADOR");
-        EditTrainerButton.addActionListener(new java.awt.event.ActionListener() {
+        editTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/edit-trainer.png"))); // NOI18N
+        editTrainerButton.setText("EDITAR TREINADOR");
+        editTrainerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditTrainerButtonActionPerformed(evt);
+                editTrainerButtonActionPerformed(evt);
             }
         });
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        RegisterTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/add-trainer.png"))); // NOI18N
-        RegisterTrainerButton.setText("ADICIONAR TREINADOR");
-        RegisterTrainerButton.addActionListener(new java.awt.event.ActionListener() {
+        registerTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/add-trainer.png"))); // NOI18N
+        registerTrainerButton.setText("ADICIONAR TREINADOR");
+        registerTrainerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegisterTrainerButtonActionPerformed(evt);
+                registerTrainerButtonActionPerformed(evt);
             }
         });
 
-        TrainerImageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TrainerImageLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        trainerImageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        trainerImageLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        LinkPokemonButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/link-pokemon.png"))); // NOI18N
-        LinkPokemonButton.setText("VINCULAR POKÉMONS AOS TREINADORES");
-        LinkPokemonButton.addActionListener(new java.awt.event.ActionListener() {
+        linkPokemonButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/link-pokemon.png"))); // NOI18N
+        linkPokemonButton.setText("VINCULAR POKÉMONS AOS TREINADORES");
+        linkPokemonButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LinkPokemonButtonActionPerformed(evt);
+                linkPokemonButtonActionPerformed(evt);
             }
         });
 
-        RemoveTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/remove-trainer.png"))); // NOI18N
-        RemoveTrainerButton.setText("REMOVER TREINADOR");
-        RemoveTrainerButton.addActionListener(new java.awt.event.ActionListener() {
+        removeTrainerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons/remove-trainer.png"))); // NOI18N
+        removeTrainerButton.setText("REMOVER TREINADOR");
+        removeTrainerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RemoveTrainerButtonActionPerformed(evt);
+                removeTrainerButtonActionPerformed(evt);
             }
         });
 
@@ -174,54 +174,54 @@ public class ViewTrainers extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(FilterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(FilterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(filterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(FilterButton))
+                        .addComponent(filterButton))
                     .addComponent(jScrollPane1))
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 9, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(EditTrainerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RegisterTrainerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(TrainerImageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(LinkPokemonButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(RemoveTrainerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(editTrainerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(registerTrainerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(trainerImageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(linkPokemonButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(removeTrainerButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(23, 23, 23))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(TitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
+                .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 52, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(FilterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(FilterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(FilterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(filterTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(filterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(filterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(9, 9, 9)
-                            .addComponent(RegisterTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(registerTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(EditTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(editTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(RemoveTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(removeTrainerButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(LinkPokemonButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(linkPokemonButton, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(TrainerImageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(trainerImageLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12))
         );
@@ -244,7 +244,7 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Abre a tela de cadastro de treinadores
      * @param evt
      */
-    private void RegisterTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterTrainerButtonActionPerformed
+    private void registerTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterTrainerButtonActionPerformed
         ViewRegisterTrainer viewRegisterTrainer = new ViewRegisterTrainer();
         viewRegisterTrainer.setVisible(true);
     }//GEN-LAST:event_RegisterTrainerButtonActionPerformed
@@ -253,9 +253,9 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Abre a tela de edição de treinadores com os dados do treinador selecionado na tabela
      * @param evt
      */
-    private void EditTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTrainerButtonActionPerformed
+    private void editTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTrainerButtonActionPerformed
         try {
-            int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
+            int id = (int) trainersTable.getValueAt(trainersTable.getSelectedRow(), 0);
             ViewEditTrainer viewEditTrainer = new ViewEditTrainer(id);
             viewEditTrainer.setVisible(true);
         } catch (Exception e) {
@@ -267,9 +267,9 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Abre a tela de vinculação de pokemons aos treinadores com os dados do treinador selecionado na tabela
      * @param evt
      */
-    private void LinkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LinkPokemonButtonActionPerformed
+    private void linkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LinkPokemonButtonActionPerformed
         try {
-            int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
+            int id = (int) trainersTable.getValueAt(trainersTable.getSelectedRow(), 0);
             ViewLinkPokemon viewLinkPokemon = new ViewLinkPokemon(id);
             viewLinkPokemon.setVisible(true);
         } catch (Exception e) {
@@ -281,10 +281,10 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Remove o treinador que estiver com a linha selecionada
      * @param evt
      */
-    private void RemoveTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveTrainerButtonActionPerformed
+    private void removeTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveTrainerButtonActionPerformed
         try {
-            int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
-            TrainersTable.clearSelection();
+            int id = (int) trainersTable.getValueAt(trainersTable.getSelectedRow(), 0);
+            trainersTable.clearSelection();
             controllerTrainer.removeTrainerController(id);
             controllerTrainerParty.removeAllTrainerPartyController(id);
             updateTable();
@@ -304,26 +304,26 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Filtra os treinadores conforme o valor da ComboBox
      * @param evt
      */
-    private void FilterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterButtonActionPerformed
-        DefaultTableModel model = (DefaultTableModel) TrainersTable.getModel();
+    private void filterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterButtonActionPerformed
+        DefaultTableModel model = (DefaultTableModel) trainersTable.getModel();
         model.setRowCount(0);
 
         try {
-            if (FilterComboBox.getSelectedItem().equals("ID")){
-                idSearch(model, FilterTextField.getText());
-            } else if (FilterComboBox.getSelectedItem().equals("Nome")){
-                nameSearch(model, FilterTextField.getText());
-            } else if (FilterComboBox.getSelectedItem().equals("Idade")){
-                ageSearch(model, FilterTextField.getText());
-            } else if (FilterComboBox.getSelectedItem().equals("Região")){
-                regionSearch(model, FilterTextField.getText());
-            } else if (FilterComboBox.getSelectedItem().equals("Todos")){
+            if (filterComboBox.getSelectedItem().equals("ID")){
+                idSearch(model, filterTextField.getText());
+            } else if (filterComboBox.getSelectedItem().equals("Nome")){
+                nameSearch(model, filterTextField.getText());
+            } else if (filterComboBox.getSelectedItem().equals("Idade")){
+                ageSearch(model, filterTextField.getText());
+            } else if (filterComboBox.getSelectedItem().equals("Região")){
+                regionSearch(model, filterTextField.getText());
+            } else if (filterComboBox.getSelectedItem().equals("Todos")){
                 updateTable();
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Filtro não encontrado! Informe no campo de texto um valor válido.", "Atenção", JOptionPane.WARNING_MESSAGE);
         } finally {
-            FilterTextField.setText("");
+            filterTextField.setText("");
         }
 
     }//GEN-LAST:event_FilterButtonActionPerformed
@@ -411,7 +411,7 @@ public class ViewTrainers extends javax.swing.JFrame {
      */
     public static void updateTable() {
         trainersList = controllerTrainer.getTrainersController();
-        DefaultTableModel model = (DefaultTableModel) TrainersTable.getModel();
+        DefaultTableModel model = (DefaultTableModel) trainersTable.getModel();
         model.setRowCount(0);
 
         for (Trainer trainer : trainersList) {
@@ -428,9 +428,9 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Metodo que limpa o campo de texto do filtro quando é focado.
      * @param evt
      */
-    private void FilterTextFieldFocusGaned(java.awt.event.FocusEvent evt){
-        if(FilterTextField.getText().equals("O que você procura?")){
-            FilterTextField.setText("");
+    private void filterTextFieldFocusGaned(java.awt.event.FocusEvent evt){
+        if(filterTextField.getText().equals("O que você procura?")){
+            filterTextField.setText("");
         }
     }
 
@@ -438,9 +438,9 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Metodo que preenche o campo de texto do filtro quando é desfocado.
      * @param evt
      */
-    private void FilterTextFieldFocusLost(java.awt.event.FocusEvent evt){
-        if(FilterTextField.getText().equals("")){
-            FilterTextField.setText("O que você procura?");
+    private void filterTextFieldFocusLost(java.awt.event.FocusEvent evt){
+        if(filterTextField.getText().equals("")){
+            filterTextField.setText("O que você procura?");
         }
     }
 
@@ -448,12 +448,12 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Metodo que altera a imagem do treinador conforme o treinador selecionado na tabela.
      * @param evt
      */
-    private void ChangeTrainerImage(ListSelectionEvent evt) {
+    private void changeTrainerImage(ListSelectionEvent evt) {
         try{
-            TrainerImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/" + TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 1) + ".png")));   
+            trainerImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/" + trainersTable.getValueAt(trainersTable.getSelectedRow(), 1) + ".png")));   
         }
         catch (Exception e){
-            TrainerImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/BugCatcher.png")));   
+            trainerImageLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/BugCatcher.png")));   
         }
     }
 
@@ -462,25 +462,25 @@ public class ViewTrainers extends javax.swing.JFrame {
      * abre a tela de edição de treinador.
      * @param evt
      */
-    private void TrainersTableMouseClicked(java.awt.event.MouseEvent evt) {
+    private void trainersTableMouseClicked(java.awt.event.MouseEvent evt) {
         if (evt.getClickCount() == 2) {
-            int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
+            int id = (int) trainersTable.getValueAt(trainersTable.getSelectedRow(), 0);
             ViewEditTrainer editTrainer = new ViewEditTrainer(id);
             editTrainer.setVisible(true);
         }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton EditTrainerButton;
-    private javax.swing.JButton FilterButton;
-    private javax.swing.JComboBox<String> FilterComboBox;
-    private javax.swing.JTextField FilterTextField;
-    private javax.swing.JButton LinkPokemonButton;
-    private javax.swing.JButton RegisterTrainerButton;
-    private javax.swing.JButton RemoveTrainerButton;
-    private javax.swing.JLabel TitleLabel;
-    private javax.swing.JLabel TrainerImageLabel;
-    private static javax.swing.JTable TrainersTable;
+    private javax.swing.JButton editTrainerButton;
+    private javax.swing.JButton filterButton;
+    private javax.swing.JComboBox<String> filterComboBox;
+    private javax.swing.JTextField filterTextField;
+    private javax.swing.JButton linkPokemonButton;
+    private javax.swing.JButton registerTrainerButton;
+    private javax.swing.JButton removeTrainerButton;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JLabel trainerImageLabel;
+    private static javax.swing.JTable trainersTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;

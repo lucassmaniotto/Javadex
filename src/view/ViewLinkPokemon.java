@@ -51,53 +51,53 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        WildPokemonsTable = new javax.swing.JTable();
-        TitleLabel = new javax.swing.JLabel();
-        TrainersPokemonLabel = new javax.swing.JLabel();
-        PokemonsLabel = new javax.swing.JLabel();
-        LinkPokemonButton = new javax.swing.JButton();
-        RemovePokemonButton = new javax.swing.JButton();
+        wildPokemonsTable = new javax.swing.JTable();
+        titleLabel = new javax.swing.JLabel();
+        trainersPokemonLabel = new javax.swing.JLabel();
+        pokemonsLabel = new javax.swing.JLabel();
+        linkPokemonButton = new javax.swing.JButton();
+        removePokemonButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane3 = new javax.swing.JScrollPane();
-        TrainerPokemonsTable = new javax.swing.JTable();
+        trainerPokemonsTable = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        NameTextField = new javax.swing.JTextField();
-        NameLabel = new javax.swing.JLabel();
-        IDTextField = new javax.swing.JTextField();
-        ImageTrainerLabel = new javax.swing.JLabel();
-        IDLabel = new javax.swing.JLabel();
+        nameTextField = new javax.swing.JTextField();
+        nameLabel = new javax.swing.JLabel();
+        iDTextField = new javax.swing.JTextField();
+        imageTrainerLabel = new javax.swing.JLabel();
+        iDLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        WildPokemonsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        wildPokemonsTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 if (evt.getClickCount() == 2) {
-                    WildPokemonTableMouseClicked(evt);
+                    wildPokemonTableMouseClicked(evt);
                 }
             }
         });
 
-        TrainerPokemonsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        trainerPokemonsTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 if (evt.getClickCount() == 2) {
-                    TrainerPokemonTableMouseClicked(evt);
+                    trainerPokemonTableMouseClicked(evt);
                 }
             }
         });
 
-        LinkPokemonButton.addActionListener(new java.awt.event.ActionListener() {
+        linkPokemonButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LinkPokemonButtonActionPerformed(evt);
+                linkPokemonButtonActionPerformed(evt);
             }
         });
 
-        RemovePokemonButton.addActionListener(new java.awt.event.ActionListener() {
+        removePokemonButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RemovePokemonButtonActionPerformed(evt);
+                removePokemonButtonActionPerformed(evt);
             }
         });
 
-        WildPokemonsTable.setModel(new javax.swing.table.DefaultTableModel(
+        wildPokemonsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -120,33 +120,33 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(WildPokemonsTable);
-        if (WildPokemonsTable.getColumnModel().getColumnCount() > 0) {
-            WildPokemonsTable.getColumnModel().getColumn(0).setMinWidth(40);
-            WildPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(40);
-            WildPokemonsTable.getColumnModel().getColumn(1).setMinWidth(100);
-            WildPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(100);
-            WildPokemonsTable.getColumnModel().getColumn(4).setMinWidth(60);
-            WildPokemonsTable.getColumnModel().getColumn(4).setMaxWidth(60);
+        jScrollPane2.setViewportView(wildPokemonsTable);
+        if (wildPokemonsTable.getColumnModel().getColumnCount() > 0) {
+            wildPokemonsTable.getColumnModel().getColumn(0).setMinWidth(40);
+            wildPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(40);
+            wildPokemonsTable.getColumnModel().getColumn(1).setMinWidth(100);
+            wildPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(100);
+            wildPokemonsTable.getColumnModel().getColumn(4).setMinWidth(60);
+            wildPokemonsTable.getColumnModel().getColumn(4).setMaxWidth(60);
         }
 
-        TitleLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
-        TitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TitleLabel.setText("Vincular Pokémons com Treinadores");
+        titleLabel.setFont(new java.awt.Font("Verdana", 0, 22)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleLabel.setText("Vincular Pokémons com Treinadores");
 
-        TrainersPokemonLabel.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        TrainersPokemonLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TrainersPokemonLabel.setText("Pokémons do Treinador");
+        trainersPokemonLabel.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        trainersPokemonLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        trainersPokemonLabel.setText("Pokémons do Treinador");
 
-        PokemonsLabel.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
-        PokemonsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        PokemonsLabel.setText("Pokémons Selvagens");
+        pokemonsLabel.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        pokemonsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        pokemonsLabel.setText("Pokémons Selvagens");
 
-        LinkPokemonButton.setText("Capturar Pokémon ->");
+        linkPokemonButton.setText("Capturar Pokémon ->");
 
-        RemovePokemonButton.setText("<- Soltar Pokémon");
+        removePokemonButton.setText("<- Soltar Pokémon");
 
-        TrainerPokemonsTable.setModel(new javax.swing.table.DefaultTableModel(
+        trainerPokemonsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -169,26 +169,26 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane3.setViewportView(TrainerPokemonsTable);
-        if (TrainerPokemonsTable.getColumnModel().getColumnCount() > 0) {
-            TrainerPokemonsTable.getColumnModel().getColumn(0).setMinWidth(40);
-            TrainerPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(40);
-            TrainerPokemonsTable.getColumnModel().getColumn(1).setMinWidth(100);
-            TrainerPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(100);
-            TrainerPokemonsTable.getColumnModel().getColumn(4).setMinWidth(60);
-            TrainerPokemonsTable.getColumnModel().getColumn(4).setMaxWidth(60);
+        jScrollPane3.setViewportView(trainerPokemonsTable);
+        if (trainerPokemonsTable.getColumnModel().getColumnCount() > 0) {
+            trainerPokemonsTable.getColumnModel().getColumn(0).setMinWidth(40);
+            trainerPokemonsTable.getColumnModel().getColumn(0).setMaxWidth(40);
+            trainerPokemonsTable.getColumnModel().getColumn(1).setMinWidth(100);
+            trainerPokemonsTable.getColumnModel().getColumn(1).setMaxWidth(100);
+            trainerPokemonsTable.getColumnModel().getColumn(4).setMinWidth(60);
+            trainerPokemonsTable.getColumnModel().getColumn(4).setMaxWidth(60);
         }
 
-        NameTextField.setEditable(false);
+        nameTextField.setEditable(false);
 
-        NameLabel.setText("Nome:");
+        nameLabel.setText("Nome:");
 
-        IDTextField.setEditable(false);
+        iDTextField.setEditable(false);
 
-        ImageTrainerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ImageTrainerLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        imageTrainerLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imageTrainerLabel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        IDLabel.setText("ID:");
+        iDLabel.setText("ID:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -196,16 +196,16 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(NameLabel)
+                .addComponent(nameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(IDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(iDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(IDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(iDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(ImageTrainerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imageTrainerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -213,16 +213,16 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NameLabel))
+                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(IDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(IDLabel))
+                    .addComponent(iDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(iDLabel))
                 .addGap(16, 16, 16))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ImageTrainerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(imageTrainerLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -230,12 +230,12 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(TitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(titleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(117, 117, 117)
-                .addComponent(PokemonsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pokemonsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(TrainersPokemonLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(trainersPokemonLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(106, 106, 106))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,8 +247,8 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(15, 15, 15)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(LinkPokemonButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(RemovePokemonButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(linkPokemonButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(removePokemonButton, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -259,21 +259,21 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addComponent(TitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(titleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(TrainersPokemonLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PokemonsLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(trainersPokemonLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pokemonsLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(LinkPokemonButton)
+                        .addComponent(linkPokemonButton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(RemovePokemonButton)
+                        .addComponent(removePokemonButton)
                         .addGap(160, 160, 160))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -302,12 +302,12 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      */
     private void loadTrainerData(int id){
         trainer = controllerTrainer.getTrainerByIDController(id);
-        IDTextField.setText(String.valueOf(trainer.getId()));
-        NameTextField.setText(trainer.getName());
+        iDTextField.setText(String.valueOf(trainer.getId()));
+        nameTextField.setText(trainer.getName());
         try{
-            ImageTrainerLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/" + trainer.getName() + ".png")));
+            imageTrainerLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/" + trainer.getName() + ".png")));
         } catch (Exception e) {
-            ImageTrainerLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/BugCatcher.png")));
+            imageTrainerLabel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trainers/BugCatcher.png")));
         }
     }
 
@@ -315,8 +315,8 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * Carrega os pokemons selvagens do banco de dados
      */
     public static void loadWildPokemons(){
-        if(WildPokemonsTable != null){        
-            DefaultTableModel model = (DefaultTableModel) WildPokemonsTable.getModel();
+        if(wildPokemonsTable != null){        
+            DefaultTableModel model = (DefaultTableModel) wildPokemonsTable.getModel();
             model.setRowCount(0);
 
             pokemonsList = controllerPokemon.getWildPokemonsController();
@@ -338,8 +338,8 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * @param id ID do treinador
      */
     public static void loadTrainedPokemons(int id){
-        if(TrainerPokemonsTable != null){
-            DefaultTableModel model = (DefaultTableModel) TrainerPokemonsTable.getModel();
+        if(trainerPokemonsTable != null){
+            DefaultTableModel model = (DefaultTableModel) trainerPokemonsTable.getModel();
             model.setRowCount(0);
 
             trainedPokemonsList = controllerPokemon.getTrainedPokemonsController(id);
@@ -361,9 +361,9 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * abre a tela ViewPokemonDetails do pokemon selecionado
      * @param evt
      */
-    private void WildPokemonTableMouseClicked(MouseEvent evt) {
+    private void wildPokemonTableMouseClicked(MouseEvent evt) {
         //pega o valor da string id na coluna ID da linha selecionada e manda para a tela de detalhes
-        int id = (int) WildPokemonsTable.getValueAt(WildPokemonsTable.getSelectedRow(), 0);
+        int id = (int) wildPokemonsTable.getValueAt(wildPokemonsTable.getSelectedRow(), 0);
         ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(id);
         viewPokemonDetails.setVisible(true);
     }
@@ -373,8 +373,8 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * abre a tela ViewPokemonDetails do pokemon selecionado
      * @param evt
      */
-    private void TrainerPokemonTableMouseClicked(MouseEvent evt) {
-        int id = (int) TrainerPokemonsTable.getValueAt(TrainerPokemonsTable.getSelectedRow(), 0);
+    private void trainerPokemonTableMouseClicked(MouseEvent evt) {
+        int id = (int) trainerPokemonsTable.getValueAt(trainerPokemonsTable.getSelectedRow(), 0);
         ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(id);
         viewPokemonDetails.setVisible(true);
     }
@@ -384,9 +384,9 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * utilizando o método linkPokemonController e o valor da string ID no IDTextField
      * @param evt
      */
-    private void LinkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LinkPokemonButtonActionPerformed
-        int idPokemon = (int) WildPokemonsTable.getValueAt(WildPokemonsTable.getSelectedRow(), 0);
-        int idTrainer = Integer.parseInt(IDTextField.getText());
+    private void linkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LinkPokemonButtonActionPerformed
+        int idPokemon = (int) wildPokemonsTable.getValueAt(wildPokemonsTable.getSelectedRow(), 0);
+        int idTrainer = Integer.parseInt(iDTextField.getText());
         if(controllerPokemon.setWildPokemonToTrainedPokemonController(idPokemon, idTrainer)){
             JOptionPane.showMessageDialog(this, "Pokemon capturado na Pokébola com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             loadTrainedPokemons(idTrainer);
@@ -403,9 +403,9 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * utilizando o método removePokemonController e o valor da string ID no IDTextField
      * @param evt
      */
-    private void RemovePokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovePokemonButtonActionPerformed
-        int idPokemon = (int) TrainerPokemonsTable.getValueAt(TrainerPokemonsTable.getSelectedRow(), 0);
-        int idTrainer = Integer.parseInt(IDTextField.getText());
+    private void removePokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovePokemonButtonActionPerformed
+        int idPokemon = (int) trainerPokemonsTable.getValueAt(trainerPokemonsTable.getSelectedRow(), 0);
+        int idTrainer = Integer.parseInt(iDTextField.getText());
         if(controllerPokemon.setTrainedPokemonToWildPokemonController(idPokemon)){
             JOptionPane.showMessageDialog(this, "O Pokémon foi solto na natureza com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             loadTrainedPokemons(idTrainer);
@@ -418,18 +418,18 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
     }//GEN-LAST:event_RemovePokemonButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel IDLabel;
-    private javax.swing.JTextField IDTextField;
-    private javax.swing.JLabel ImageTrainerLabel;
-    private javax.swing.JButton LinkPokemonButton;
-    private javax.swing.JLabel NameLabel;
-    private javax.swing.JTextField NameTextField;
-    private javax.swing.JLabel PokemonsLabel;
-    private javax.swing.JButton RemovePokemonButton;
-    private javax.swing.JLabel TitleLabel;
-    private static javax.swing.JTable TrainerPokemonsTable;
-    private javax.swing.JLabel TrainersPokemonLabel;
-    private static javax.swing.JTable WildPokemonsTable;
+    private javax.swing.JLabel iDLabel;
+    private javax.swing.JTextField iDTextField;
+    private javax.swing.JLabel imageTrainerLabel;
+    private javax.swing.JButton linkPokemonButton;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nameTextField;
+    private javax.swing.JLabel pokemonsLabel;
+    private javax.swing.JButton removePokemonButton;
+    private javax.swing.JLabel titleLabel;
+    private static javax.swing.JTable trainerPokemonsTable;
+    private javax.swing.JLabel trainersPokemonLabel;
+    private static javax.swing.JTable wildPokemonsTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
