@@ -279,15 +279,18 @@ public class ViewTrainers extends javax.swing.JFrame {
     private void RemoveTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveTrainerButtonActionPerformed
         try {
             int id = (int) TrainersTable.getValueAt(TrainersTable.getSelectedRow(), 0);
+            TrainersTable.clearSelection();
             controllerTrainer.removeTrainerController(id);
             controllerTrainerParty.removeAllTrainerPartyController(id);
             updateTable();
             JOptionPane.showMessageDialog(null, "Treinador removido com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
-            ViewPokedex.updateTable();
-            ViewLinkPokemon.loadWildPokemons();
-            ViewLinkPokemon.loadTrainedPokemons(id);
+            if (!controllerTrainerParty.getTrainerPartyController(id).isEmpty()) {
+                ViewPokedex.updateTable();
+                ViewLinkPokemon.loadWildPokemons();
+                ViewLinkPokemon.loadTrainedPokemons(id);
+            }
         } catch (NullPointerException e) {
-            JOptionPane.showMessageDialog(null, "Não há mais treinadores!", "Atenção", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Não há pokemons vinculados ao treinador!", "Atenção", JOptionPane.WARNING_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Selecione um treinador para remover!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
