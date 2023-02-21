@@ -18,6 +18,7 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Cadastro de Pokémon");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons/pokeball.svg")).getImage());
     }
 
     /**

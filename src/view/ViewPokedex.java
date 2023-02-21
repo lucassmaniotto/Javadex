@@ -28,6 +28,7 @@ public class ViewPokedex extends javax.swing.JFrame {
         setTitle("Pokedex");
         setResizable(false);
         setFocusable(rootPaneCheckingEnabled);
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons/pokeball.svg")).getImage());
         updateTable();
     }
 

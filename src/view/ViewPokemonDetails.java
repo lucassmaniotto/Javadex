@@ -25,6 +25,7 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Detalhes do Pokémon");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons/pokeball.svg")).getImage());
         loadPokemonData(id);
     }
     

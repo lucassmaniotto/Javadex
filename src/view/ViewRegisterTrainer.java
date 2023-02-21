@@ -18,6 +18,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Cadastro de Treinador");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons/pokeball.svg")).getImage());
     }
 
     /**

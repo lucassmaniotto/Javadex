@@ -30,6 +30,7 @@ public class ViewTrainers extends javax.swing.JFrame {
         setResizable(false);
         setTitle("Treinadores");
         setFocusable(rootPaneCheckingEnabled);
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons/pokeball.svg")).getImage());
         updateTable();
     }
     

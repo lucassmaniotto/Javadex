@@ -31,6 +31,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Editar Treinador");
+        setIconImage(new javax.swing.ImageIcon(getClass().getResource("/images/icons/pokeball.svg")).getImage());
         loadTrainerData(idTrainer);
         loadTrainerPokemons(idTrainer);
         loadTrainerParty(idTrainer);
