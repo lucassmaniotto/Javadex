@@ -20,8 +20,28 @@ import model.WildPokemon;
  * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewLinkPokemon extends javax.swing.JFrame {
-    Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());
+    // Declaração de componentes da interface gráfica
+    private javax.swing.JLabel iDLabel;
+    private javax.swing.JTextField iDTextField;
+    private javax.swing.JLabel imageTrainerLabel;
+    private javax.swing.JButton linkPokemonButton;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nameTextField;
+    private javax.swing.JLabel pokemonsLabel;
+    private javax.swing.JButton removePokemonButton;
+    private javax.swing.JLabel titleLabel;
+    private static javax.swing.JTable trainerPokemonsTable;
+    private javax.swing.JLabel trainersPokemonLabel;
+    private static javax.swing.JTable wildPokemonsTable;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator1;
+
+    // Declaração de variáveis e objetos da classe de controle.
     static ControllerTrainer controllerTrainer = new ControllerTrainer();
+    Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());
     static List<Trainer> trainersList = new ArrayList<>();
 
     static ControllerPokemon controllerPokemon = new ControllerPokemon();
@@ -46,7 +66,6 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * Criado automaticamente pelo NetBeans.
      */
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -362,7 +381,6 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * @param evt
      */
     private void wildPokemonTableMouseClicked(MouseEvent evt) {
-        //pega o valor da string id na coluna ID da linha selecionada e manda para a tela de detalhes
         int id = (int) wildPokemonsTable.getValueAt(wildPokemonsTable.getSelectedRow(), 0);
         ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(id);
         viewPokemonDetails.setVisible(true);
@@ -384,7 +402,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
      * utilizando o método linkPokemonController e o valor da string ID no IDTextField
      * @param evt
      */
-    private void linkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LinkPokemonButtonActionPerformed
+    private void linkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {
         int idPokemon = (int) wildPokemonsTable.getValueAt(wildPokemonsTable.getSelectedRow(), 0);
         int idTrainer = Integer.parseInt(iDTextField.getText());
         if(controllerPokemon.setWildPokemonToTrainedPokemonController(idPokemon, idTrainer)){
@@ -396,14 +414,13 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao adicionar pokemon!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_LinkPokemonButtonActionPerformed
-
+    }
     /**
      * Método que pega a linha selecionada da tabela TrainerPokemonsTable e remove da tabela TrainerPokemonsTable
      * utilizando o método removePokemonController e o valor da string ID no IDTextField
      * @param evt
      */
-    private void removePokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemovePokemonButtonActionPerformed
+    private void removePokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {
         int idPokemon = (int) trainerPokemonsTable.getValueAt(trainerPokemonsTable.getSelectedRow(), 0);
         int idTrainer = Integer.parseInt(iDTextField.getText());
         if(controllerPokemon.setTrainedPokemonToWildPokemonController(idPokemon)){
@@ -415,25 +432,5 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao libertar o pokemon!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_RemovePokemonButtonActionPerformed
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel iDLabel;
-    private javax.swing.JTextField iDTextField;
-    private javax.swing.JLabel imageTrainerLabel;
-    private javax.swing.JButton linkPokemonButton;
-    private javax.swing.JLabel nameLabel;
-    private javax.swing.JTextField nameTextField;
-    private javax.swing.JLabel pokemonsLabel;
-    private javax.swing.JButton removePokemonButton;
-    private javax.swing.JLabel titleLabel;
-    private static javax.swing.JTable trainerPokemonsTable;
-    private javax.swing.JLabel trainersPokemonLabel;
-    private static javax.swing.JTable wildPokemonsTable;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JSeparator jSeparator1;
-    // End of variables declaration//GEN-END:variables
+    }
 }

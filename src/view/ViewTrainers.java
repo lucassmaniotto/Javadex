@@ -19,6 +19,22 @@ import model.Trainer;
  * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewTrainers extends javax.swing.JFrame {
+    //Declaração de componentes da interface gráfica.
+    private javax.swing.JButton editTrainerButton;
+    private javax.swing.JButton filterButton;
+    private javax.swing.JComboBox<String> filterComboBox;
+    private javax.swing.JTextField filterTextField;
+    private javax.swing.JButton linkPokemonButton;
+    private javax.swing.JButton registerTrainerButton;
+    private javax.swing.JButton removeTrainerButton;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JLabel trainerImageLabel;
+    private static javax.swing.JTable trainersTable;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+
+    //Declaração de variáveis e objetos da classe de controle.
     Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());
     static ControllerTrainer controllerTrainer = new ControllerTrainer();
     static List<Trainer> trainersList = new ArrayList<>();
@@ -39,7 +55,6 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Criado automaticamente pelo NetBeans.
      */
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -244,16 +259,16 @@ public class ViewTrainers extends javax.swing.JFrame {
      * Abre a tela de cadastro de treinadores
      * @param evt
      */
-    private void registerTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterTrainerButtonActionPerformed
+    private void registerTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {
         ViewRegisterTrainer viewRegisterTrainer = new ViewRegisterTrainer();
         viewRegisterTrainer.setVisible(true);
-    }//GEN-LAST:event_RegisterTrainerButtonActionPerformed
+    }
 
     /**
      * Abre a tela de edição de treinadores com os dados do treinador selecionado na tabela
      * @param evt
      */
-    private void editTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditTrainerButtonActionPerformed
+    private void editTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             int id = (int) trainersTable.getValueAt(trainersTable.getSelectedRow(), 0);
             ViewEditTrainer viewEditTrainer = new ViewEditTrainer(id);
@@ -261,13 +276,13 @@ public class ViewTrainers extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Selecione um treinador para editar!", "Atenção", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_EditTrainerButtonActionPerformed
+    }
 
     /**
      * Abre a tela de vinculação de pokemons aos treinadores com os dados do treinador selecionado na tabela
      * @param evt
      */
-    private void linkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LinkPokemonButtonActionPerformed
+    private void linkPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             int id = (int) trainersTable.getValueAt(trainersTable.getSelectedRow(), 0);
             ViewLinkPokemon viewLinkPokemon = new ViewLinkPokemon(id);
@@ -275,13 +290,13 @@ public class ViewTrainers extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Selecione um treinador para vincular pokemons!", "Atenção", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_LinkPokemonButtonActionPerformed
+    }
 
     /**
      * Remove o treinador que estiver com a linha selecionada
      * @param evt
      */
-    private void removeTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveTrainerButtonActionPerformed
+    private void removeTrainerButtonActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             int id = (int) trainersTable.getValueAt(trainersTable.getSelectedRow(), 0);
             if (JOptionPane.showConfirmDialog(null, "Deseja realmente remover o treinador?", "Atenção", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE) == JOptionPane.YES_OPTION) {
@@ -300,14 +315,13 @@ public class ViewTrainers extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Selecione um treinador para remover!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_RemoveTrainerButtonActionPerformed
+    }
     
     /**
      * Filtra os treinadores conforme o valor da ComboBox
      * @param evt
      */
-    private void filterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterButtonActionPerformed
-        DefaultTableModel model = (DefaultTableModel) trainersTable.getModel();
+    private void filterButtonActionPerformed(java.awt.event.ActionEvent evt) {    DefaultTableModel model = (DefaultTableModel) trainersTable.getModel();
         model.setRowCount(0);
 
         try {
@@ -328,8 +342,7 @@ public class ViewTrainers extends javax.swing.JFrame {
             filterTextField.setText("");
         }
 
-    }//GEN-LAST:event_FilterButtonActionPerformed
-    
+    }
     /**
      * Busca os treinadores pelo ID
      * @param model
@@ -471,20 +484,4 @@ public class ViewTrainers extends javax.swing.JFrame {
             editTrainer.setVisible(true);
         }
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton editTrainerButton;
-    private javax.swing.JButton filterButton;
-    private javax.swing.JComboBox<String> filterComboBox;
-    private javax.swing.JTextField filterTextField;
-    private javax.swing.JButton linkPokemonButton;
-    private javax.swing.JButton registerTrainerButton;
-    private javax.swing.JButton removeTrainerButton;
-    private javax.swing.JLabel titleLabel;
-    private javax.swing.JLabel trainerImageLabel;
-    private static javax.swing.JTable trainersTable;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
-    // End of variables declaration//GEN-END:variables
 }

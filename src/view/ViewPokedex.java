@@ -18,6 +18,20 @@ import model.WildPokemon;
  * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewPokedex extends javax.swing.JFrame {
+    //Declaração de componentes da interface gráfica.
+    private javax.swing.JButton filterButton;
+    private javax.swing.JComboBox<String> filterComboBox;
+    private javax.swing.JTextField filterTextField;
+    private javax.swing.JLabel pokemonImageLabel;
+    private javax.swing.JButton registerPokemonButton;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JButton viewTrainersButton;
+    private static javax.swing.JTable wildPokemonTable;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+
+    //Declaração de variáveis e objetos da classe de controle.
     WildPokemon wildPokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
     static ControllerPokemon controllerPokemon = new ControllerPokemon();
     static List<WildPokemon> wildPokemonsList = new ArrayList<>();
@@ -37,7 +51,6 @@ public class ViewPokedex extends javax.swing.JFrame {
      * Criado automaticamente pelo NetBeans.
      */
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -225,19 +238,18 @@ public class ViewPokedex extends javax.swing.JFrame {
      * Abre a tela de vizualização de treinadores
      * @param evt
      */
-    private void viewTrainersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewTrainersButtonActionPerformed
+    private void viewTrainersButtonActionPerformed(java.awt.event.ActionEvent evt) {
         ViewTrainers viewTrainers = new ViewTrainers();
         viewTrainers.setVisible(true);
-    }//GEN-LAST:event_ViewTrainersButtonActionPerformed
-    
+    }
     /**
      * Abre a tela de registro de pokemons
      * @param evt
      */
-    private void registerPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterPokemonButtonActionPerformed
+    private void registerPokemonButtonActionPerformed(java.awt.event.ActionEvent evt) {
         ViewRegisterPokemon viewRegisterPokemon = new ViewRegisterPokemon();
         viewRegisterPokemon.setVisible(true);
-    }//GEN-LAST:event_RegisterPokemonButtonActionPerformed
+    }
 
     /**
      * Altera a imagem do pokemon quando a linha da tabela recebe foco
@@ -264,7 +276,7 @@ public class ViewPokedex extends javax.swing.JFrame {
      * Filtra os pokemons selvagens conforme o valor da ComboBox
      * @param evt
      */
-    private void filterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterButtonActionPerformed
+    private void filterButtonActionPerformed(java.awt.event.ActionEvent evt) {
         DefaultTableModel model = (DefaultTableModel) wildPokemonTable.getModel();
         model.setRowCount(0);
 
@@ -283,8 +295,7 @@ public class ViewPokedex extends javax.swing.JFrame {
         } finally {
             filterTextField.setText("");
         }
-        
-    }//GEN-LAST:event_FilterButtonActionPerformed
+    }
 
     /**
      * Busca os pokemons selvagens pelo ID
@@ -393,18 +404,4 @@ public class ViewPokedex extends javax.swing.JFrame {
             filterTextField.setText("O que você procura?");
         }
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton filterButton;
-    private javax.swing.JComboBox<String> filterComboBox;
-    private javax.swing.JTextField filterTextField;
-    private javax.swing.JLabel pokemonImageLabel;
-    private javax.swing.JButton registerPokemonButton;
-    private javax.swing.JLabel titleLabel;
-    private javax.swing.JButton viewTrainersButton;
-    private static javax.swing.JTable wildPokemonTable;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator1;
-    // End of variables declaration//GEN-END:variables
 }

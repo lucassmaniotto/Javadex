@@ -10,6 +10,24 @@ import model.Trainer;
  * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewRegisterTrainer extends javax.swing.JFrame {
+    //Declaração de componentes da interface gráfica.
+    private javax.swing.JLabel ageLabel;
+    private javax.swing.JTextField ageTextField;
+    private javax.swing.JLabel badgesLabel;
+    private javax.swing.JTextField bagdesTextField;
+    private javax.swing.JButton exitButton;
+    private javax.swing.JLabel iDLabel;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nameTextField;
+    private javax.swing.JComboBox<String> regionsComboBox;
+    private javax.swing.JLabel regionsLabel;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField iDTextField;
+
+    //Declaração de variáveis e objetos da classe de controle.
     Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());
     ControllerTrainer controllerTrainer = new ControllerTrainer();
 
@@ -25,8 +43,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
      * Método de inicialização dos componentes da interface gráfica.
      * Criado automaticamente pelo NetBeans.
      */
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
+     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
@@ -173,7 +190,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
      * Salva os dados do treinador
      * @param evt
      */
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {
         trainer.setName(nameTextField.getText());
         if (nameTextField.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "O Treinador precisa de um nome!", "Erro",JOptionPane.ERROR_MESSAGE);
@@ -202,7 +219,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao salvar o treinador!", "Erro",JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_SaveButtonActionPerformed
+    }
 
     /**
      * Limpa os campos do formulário
@@ -219,25 +236,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
      * Fecha a janela
      * @param evt
      */
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {
         this.dispose();
-    }//GEN-LAST:event_ExitButtonActionPerformed
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ageLabel;
-    private javax.swing.JTextField ageTextField;
-    private javax.swing.JLabel badgesLabel;
-    private javax.swing.JTextField bagdesTextField;
-    private javax.swing.JButton exitButton;
-    private javax.swing.JLabel iDLabel;
-    private javax.swing.JLabel nameLabel;
-    private javax.swing.JTextField nameTextField;
-    private javax.swing.JComboBox<String> regionsComboBox;
-    private javax.swing.JLabel regionsLabel;
-    private javax.swing.JButton saveButton;
-    private javax.swing.JLabel titleLabel;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField iDTextField;
-    // End of variables declaration//GEN-END:variables
+    }
 }

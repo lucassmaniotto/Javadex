@@ -10,6 +10,41 @@ import model.WildPokemon;
  * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewRegisterPokemon extends javax.swing.JFrame {
+    //Declaração de componentes da interface gráfica.
+    private javax.swing.JLabel aTQLabel;
+    private javax.swing.JTextField aTQTextField;
+    private javax.swing.JLabel dEFLabel;
+    private javax.swing.JTextField dEFTextField;
+    private javax.swing.JButton exitButton;
+    private javax.swing.JComboBox<String> firstTypeComboBox;
+    private javax.swing.JLabel firstTypeLabel;
+    private javax.swing.JLabel hPLabel;
+    private javax.swing.JTextField hPTextField;
+    private javax.swing.JLabel heightLabel;
+    private javax.swing.JTextField heightTextField;
+    private javax.swing.JLabel iDLabel;
+    private javax.swing.JTextField iDTextField;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nameTextField;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JComboBox<String> secondTypeComboBox;
+    private javax.swing.JLabel secondTypeLabel;
+    private javax.swing.JCheckBox shinyCheckBox;
+    private javax.swing.JLabel speedLabel;
+    private javax.swing.JTextField speedTextField;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JLabel totalLabel;
+    private javax.swing.JLabel totalValueLabel;
+    private javax.swing.JLabel weightLabel;
+    private javax.swing.JTextField weightTextField;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel sATQLabel;
+    private javax.swing.JTextField sATQTextField;
+    private javax.swing.JLabel sDEFLabel;
+    private javax.swing.JTextField sDEFTextField;
+
+    //Declaração de variáveis e objetos da classe de controle.
     WildPokemon pokemon = new WildPokemon("", Types.NONE.toString(), Types.NONE.toString(), 0, 0, 0, 0, 0, 0, 0, 0);
     ControllerPokemon controllerPokemon = new ControllerPokemon();
     
@@ -25,7 +60,6 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
      * Método de inicialização dos componentes da interface gráfica.
      * Criado automaticamente pelo NetBeans.
      */
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -305,7 +339,7 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
      * Método para capturar os dados do Pokémon a serem cadastrados no formulário e enviá-los para o banco de dados.
      * @param evt
      */
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {
         pokemon.setName(nameTextField.getText());
         if (nameTextField.getText().equals("")) {
             JOptionPane.showMessageDialog(this, "O Pokemón precisa de um nome!", "Erro",JOptionPane.ERROR_MESSAGE);
@@ -351,7 +385,7 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao cadastrar usuário!", "Erro",JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_SaveButtonActionPerformed
+    }
 
     /**
      * Limpa os campos do formulário e atualiza o ID do Pokémon.
@@ -373,43 +407,8 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
         iDTextField.setText(String.valueOf(Integer.parseInt(iDTextField.getText()) + 1));
     }
 
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {
         totalValueLabel.setText("???");
         this.dispose();
-    }//GEN-LAST:event_ExitButtonActionPerformed
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel aTQLabel;
-    private javax.swing.JTextField aTQTextField;
-    private javax.swing.JLabel dEFLabel;
-    private javax.swing.JTextField dEFTextField;
-    private javax.swing.JButton exitButton;
-    private javax.swing.JComboBox<String> firstTypeComboBox;
-    private javax.swing.JLabel firstTypeLabel;
-    private javax.swing.JLabel hPLabel;
-    private javax.swing.JTextField hPTextField;
-    private javax.swing.JLabel heightLabel;
-    private javax.swing.JTextField heightTextField;
-    private javax.swing.JLabel iDLabel;
-    private javax.swing.JTextField iDTextField;
-    private javax.swing.JLabel nameLabel;
-    private javax.swing.JTextField nameTextField;
-    private javax.swing.JButton saveButton;
-    private javax.swing.JComboBox<String> secondTypeComboBox;
-    private javax.swing.JLabel secondTypeLabel;
-    private javax.swing.JCheckBox shinyCheckBox;
-    private javax.swing.JLabel speedLabel;
-    private javax.swing.JTextField speedTextField;
-    private javax.swing.JLabel titleLabel;
-    private javax.swing.JLabel totalLabel;
-    private javax.swing.JLabel totalValueLabel;
-    private javax.swing.JLabel weightLabel;
-    private javax.swing.JTextField weightTextField;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel sATQLabel;
-    private javax.swing.JTextField sATQTextField;
-    private javax.swing.JLabel sDEFLabel;
-    private javax.swing.JTextField sDEFTextField;
-    // End of variables declaration//GEN-END:variables
+    }
 }

@@ -15,6 +15,43 @@ import model.WildPokemon;
  * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewPokemonDetails extends javax.swing.JFrame {
+    //Declaração de componentes da interface gráfica.
+    private javax.swing.JLabel aTQLabel;
+    private javax.swing.JProgressBar aTQProgressBar;
+    private javax.swing.JLabel aTQValueLabel;
+    private javax.swing.JLabel dEFLabel;
+    private javax.swing.JProgressBar dEFProgressBar;
+    private javax.swing.JLabel dEFValueLabel;
+    private javax.swing.JLabel firstTypeLabel;
+    private javax.swing.JLabel firstTypeValueLabel;
+    private javax.swing.JLabel hPLabel;
+    private javax.swing.JProgressBar hPProgressBar;
+    private javax.swing.JLabel hPValueLabel;
+    private javax.swing.JLabel heightLabel;
+    private javax.swing.JLabel heightValueLabel;
+    private javax.swing.JLabel pokemonImageLabel;
+    private javax.swing.JLabel pokemonNameLabel;
+    private javax.swing.JLabel secondTypeLabel;
+    private javax.swing.JLabel secondTypeValueLabel;
+    private javax.swing.JLabel speedLabel;
+    private javax.swing.JProgressBar speedProgressBar;
+    private javax.swing.JLabel speedValueLabel;
+    private javax.swing.JLabel totalLabel;
+    private javax.swing.JLabel totalValueLabel;
+    private javax.swing.JLabel weightLabel;
+    private javax.swing.JLabel weightValueLabel;
+    private javax.swing.JLabel isShinyLabel;
+    private javax.swing.JLabel isShinyValueLabel;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel sATQLabel;
+    private javax.swing.JProgressBar sATQProgressBar;
+    private javax.swing.JLabel sATQValueLabel;
+    private javax.swing.JLabel sDEFLabel;
+    private javax.swing.JProgressBar sDEFProgressBar;
+    private javax.swing.JLabel sDEFValueLabel;
+
+    //Declaração de variáveis e objetos da classe de controle.
     WildPokemon wildPokemon = new WildPokemon("", "", "", 0, 0, 0, 0, 0, 0, 0, 0);
     static ControllerPokemon controllerPokemon = new ControllerPokemon();
     static List<WildPokemon> wildPokemonsList = new ArrayList<>();
@@ -33,7 +70,6 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
      * Método de inicialização dos componentes da interface gráfica.
      * Criado automaticamente pelo NetBeans.
      */
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -415,41 +451,4 @@ public class ViewPokemonDetails extends javax.swing.JFrame {
             Logger.getLogger(ViewPokemonDetails.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel aTQLabel;
-    private javax.swing.JProgressBar aTQProgressBar;
-    private javax.swing.JLabel aTQValueLabel;
-    private javax.swing.JLabel dEFLabel;
-    private javax.swing.JProgressBar dEFProgressBar;
-    private javax.swing.JLabel dEFValueLabel;
-    private javax.swing.JLabel firstTypeLabel;
-    private javax.swing.JLabel firstTypeValueLabel;
-    private javax.swing.JLabel hPLabel;
-    private javax.swing.JProgressBar hPProgressBar;
-    private javax.swing.JLabel hPValueLabel;
-    private javax.swing.JLabel heightLabel;
-    private javax.swing.JLabel heightValueLabel;
-    private javax.swing.JLabel pokemonImageLabel;
-    private javax.swing.JLabel pokemonNameLabel;
-    private javax.swing.JLabel secondTypeLabel;
-    private javax.swing.JLabel secondTypeValueLabel;
-    private javax.swing.JLabel speedLabel;
-    private javax.swing.JProgressBar speedProgressBar;
-    private javax.swing.JLabel speedValueLabel;
-    private javax.swing.JLabel totalLabel;
-    private javax.swing.JLabel totalValueLabel;
-    private javax.swing.JLabel weightLabel;
-    private javax.swing.JLabel weightValueLabel;
-    private javax.swing.JLabel isShinyLabel;
-    private javax.swing.JLabel isShinyValueLabel;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel sATQLabel;
-    private javax.swing.JProgressBar sATQProgressBar;
-    private javax.swing.JLabel sATQValueLabel;
-    private javax.swing.JLabel sDEFLabel;
-    private javax.swing.JProgressBar sDEFProgressBar;
-    private javax.swing.JLabel sDEFValueLabel;
-    // End of variables declaration//GEN-END:variables
 }

@@ -18,6 +18,35 @@ import model.Trainer;
  * @author Lucas Smaniotto & Valtemir Junior
  */
 public class ViewEditTrainer extends javax.swing.JFrame {
+    //Declaração de componentes da interface gráfica.
+    private javax.swing.JLabel ageLabel;
+    private javax.swing.JTextField ageTextField;
+    private javax.swing.JLabel badgesLabel;
+    private javax.swing.JTextField bagdesTextField;
+    private static javax.swing.JButton exitButton;
+    private javax.swing.JLabel iDLabel;
+    private javax.swing.JTextField iDTextField;
+    private javax.swing.JLabel imageTrainerLabel;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nameTextField;
+    private javax.swing.JLabel partyLabel;
+    private static javax.swing.JTable pokemonPartyTable;
+    private javax.swing.JLabel pokemonsLabel;
+    private javax.swing.JComboBox<String> regionsComboBox;
+    private javax.swing.JLabel regionsLabel;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JLabel titleLabel;
+    private static javax.swing.JTable trainedPokemonsTable;
+    private javax.swing.JButton addToPartyButton;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JButton removeFromPartyButton;
+
+    //Declaração de variáveis e objetos da classe de controle.
     ControllerTrainer controllerTrainer = new ControllerTrainer();
     Trainer trainer = new Trainer("", 0, 0, Regions.UNKNOWN.toString());
     
@@ -42,7 +71,6 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * Criado automaticamente pelo NetBeans.
      */
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -363,7 +391,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * Remove um pokemon do grupo do treinador
      * @param evt
      */
-    private void removeFromPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeFromPartyButtonActionPerformed
+    private void removeFromPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {
         DefaultTableModel model = (DefaultTableModel) pokemonPartyTable.getModel();
         try {
             int idPokemon = (int) pokemonPartyTable.getValueAt(pokemonPartyTable.getSelectedRow(), 0);
@@ -373,13 +401,13 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Selecione um pokemon para remover!", "Atenção", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_removeFromPartyButtonActionPerformed
+    }
     
     /**
      * Adiciona um pokemon ao grupo do treinador
      * @param evt
      */
-    private void addToPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToPartyButtonActionPerformed
+    private void addToPartyButtonActionPerformed(java.awt.event.ActionEvent evt) {
         DefaultTableModel model = (DefaultTableModel) pokemonPartyTable.getModel();
         try{       
             int idPokemon = (int) trainedPokemonsTable.getValueAt(trainedPokemonsTable.getSelectedRow(), 0);
@@ -404,13 +432,13 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Selecione um pokemon para adicionar!", "Atenção", JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_addToPartyButtonActionPerformed
+    }
     
     /**
      * Salva as alterações feitas no treinador e no seu time
      * @param evt
      */
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {
         try {
             saveTrainerParty();
             updateTrainerParty();
@@ -419,15 +447,15 @@ public class ViewEditTrainer extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "Erro ao salvar os dados do treinador!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
-    }//GEN-LAST:event_SaveButtonActionPerformed
+    }
     
     /**
      * Fecha a janela
      * @param evt
      */
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitButtonActionPerformed
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {
         this.dispose();
-    }//GEN-LAST:event_ExitButtonActionPerformed
+    }
 
     /**
      * Fecha a janela caso o treinador seja excluído na
@@ -554,38 +582,9 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * @param Table Tabela que será verificada
      * @param evt
      */
-     private void showPokemonDetails(java.awt.event.MouseEvent evt, javax.swing.JTable Table) {//GEN-FIRST:event_showPokemonDetails
+     private void showPokemonDetails(java.awt.event.MouseEvent evt, javax.swing.JTable Table) {
         int idPokemon = (int) Table.getValueAt(Table.getSelectedRow(), 0);
         ViewPokemonDetails viewPokemonDetails = new ViewPokemonDetails(idPokemon);
         viewPokemonDetails.setVisible(true);
-    }//GEN-LAST:event_showPokemonDetails
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ageLabel;
-    private javax.swing.JTextField ageTextField;
-    private javax.swing.JLabel badgesLabel;
-    private javax.swing.JTextField bagdesTextField;
-    private static javax.swing.JButton exitButton;
-    private javax.swing.JLabel iDLabel;
-    private javax.swing.JTextField iDTextField;
-    private javax.swing.JLabel imageTrainerLabel;
-    private javax.swing.JLabel nameLabel;
-    private javax.swing.JTextField nameTextField;
-    private javax.swing.JLabel partyLabel;
-    private static javax.swing.JTable pokemonPartyTable;
-    private javax.swing.JLabel pokemonsLabel;
-    private javax.swing.JComboBox<String> regionsComboBox;
-    private javax.swing.JLabel regionsLabel;
-    private javax.swing.JButton saveButton;
-    private javax.swing.JLabel titleLabel;
-    private static javax.swing.JTable trainedPokemonsTable;
-    private javax.swing.JButton addToPartyButton;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JButton removeFromPartyButton;
-    // End of variables declaration//GEN-END:variables
+    }
 }
