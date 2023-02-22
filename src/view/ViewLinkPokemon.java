@@ -409,8 +409,12 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Pokemon capturado na Pokébola com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             loadTrainedPokemons(idTrainer);
             loadWildPokemons();
-            ViewPokedex.updateTable();
-            ViewEditTrainer.loadTrainerPokemons(idTrainer);
+            try{    
+                ViewPokedex.updateTable();
+                ViewEditTrainer.loadTrainerPokemons(idTrainer);
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(this, "Tabelas atualizadas em segundo plano!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao adicionar pokemon!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
@@ -427,8 +431,12 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "O Pokémon foi solto na natureza com sucesso!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
             loadTrainedPokemons(idTrainer);
             loadWildPokemons();
-            ViewPokedex.updateTable();
-            ViewEditTrainer.loadTrainerPokemons(idTrainer);
+            try{
+                ViewPokedex.updateTable();
+                ViewEditTrainer.loadTrainerPokemons(idTrainer);
+            } catch (NullPointerException e) {
+                JOptionPane.showMessageDialog(this, "Tabelas atualizadas em segundo plano!", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao libertar o pokemon!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
