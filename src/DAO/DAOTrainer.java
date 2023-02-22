@@ -32,9 +32,8 @@ public class DAOTrainer extends SQLiteConnection {
                     + "TRAINER_NAME, "
                     + "TRAINER_AGE ,"
                     + "TRAINER_BADGES ,"
-                    + "TRAINER_REGION ,"
-                    + "TRAINER_POKEMON_COUNT ) "
-                    + "VALUES (?,?,?,?,0)";
+                    + "TRAINER_REGION ) "
+                    + "VALUES (?,?,?,?)";
 
         PreparedStatement preparedStatement = createPreparedStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
