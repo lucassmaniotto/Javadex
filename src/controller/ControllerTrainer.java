@@ -7,7 +7,7 @@ import model.Trainer;
 
 /**
  * Classe responsável por controlar as ações do usuário relacionadas ao Objeto Trainer.
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class ControllerTrainer {
     DAOTrainer daoTrainer = new DAOTrainer();
@@ -23,6 +23,7 @@ public class ControllerTrainer {
 
     /**Retorna um treinador do banco de dados através do seu ID.
      * @param id ID do treinador a ser retornado.
+     * @return Trainer - Treinador com o ID passado como parâmetro.
      */
     public Trainer getTrainerByIDController(int id) {
         return this.daoTrainer.getTrainer(id);
@@ -47,7 +48,7 @@ public class ControllerTrainer {
     /**
      * Remove um treinador do banco de dados através do seu ID
      * e torna seus pokemons treinados como selvagens
-     * @param id ID do treinador a ser removido.
+     * @param idTrainer ID do treinador a ser removido.
      */
     public void removeTrainerController(int idTrainer) {
         this.daoTrainer.removeTrainer(idTrainer);
@@ -56,10 +57,10 @@ public class ControllerTrainer {
 
     /**
      * Atualiza um treinador no banco de dados
-     * @param int idTrainer - Treinador a ser atualizado
-     * @param String region - Região do treinador
-     * @param int age - Idade do treinador
-     * @param int badges - Quantidade de badges do treinador
+     * @param idTrainer - Treinador a ser atualizado
+     * @param region - Região do treinador
+     * @param age - Idade do treinador
+     * @param badges - Quantidade de badges do treinador
      */
     public void updateTrainerController(int idTrainer, String region, int age, int badges) {
         this.daoTrainer.updateTrainer(idTrainer, region, age, badges);

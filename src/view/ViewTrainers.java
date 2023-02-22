@@ -16,7 +16,7 @@ import model.Trainer;
 
 /**
  * Classe que representa a interface gráfica de visualização de treinadores.
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class ViewTrainers extends javax.swing.JFrame {
     //Declaração de componentes da interface gráfica.
@@ -253,7 +253,7 @@ public class ViewTrainers extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     /**
      * Abre a tela de cadastro de treinadores

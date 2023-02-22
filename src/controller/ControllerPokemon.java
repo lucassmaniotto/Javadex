@@ -8,7 +8,7 @@ import model.WildPokemon;
 
 /**
  * Classe responsável por controlar as ações do usuário relacionadas ao Objetos WildPokemon e TrainedPokemon
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class ControllerPokemon {
     DAOPokemon daoPokemon = new DAOPokemon();
@@ -61,6 +61,7 @@ public class ControllerPokemon {
      * para um pokemon treinado através do ID
      * @param idPokemon int - ID do pokemon selvagem
      * @param idTrainer int - ID do treinador
+     * @return boolean - true se salvou, false se não salvou
      */
     public boolean setWildPokemonToTrainedPokemonController(int idPokemon, int idTrainer) {
         if (this.daoPokemon.setWildPokemonToTrainedPokemon(idPokemon, idTrainer)) {
@@ -74,6 +75,7 @@ public class ControllerPokemon {
      * Atualiza o pokemon treinado no banco de dados
      * para um pokemon selvagem através do ID
      * @param idPokemon int - ID do pokemon treinado
+     * @return boolean - true se salvou, false se não salvou
      */
     public boolean setTrainedPokemonToWildPokemonController(int idPokemon) {
         if (this.daoPokemon.setTrainedPokemonToWildPokemon(idPokemon)) {

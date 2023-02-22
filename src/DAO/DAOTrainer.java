@@ -16,7 +16,7 @@ import model.Trainer;
 
 /**
  * Classe responsável por fazer as operações de CRUD no banco de dados para a tabela T_TRAINER.
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class DAOTrainer extends SQLiteConnection {
     
@@ -186,10 +186,10 @@ public class DAOTrainer extends SQLiteConnection {
 
     /**
      * Atualiza um treinador no banco de dados
-     * @param int idTrainer - Treinador a ser atualizado
-     * @param String region - Região do treinador
-     * @param int age - Idade do treinador
-     * @param int badges - Quantidade de badges do treinador
+     * @param idTrainer Treinador a ser atualizado
+     * @param region Região do treinador
+     * @param age Idade do treinador
+     * @param badges Quantidade de badges do treinador
      */
     public void updateTrainer(int idTrainer, String region, int age, int badges) {
         connect();

@@ -7,7 +7,7 @@ import model.Trainer;
 
 /**
  * Classe que representa a interface gráfica de cadastro de treinadores.
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class ViewRegisterTrainer extends javax.swing.JFrame {
     //Declaração de componentes da interface gráfica.
@@ -184,7 +184,7 @@ public class ViewRegisterTrainer extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     /**
      * Salva os dados do treinador

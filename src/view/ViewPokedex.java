@@ -15,7 +15,7 @@ import model.WildPokemon;
 
 /**
  * Classe que representa a interface gráfica da Pokedex
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class ViewPokedex extends javax.swing.JFrame {
     //Declaração de componentes da interface gráfica.
@@ -231,7 +231,7 @@ public class ViewPokedex extends javax.swing.JFrame {
             );
             
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
     
     
     /**

@@ -7,7 +7,7 @@ import model.WildPokemon;
 
 /**
  * Classe que representa a interface gráfica de registro de Pokémon selvagens.
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class ViewRegisterPokemon extends javax.swing.JFrame {
     //Declaração de componentes da interface gráfica.
@@ -333,7 +333,7 @@ public class ViewRegisterPokemon extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     /**
      * Método para capturar os dados do Pokémon a serem cadastrados no formulário e enviá-los para o banco de dados.

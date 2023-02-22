@@ -16,7 +16,7 @@ import model.WildPokemon;
 
 /**
  * Classe responsável por realizar as operações de CRUD no banco de dados para a tabela T_POKEMON.
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class DAOPokemon extends SQLiteConnection {
     
@@ -185,8 +185,8 @@ public class DAOPokemon extends SQLiteConnection {
 
     /**
      * Retorna uma lista com todos os pokemons treinados do banco de dados
-     * @param int - ID do treinador
-     * @return List - Lista de pokemons do tipo TrainedPokemon
+     * @param trainerID ID do treinador
+     * @return List Lista de pokemons do tipo TrainedPokemon
      */
     public List<TrainedPokemon> getTrainedPokemons(int trainerID) {
         List<TrainedPokemon> trainedPokemonsList = new ArrayList<>();
@@ -232,8 +232,9 @@ public class DAOPokemon extends SQLiteConnection {
      * Vincula um pokemon selvagem a um treinador
      * através do ID do pokemon e do ID do treinador
      * com um UPDATE no banco de dados
-     * @param int - ID do pokemon
-     * @param int - ID do treinador
+     * @param pokemonID ID do pokemon
+     * @param trainerID ID do treinador
+     * @return boolean - true se o pokemon foi vinculado com sucesso, false caso contrário.
      */
     public boolean setWildPokemonToTrainedPokemon(int pokemonID, int trainerID) {
         connect();
@@ -257,7 +258,8 @@ public class DAOPokemon extends SQLiteConnection {
     /**
      * O pokemon vinculado a um treinador
      * é desvinculado e vira um pokemon selvagem
-     * @param int - ID do pokemon
+     * @param pokemonID ID do pokemon
+     * @return boolean - true se o pokemon foi desvinculado com sucesso, false caso contrário.
      */
      public boolean setTrainedPokemonToWildPokemon(int pokemonID){
         connect();

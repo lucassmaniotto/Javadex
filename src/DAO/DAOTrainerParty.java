@@ -14,7 +14,7 @@ import model.TrainedPokemon;
 
 /**
  * Classe responsável por realizar as operações de CRUD no banco de dados para a tabela T_TRAINER_PARTY.
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class DAOTrainerParty extends SQLiteConnection {
     
@@ -22,6 +22,7 @@ public class DAOTrainerParty extends SQLiteConnection {
      * Salva a lista de Pokémons do Time do treinador no banco de dados, recebendo a lista de Pokémons e o ID do treinador.
      * @param idTrainer ID do treinador.
      * @param pokemonList Lista de Pokémons do treinador.
+     * @return true se salvou, false se não salvou.
      */
     public boolean saveTrainerParty(int idTrainer, List<TrainedPokemon> pokemonList) {
         connect();
@@ -94,6 +95,7 @@ public class DAOTrainerParty extends SQLiteConnection {
      * Remove o Pokémon do Time do treinador, recebendo o ID do treinador e o ID do Pokémon.
      * @param idTrainer ID do treinador.
      * @param idPokemon ID do Pokémon.
+     * @return true se removeu, false se não removeu.
      */
     public boolean removePokemonFromTrainerParty(int idTrainer, int idPokemon) {
         connect();

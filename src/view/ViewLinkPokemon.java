@@ -17,7 +17,7 @@ import model.WildPokemon;
 
 /**
  * Classe que representa a interface gráfica de vincular um pokémon selvagem a um treinador.
- * @author Lucas Smaniotto & Valtemir Junior
+ * @author Lucas Smaniotto e Valtemir Junior
  */
 public class ViewLinkPokemon extends javax.swing.JFrame {
     // Declaração de componentes da interface gráfica
@@ -313,7 +313,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     /**
      * Carrega os dados do treinador nos campos
