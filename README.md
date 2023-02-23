@@ -21,7 +21,8 @@ Javadéx é um <strong>projeto 100%</strong> em Java que consiste na implementa�
 Para execução do projeto, basta rodar o arquivo Main.java nas IDE's NetBeans ou VSCode, que está localizado na pasta src.
 
 ### 🛠️ Diagrama de Classes
-![project-uml](https://user-images.githubusercontent.com/101435037/220702439-136e6f9f-da31-40b6-ad02-b627f61e20fe.jpeg)
+
+![project-uml](https://user-images.githubusercontent.com/101435037/220891568-0aec3022-6cd4-4d01-8e75-f69994cb5edb.jpeg)
 
 ### 💾 Schema do DB
 
