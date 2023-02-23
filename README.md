@@ -20,6 +20,13 @@ Javadéx é um <strong>projeto 100%</strong> em Java que consiste na implementa�
 ### ▶️ Executando o projeto
 Para execução do projeto, basta rodar o arquivo Main.java nas IDE's NetBeans ou VSCode, que está localizado na pasta src.
 
+### 🛠️ Diagrama de Classes
+![project-uml](https://user-images.githubusercontent.com/101435037/220702439-136e6f9f-da31-40b6-ad02-b627f61e20fe.jpeg)
+
+### 💾 Schema do DB
+
+![dbPokedexSchema](https://user-images.githubusercontent.com/101435037/220702828-7acd4503-e3b7-4ae4-8da0-e3cbebf22c51.png)
+
 ### 💡 Funcionalidades
 
 #### Pokédex
