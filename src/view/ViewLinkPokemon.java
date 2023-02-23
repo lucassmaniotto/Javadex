@@ -22,11 +22,11 @@ import model.WildPokemon;
 public class ViewLinkPokemon extends javax.swing.JFrame {
     // Declaração de componentes da interface gráfica
     private javax.swing.JLabel iDLabel;
-    private javax.swing.JTextField iDTextField;
-    private javax.swing.JLabel imageTrainerLabel;
+    private static javax.swing.JTextField iDTextField;
+    private static javax.swing.JLabel imageTrainerLabel;
     private javax.swing.JButton linkPokemonButton;
     private javax.swing.JLabel nameLabel;
-    private javax.swing.JTextField nameTextField;
+    private static javax.swing.JTextField nameTextField;
     private javax.swing.JLabel pokemonsLabel;
     private javax.swing.JButton removePokemonButton;
     private javax.swing.JLabel titleLabel;
@@ -419,6 +419,7 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Erro ao adicionar pokemon!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
     }
+
     /**
      * Método que pega a linha selecionada da tabela TrainerPokemonsTable e remove da tabela TrainerPokemonsTable
      * utilizando o método removePokemonController e o valor da string ID no IDTextField
@@ -440,5 +441,19 @@ public class ViewLinkPokemon extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "Erro ao libertar o pokemon!", "Erro", JOptionPane.ERROR_MESSAGE);
         }
+    }
+
+    /**
+     * Método para limpar os campos quando treinador for excluido
+     * na ViewTrainers
+     */
+    public static void clearView(){
+        DefaultTableModel model = (DefaultTableModel) trainerPokemonsTable.getModel();
+        iDTextField.setText("");
+        nameTextField.setText("");
+        imageTrainerLabel.setIcon(null);
+        model.setRowCount(0);
+        model = (DefaultTableModel) wildPokemonsTable.getModel();
+        model.setRowCount(0);
     }
 }

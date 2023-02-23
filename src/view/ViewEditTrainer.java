@@ -461,7 +461,7 @@ public class ViewEditTrainer extends javax.swing.JFrame {
      * Fecha a janela caso o treinador seja excluído na
      * janela ViewTrainers
      */
-    public static void clearTables(){
+    public static void closeView(){
         exitButton.doClick();
     }
 
