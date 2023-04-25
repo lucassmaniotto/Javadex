@@ -9,7 +9,7 @@ Projeto feito para o Trabalho Final da disciplina de Programação I da [Univers
 | 📄 Tarefa     | https://encr.pw/5vNT6
 | 🎓 Curso | https://cc.uffs.edu.br
 
-![](https://i.pinimg.com/originals/74/c2/f0/74c2f0be552806e0b686e1396751f4a9.gif#vitrinedev)
+![porygon](https://i.pinimg.com/originals/74/c2/f0/74c2f0be552806e0b686e1396751f4a9.gif#vitrinedev)
 
 ## Detalhes do projeto
 
